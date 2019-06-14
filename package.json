@@ -1,17 +1,17 @@
 {
-  "name": "node_modules",
+  "name": "node_mod",
   "version": "0.0.0",
   "private": true,
   "description": "A collection of node modules for The Really Project",
   "keywords": [
-    "node_modules",
+    "node_mod",
     "node",
     "typescript"
   ],
-  "homepage": "https://github.com/reallyland/node_modules",
+  "homepage": "https://github.com/reallyland/node_mod",
   "repository": {
     "type": "git",
-    "url": "git@github.com:reallyland/node_modules.git"
+    "url": "git@github.com:reallyland/node_mod.git"
   },
   "license": "MIT",
   "author": {
@@ -30,11 +30,13 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "npm run ts -- -p tsconfig.prod.json",
+    "build:test": "npm run clean && tsc -p ./tsconfig.test.json",
     "clean": "shx rm -rf dist/",
     "lint": "npm run lint:debug -- --config tslint.prod.json",
     "lint:debug": "tslint --project tsconfig.json --format stylish",
     "prepublishOnly": "npm run lint && npm run build",
-    "test": "shx echo 'Write your own tests'",
+    "test": "npm run lint && npm run build:test && npm run jest",
+    "jest": "jest --config ./.jestrc.json",
     "ts": "npm run clean && tsc",
     "watch": "npm run ts -- --watch"
   },
@@ -42,7 +44,9 @@
   "devDependencies": {
     "@reallyland/tsconfig": "^1.0.0",
     "@reallyland/tslint-config": "^1.1.0",
+    "@types/jest": "^24.0.14",
     "@types/node": "^12.0.8",
+    "jest": "^24.8.0",
     "shx": "^0.3.2",
     "tslint": "^5.17.0",
     "typescript": "^3.5.2"

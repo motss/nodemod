@@ -1,5 +1,5 @@
 <div align="center" style="text-align: center;">
-  <h1 style="border-bottom: none;">node_modules</h1>
+  <h1 style="border-bottom: none;">node_mod</h1>
 
   <p>A collection of node modules for The Really Project</p>
 </div>
@@ -52,7 +52,7 @@
 
 ```sh
 # Install via NPM
-$ npm install --save node_modules
+$ npm install --save node_mod
 ```
 
 ### Usage
@@ -60,13 +60,13 @@ $ npm install --save node_modules
 #### Node.js
 
 ```js
-const greeting = require('node_modules');
+const greeting = require('node_mod');
 ```
 
 #### Native ES modules or TypeScript
 
 ```ts
-import greeting from 'node_modules';
+import greeting from 'node_mod';
 ```
 
 ## API Reference
@@ -105,40 +105,40 @@ This methods works the same as `greeting(name)` except that this is the synchron
 <!-- Badges -->
 [follow-me-badge]: https://flat.badgen.net/twitter/follow/motss?icon=twitter
 
-[version-badge]: https://flat.badgen.net/npm/v/node_modules?icon=npm
-[node-version-badge]: https://flat.badgen.net/npm/node/node_modules
-[mit-license-badge]: https://flat.badgen.net/npm/license/node_modules
+[version-badge]: https://flat.badgen.net/npm/v/node_mod?icon=npm
+[node-version-badge]: https://flat.badgen.net/npm/node/node_mod
+[mit-license-badge]: https://flat.badgen.net/npm/license/node_mod
 
-[downloads-badge]: https://flat.badgen.net/npm/dm/node_modules
-[total-downloads-badge]: https://flat.badgen.net/npm/dt/node_modules?label=total%20downloads
-[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/node_modules
-[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/node_modules
+[downloads-badge]: https://flat.badgen.net/npm/dm/node_mod
+[total-downloads-badge]: https://flat.badgen.net/npm/dt/node_mod?label=total%20downloads
+[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/node_mod
+[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/node_mod
 
-[circleci-badge]: https://flat.badgen.net/circleci/github/motss/node_modules?icon=circleci
-[daviddm-badge]: https://flat.badgen.net/david/dep/motss/node_modules
-[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_modules?label=codecov&icon=codecov
-[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_modules?label=coveralls
+[circleci-badge]: https://flat.badgen.net/circleci/github/motss/node_mod?icon=circleci
+[daviddm-badge]: https://flat.badgen.net/david/dep/motss/node_mod
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_mod?label=codecov&icon=codecov
+[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_mod?label=coveralls
 
 [codebeat-badge]: https://codebeat.co/badges/123
 [codacy-badge]: https://api.codacy.com/project/badge/Grade/123
 [coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
 <!-- Links -->
-[follow-me-url]: https://twitter.com/motss?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_modules
+[follow-me-url]: https://twitter.com/motss?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod
 
-[version-url]: https://www.npmjs.com/package/node_modules
+[version-url]: https://www.npmjs.com/package/node_mod
 [node-version-url]: https://nodejs.org/en/download
-[mit-license-url]: https://github.com/motss/node_modules/blob/master/LICENSE
+[mit-license-url]: https://github.com/motss/node_mod/blob/master/LICENSE
 
-[downloads-url]: https://www.npmtrends.com/node_modules
-[packagephobia-url]: https://packagephobia.now.sh/result?p=node_modules
-[bundlephobia-url]: https://bundlephobia.com/result?p=node_modules
+[downloads-url]: https://www.npmtrends.com/node_mod
+[packagephobia-url]: https://packagephobia.now.sh/result?p=node_mod
+[bundlephobia-url]: https://bundlephobia.com/result?p=node_mod
 
-[circleci-url]: https://circleci.com/gh/motss/node_modules/tree/master
-[daviddm-url]: https://david-dm.org/motss/node_modules
-[codecov-url]: https://codecov.io/gh/motss/node_modules
-[coveralls-url]: https://coveralls.io/github/motss/node_modules?branch=master
+[circleci-url]: https://circleci.com/gh/motss/node_mod/tree/master
+[daviddm-url]: https://david-dm.org/motss/node_mod
+[codecov-url]: https://codecov.io/gh/motss/node_mod
+[coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
 
-[codebeat-url]: https://codebeat.co/projects/github-com-motss-node_modules-master
-[codacy-url]: https://www.codacy.com/app/motss/node_modules?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_modules&amp;utm_campaign=Badge_Grade
-[coc-url]: https://github.com/motss/node_modules/blob/master/CODE_OF_CONDUCT.md
+[codebeat-url]: https://codebeat.co/projects/github-com-motss-node_mod-master
+[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod&amp;utm_campaign=Badge_Grade
+[coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
