@@ -1,23 +1,5 @@
-import { htmlFragment } from '..';
-
-const helloWorld = `<h1>Hello, World!</h1>`;
-const peopleList = [
-  'John Doe',
-  'Michael CEO',
-  'Vict Fisherman',
-  'Cash Black',
-];
-
-const html = htmlFragment;
-
-it(`throws when error happens`, async () => {
-  try {
-    const errorContent = async () => { throw new Error('error'); };
-    await html`${errorContent}`;
-  } catch (e) {
-    expect(e).toStrictEqual(new Error('error'));
-  }
-});
+import { htmlFragment as html } from '..';
+import { helloWorld, peopleList } from './CONSTANTS';
 
 it(`renders`, async () => {
   const d = await html`${helloWorld}`;
