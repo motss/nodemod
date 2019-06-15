@@ -14,7 +14,7 @@ interface SignaturReturnError {
 
 type UnknownRecord = Record<string, unknown>;
 
-import { Buffer } from 'safe-buffer';
+import { Buffer } from '../lib.js';
 import { hmac } from './hmac';
 
 export class SignaturError extends Error {
@@ -110,11 +110,3 @@ export async function unsign<T = UnknownRecord>(
 ): Promise<T> {
   return unsignSync<T>(signature, secret, options);
 }
-
-export default {
-  signSync,
-  unsignSync,
-
-  sign,
-  unsign,
-};

@@ -136,5 +136,3 @@ export function normalizeSync(input?: string | null) {
 export async function normalize(input?: string | null) {
   return normalizeSync(input);
 }
-
-export default normalize;

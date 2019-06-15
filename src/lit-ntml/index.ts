@@ -1,4 +1,4 @@
-import { parse, parseFragment, serialize } from 'parse5';
+import { parse, parseFragment, serialize } from '../lib.js';
 
 // export const DEFAULT_MINIFY_OPTIONS: htmlMinifier.Options = {
 //   collapseBooleanAttributes: true,
@@ -51,5 +51,3 @@ export const html = async (s: TemplateStringsArray, ...e: any[]) =>
   parsePartial(c => parse(`<!doctype html>${c}`), s, ...e);
 export const htmlFragment = async (s: TemplateStringsArray, ...e: any[]) =>
   parsePartial(parseFragment, s, ...e);
-
-export default { html, htmlFragment };
