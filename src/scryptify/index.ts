@@ -1,4 +1,4 @@
-import { Buffer, createCipheriv, createDecipheriv, randomBytes } from '../lib.js';
+import { createCipheriv, createDecipheriv, randomBytes } from 'crypto';
 
 const IV_LENGTH = 16; /** For AES, this is always 16 */
 

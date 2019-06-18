@@ -13,9 +13,10 @@
   "collectCoverageFrom": [
     "!**/node_modules/**",
     "!**/src/demo/**/*.js?(x)",
-    "!<rootDir>/dist/(index|lib).js?(x)",
     "!<rootDir>/dist/**/*.spec.js?(x)",
     "!<rootDir>/dist/**/test/CONSTANTS.js?(x)",
+    "!<rootDir>/dist/index.js?(x)",
+    "!<rootDir>/dist/lib/**",
     "<rootDir>/dist/**/*.js?(x)"
   ],
   "verbose": true,

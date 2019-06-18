@@ -3,9 +3,6 @@
   "compilerOptions": {
     "module": "commonjs",
   },
-  "include": [
-    "src/*",
-    "src/test/**/*"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": ["src/demo/**/*"]
 }

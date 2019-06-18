@@ -14,8 +14,7 @@ interface SignaturReturnError {
 
 type UnknownRecord = Record<string, unknown>;
 
-import { Buffer } from '../lib.js';
-import { hmac } from './hmac';
+import { createHmac } from 'crypto';
 
 export class SignaturError extends Error {
   public type: string;
@@ -60,7 +59,7 @@ export function signSync<T = UnknownRecord>(
 
   const stringData = JSON.stringify({ data });
   const encoded = Buffer.from(stringData, 'utf8').toString('base64');
-  const signature = hmac(secret, stringData);
+  const signature = createHmac('sha256', secret).update(stringData).digest('base64');
 
   return urlSafeBase64(`${encoded}${separator}${signature}`);
 }
@@ -86,7 +85,8 @@ export function unsignSync<T = UnknownRecord>(
       .replace(/\-/gi, '+')
       .replace(/_/gi, '/'), 'base64')
     .toString('utf8');
-  const signedDecoded = urlSafeBase64(hmac(secret, decoded));
+  const signedDecoded = urlSafeBase64(
+    createHmac('sha256', secret).update(decoded).digest('base64'));
 
   if (enc !== signedDecoded) {
     throw new SignaturError('invalid_signature', 'Signature not match');
