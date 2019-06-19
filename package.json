@@ -32,12 +32,12 @@
     "build:lib": "rollup --config ./rollup.config.lib.js",
     "build:mod": "node --max-old-space-size=8192 node_modules/rollup/bin/rollup --config ./rollup.config.js",
     "build": "npm run ts -- -p tsconfig.prod.json",
-    "build:test": "tsc -p ./tsconfig.test.json",
+    "build:test": "npm run ts -- -p tsconfig.test.json && npm run build:lib",
     "clean": "shx rm -rf dist/",
     "lint": "npm run lint:debug -- --config tslint.prod.json",
     "lint:debug": "tslint --project tsconfig.json --format stylish",
     "prepublishOnly": "npm run lint && npm run build",
-    "test": "npm run clean && npm run lint && npm run build:test && npm run build:lib && npm run jest",
+    "test": "npm run clean && npm run lint && npm run build:test && npm run jest",
     "jest": "jest --config ./.jestrc.json",
     "ts": "tsc",
     "watch": "npm run ts -- --watch"
@@ -46,7 +46,7 @@
   "devDependencies": {
     "@reallyland/tsconfig": "^1.0.0",
     "@reallyland/tslint-config": "^1.1.0",
-    "@types/jest": "^24.0.14",
+    "@types/jest": "^24.0.15",
     "@types/lodash-es": "^4.17.3",
     "@types/nock": "^10.0.3",
     "@types/node": "^12.0.8",
