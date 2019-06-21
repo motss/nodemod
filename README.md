@@ -6,6 +6,8 @@
 
 <hr />
 
+<a href="https://www.buymeacoffee.com/RLmMhgXFb" target="_blank" rel="noopener noreferrer"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 20px !important;width: auto !important;" ></a>
+[![tippin.me][tippin-me-badge]][tippin-me-url]
 [![Follow me][follow-me-badge]][follow-me-url]
 
 [![Version][version-badge]][version-url]
@@ -30,16 +32,10 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Pre-requisites](#pre-requisites)
-- [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-    - [Node.js](#nodejs)
-    - [Native ES modules or TypeScript](#native-es-modules-or-typescript)
-- [API Reference](#api-reference)
-  - [greeting([name])](#greetingname)
-  - [greetingSync([name])](#greetingsyncname)
-- [License](#license)
+- [Pre-requisites](#Pre-requisites)
+- [Setup](#Setup)
+  - [Install](#Install)
+- [License](#License)
 
 ## Pre-requisites
 
@@ -55,31 +51,6 @@
 $ npm install --save node_mod
 ```
 
-### Usage
-
-#### Node.js
-
-```js
-const greeting = require('node_mod');
-```
-
-#### Native ES modules or TypeScript
-
-```ts
-import greeting from 'node_mod';
-```
-
-## API Reference
-
-### greeting([name])
-
-- `name` <[string][string-mdn-url]> Name of the person to greet at.
-- returns: <[Promise][promise-mdn-url]<[string][string-mdn-url]>> Promise which resolves with a greeting message.
-
-### greetingSync([name])
-
-This methods works the same as `greeting(name)` except that this is the synchronous version.
-
 ## License
 
 [MIT License](https://motss.mit-license.org/) © Rong Sen Ng (motss)
@@ -90,20 +61,9 @@ This methods works the same as `greeting(name)` except that this is the synchron
 [npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
 
-<!-- MDN -->
-[array-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
-[function-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
-[map-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-[number-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-[promise-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-[regexp-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
-[set-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-[string-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-
 <!-- Badges -->
-[follow-me-badge]: https://flat.badgen.net/twitter/follow/motss?icon=twitter
+[tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
+[follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter
 
 [version-badge]: https://flat.badgen.net/npm/v/node_mod?icon=npm
 [node-version-badge]: https://flat.badgen.net/npm/node/node_mod
@@ -119,12 +79,14 @@ This methods works the same as `greeting(name)` except that this is the synchron
 [codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_mod?label=codecov&icon=codecov
 [coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_mod?label=coveralls
 
-[codebeat-badge]: https://codebeat.co/badges/123
-[codacy-badge]: https://api.codacy.com/project/badge/Grade/123
+[codebeat-badge]: https://codebeat.co/badges/060dcdf2-123d-430b-9c45-52bba50b5783
+[codacy-badge]: https://api.codacy.com/project/badge/Grade/bbebe77f59434390aa1b27cd5acd92ed
 [coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
 <!-- Links -->
-[follow-me-url]: https://twitter.com/motss?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod
+[tippin-me-url]: https://tippin.me/@igarshmyb
+[follow-me-url]: https://twitter.com/igarshmyb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/app-datepicker
+
 
 [version-url]: https://www.npmjs.com/package/node_mod
 [node-version-url]: https://nodejs.org/en/download
@@ -139,6 +101,6 @@ This methods works the same as `greeting(name)` except that this is the synchron
 [codecov-url]: https://codecov.io/gh/motss/node_mod
 [coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
 
-[codebeat-url]: https://codebeat.co/projects/github-com-motss-node_mod-master
-[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod&amp;utm_campaign=Badge_Grade
+[codebeat-url]: https://codebeat.co/projects/github-com-reallyland-node_mod-master
+[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallyland/node_mod&amp;utm_campaign=Badge_Grade
 [coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
