@@ -17,11 +17,12 @@ import typescript from 'rollup-plugin-typescript2';
 // }
 
 const allModules = readdirSync('./src').filter((n) => {
+  const isIndex = 'index.ts' === n;
   const notFile = !/\.(js|ts)x?$/i.test(n);
   const notCustomTypings = 'custom_typings' !== n;
   const notLib = 'lib' !== n;
 
-  return notFile && notCustomTypings && notLib;
+  return isIndex || (notFile && notCustomTypings && notLib);
 });
 
 function pluginFn(format, minify) {
@@ -48,8 +49,8 @@ function pluginFn(format, minify) {
 };
 
 const multiBuild = allModules.reduce((p, n) => {
-  const src = `src/${n}`;
-  const dest = `dist/${n}`;
+  const src = `src${'index.ts' === n ? '' : `/${n}`}`;
+  const dest = `dist${'index.ts' === n ? '' : `/${n}`}`;
   const tmpl = [
     {
       file: `${dest}/index.mjs`,
@@ -79,6 +80,15 @@ const multiBuild = allModules.reduce((p, n) => {
       external: [
         '../lib/clone-deep.js',
         '../lib/parse5.js',
+        './deep-clone/index.js',
+        './fetch-as/index.js',
+        './lit-ntml/index.js',
+        './normalize-diacritics/index.js',
+        './scryptify/index.js',
+        './signatur/index.js',
+        './utc-date/index.js',
+        './utc-time/index.js',
+        'crypto',
       ],
     };
     const minified = {
