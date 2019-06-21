@@ -48,7 +48,7 @@
 
 ```sh
 # Install via NPM
-$ npm install --save node_mod
+$ npm install --save @reallyland/node_mod
 ```
 
 ## License
@@ -65,19 +65,19 @@ $ npm install --save node_mod
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
 [follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter
 
-[version-badge]: https://flat.badgen.net/npm/v/node_mod?icon=npm
-[node-version-badge]: https://flat.badgen.net/npm/node/node_mod
-[mit-license-badge]: https://flat.badgen.net/npm/license/node_mod
+[version-badge]: https://flat.badgen.net/npm/v/@reallyland/node_mod?icon=npm
+[node-version-badge]: https://flat.badgen.net/npm/node/@reallyland/node_mod
+[mit-license-badge]: https://flat.badgen.net/npm/license/@reallyland/node_mod
 
-[downloads-badge]: https://flat.badgen.net/npm/dm/node_mod
-[total-downloads-badge]: https://flat.badgen.net/npm/dt/node_mod?label=total%20downloads
-[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/node_mod
-[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/node_mod
+[downloads-badge]: https://flat.badgen.net/npm/dm/@reallyland/node_mod
+[total-downloads-badge]: https://flat.badgen.net/npm/dt/@reallyland/node_mod?label=total%20downloads
+[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/@reallyland/node_mod
+[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/@reallyland/node_mod
 
-[circleci-badge]: https://flat.badgen.net/circleci/github/motss/node_mod?icon=circleci
-[daviddm-badge]: https://flat.badgen.net/david/dep/motss/node_mod
-[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_mod?label=codecov&icon=codecov
-[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_mod?label=coveralls
+[circleci-badge]: https://flat.badgen.net/circleci/github/reallyland/node_mod?icon=circleci
+[daviddm-badge]: https://flat.badgen.net/david/dep/reallyland/node_mod
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/reallyland/node_mod?label=codecov&icon=codecov
+[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/reallyland/node_mod?label=coveralls
 
 [codebeat-badge]: https://codebeat.co/badges/060dcdf2-123d-430b-9c45-52bba50b5783
 [codacy-badge]: https://api.codacy.com/project/badge/Grade/bbebe77f59434390aa1b27cd5acd92ed
@@ -88,19 +88,19 @@ $ npm install --save node_mod
 [follow-me-url]: https://twitter.com/igarshmyb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/app-datepicker
 
 
-[version-url]: https://www.npmjs.com/package/node_mod
+[version-url]: https://www.npmjs.com/package/@reallyland/node_mod
 [node-version-url]: https://nodejs.org/en/download
-[mit-license-url]: https://github.com/motss/node_mod/blob/master/LICENSE
+[mit-license-url]: https://github.com/reallyland/node_mod/blob/master/LICENSE
 
-[downloads-url]: https://www.npmtrends.com/node_mod
-[packagephobia-url]: https://packagephobia.now.sh/result?p=node_mod
-[bundlephobia-url]: https://bundlephobia.com/result?p=node_mod
+[downloads-url]: https://www.npmtrends.com/@reallyland/node_mod
+[packagephobia-url]: https://packagephobia.now.sh/result?p=@reallyland/node_mod
+[bundlephobia-url]: https://bundlephobia.com/result?p=@reallyland/node_mod
 
-[circleci-url]: https://circleci.com/gh/motss/node_mod/tree/master
-[daviddm-url]: https://david-dm.org/motss/node_mod
-[codecov-url]: https://codecov.io/gh/motss/node_mod
-[coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
+[circleci-url]: https://circleci.com/gh/reallyland/node_mod/tree/master
+[daviddm-url]: https://david-dm.org/reallyland/node_mod
+[codecov-url]: https://codecov.io/gh/reallyland/node_mod
+[coveralls-url]: https://coveralls.io/github/reallyland/node_mod?branch=master
 
 [codebeat-url]: https://codebeat.co/projects/github-com-reallyland-node_mod-master
 [codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallyland/node_mod&amp;utm_campaign=Badge_Grade
-[coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
+[coc-url]: https://github.com/reallyland/node_mod/blob/master/CODE_OF_CONDUCT.md

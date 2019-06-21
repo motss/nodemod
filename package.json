@@ -1,11 +1,11 @@
 {
-  "name": "node_mod",
+  "name": "@reallyland/node_mod",
   "version": "0.0.1",
-  "private": true,
   "description": "A collection of node modules for The Really Project",
   "keywords": [
-    "node_mod",
     "node",
+    "node_mod",
+    "reallyland",
     "typescript"
   ],
   "homepage": "https://github.com/reallyland/node_mod",
@@ -29,16 +29,16 @@
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
+    "build": "npm run ts -- -p tsconfig.prod.json && npm run build:lib",
     "build:lib": "rollup --config ./rollup.config.lib.js",
     "build:mod": "node --max-old-space-size=8192 node_modules/rollup/bin/rollup --config ./rollup.config.js",
-    "build": "npm run ts -- -p tsconfig.prod.json && npm run build:lib",
     "build:test": "npm run ts -- -p tsconfig.test.json && npm run build:lib",
     "clean": "shx rm -rf dist/",
+    "jest": "jest --config ./.jestrc.json",
     "lint": "npm run lint:debug -- --config tslint.prod.json",
     "lint:debug": "tslint --project tsconfig.json --format stylish",
-    "prepublishOnly": "npm run lint && npm run build",
+    "prepublishOnly": "npm run clean && npm run lint && npm run build",
     "test": "npm run clean && npm run lint && npm run build:test && npm run jest",
-    "jest": "jest --config ./.jestrc.json",
     "ts": "tsc",
     "watch": "npm run ts -- --watch"
   },
