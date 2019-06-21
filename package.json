@@ -29,7 +29,7 @@
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run ts -- -p tsconfig.prod.json && npm run build:lib",
+    "build": "npm run build:mod && npm run build:lib",
     "build:lib": "rollup --config ./rollup.config.lib.js",
     "build:mod": "node --max-old-space-size=8192 node_modules/rollup/bin/rollup --config ./rollup.config.js",
     "build:test": "npm run ts -- -p tsconfig.test.json && npm run build:lib",

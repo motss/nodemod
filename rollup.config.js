@@ -24,10 +24,9 @@ const allModules = readdirSync('./src').filter((n) => {
   return notFile && notCustomTypings && notLib;
 });
 
-function pluginFn(include, format, minify) {
+function pluginFn(format, minify) {
   return [
     typescript({
-      include,
       tsconfig: './tsconfig.prod.json',
       useTsconfigDeclarationDir: true,
     }),
@@ -62,31 +61,30 @@ const multiBuild = allModules.reduce((p, n) => {
       format: 'cjs',
       exports: 'named',
     },
-    {
-      file: `${dest}/${n}.js`,
-      format: 'esm',
-    },
   ];
-  const defaultOpts = {
-    input: `${src}/index.ts`,
-    experimentalOptimizeChunks: true,
-    treeshake: { moduleSifeEffects: false },
-  };
 
   for (const o of tmpl) {
-    const { file, format, exports, name } = o;
+    const { file, format } = o;
 
-    const include = [`${src}/index.ts`, 'src/lib/*.ts'];
-    const output = { format, exports, name, sourcemap: true, sourcemapExcludeSources: true };
     const raw = {
-      ...defaultOpts,
-      output: { ...output, file: file },
-      plugins: pluginFn(include, format),
+      input: `${src}/index.ts`,
+      output: {
+        ...o,
+        sourcemap: true,
+        sourcemapExcludeSources: true,
+      },
+      plugins: pluginFn(format),
+      experimentalOptimizeChunks: true,
+      treeshake: { moduleSifeEffects: false },
+      external: [
+        '../lib/clone-deep.js',
+        '../lib/parse5.js',
+      ],
     };
     const minified = {
-      ...defaultOpts,
-      output: { ...output, file: file.replace(/(.+)(\.m?js)$/, '$1.min$2') },
-      plugins: pluginFn(include, format, true),
+      ...raw,
+      output: { ...raw.output, file: file.replace(/(.+)(\.m?js)$/, '$1.min$2') },
+      plugins: pluginFn(format, true),
     };
 
     p.push(raw, minified);
