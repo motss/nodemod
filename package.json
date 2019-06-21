@@ -1,6 +1,6 @@
 {
   "name": "node_mod",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "A collection of node modules for The Really Project",
   "keywords": [
