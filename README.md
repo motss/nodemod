@@ -74,7 +74,7 @@ Showing some ❤️ and support for [deno].
 
 ## License
 
-[MIT License](https://motss.mit-license.org/) © Rong Sen Ng (motss)
+[MIT License](https://motss.mit-license.org/) © Rong Sen Ng
 
 <!-- References -->
 [typescript-url]: https://github.com/Microsoft/TypeScript
