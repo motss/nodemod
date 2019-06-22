@@ -61,6 +61,7 @@ $ npm install --save @reallyland/node_mod
 * [lit-ntml] - Expressive HTML Templates
 * [normalize-diacritics] - Remove accents/ diacritics in string
 * [polling-observer] - A new way of running polling function with observer pattern
+* [scryptify] - A stronger encryption and decryption in Node.js
 
 ## Deno equivalent
 
@@ -86,6 +87,7 @@ Showing some ❤️ and support for [deno].
 [lit-ntml]: /src/lit-ntml
 [normalize-diacritics]: /src/normalize-diacritics
 [polling-observer]: /src/polling-observer
+[scryptify]: /src/scryptify
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
