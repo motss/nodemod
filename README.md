@@ -35,6 +35,7 @@
 - [Pre-requisites](#Pre-requisites)
 - [Setup](#Setup)
   - [Install](#Install)
+- [Available modules](#Available-modules)
 - [License](#License)
 
 ## Pre-requisites
@@ -51,6 +52,10 @@
 $ npm install --save @reallyland/node_mod
 ```
 
+## Available modules
+
+* [deep-clone] - Simple and fast deep cloning
+
 ## License
 
 [MIT License](https://motss.mit-license.org/) © Rong Sen Ng (motss)
@@ -60,6 +65,8 @@ $ npm install --save @reallyland/node_mod
 [nodejs-url]: https://nodejs.org
 [npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
+
+[deep-clone]: /deep-clone
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
