@@ -35,7 +35,7 @@ const src = './src/lib';
 const allLibs = readdirSync(src).filter(n => /\.ts$/i.test(n));
 
 const multiBuild = allLibs.reduce((p, n) => {
-  p.push({
+  const cjs = {
     input: `${src}/${n}`,
     output: {
       file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
@@ -45,7 +45,17 @@ const multiBuild = allLibs.reduce((p, n) => {
     experimentalOptimizeChunks: true,
     plugins: pluginFn(),
     treeshake: { moduleSifeEffects: false },
-  });
+  };
+  const esm = {
+    ...cjs,
+    output: {
+      ...cjs.output,
+      file: `dist/lib/${n.replace(/ts$/i, 'mjs')}`,
+      format: 'esm',
+    },
+  };
+
+  p.push(cjs, esm);
 
   return p;
 }, []);

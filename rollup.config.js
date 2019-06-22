@@ -78,8 +78,8 @@ const multiBuild = allModules.reduce((p, n) => {
       experimentalOptimizeChunks: true,
       treeshake: { moduleSifeEffects: false },
       external: [
-        '../lib/clone-deep.js',
-        '../lib/parse5.js',
+        '../lib/clone-deep',
+        '../lib/parse5',
         './deep-clone/index.js',
         './fetch-as/index.js',
         './lit-ntml/index.js',
