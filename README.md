@@ -62,6 +62,7 @@ $ npm install --save @reallyland/node_mod
 * [normalize-diacritics] - Remove accents/ diacritics in string
 * [polling-observer] - A new way of running polling function with observer pattern
 * [scryptify] - A stronger encryption and decryption in Node.js
+* [signatur] - Sign and unsign HTTP request with ease
 
 ## Deno equivalent
 
@@ -88,6 +89,7 @@ Showing some ❤️ and support for [deno].
 [normalize-diacritics]: /src/normalize-diacritics
 [polling-observer]: /src/polling-observer
 [scryptify]: /src/scryptify
+[signatur]: /src/signatur
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
