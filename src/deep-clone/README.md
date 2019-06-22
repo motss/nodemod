@@ -1,5 +1,5 @@
 <div align="center" style="text-align: center;">
-  <h1 style="border-bottom: none;">deep_clone</h1>
+  <h1 style="border-bottom: none;">deep-clone</h1>
 
   <p>Simple and fast deep cloning</p>
 </div>

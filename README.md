@@ -55,6 +55,7 @@ $ npm install --save @reallyland/node_mod
 ## Available modules
 
 * [deep-clone] - Simple and fast deep cloning
+* [delay-until] - A typical delay function but Promise based
 
 ## License
 
@@ -67,6 +68,7 @@ $ npm install --save @reallyland/node_mod
 [node-releases-url]: https://nodejs.org/en/download/releases
 
 [deep-clone]: /src/deep-clone
+[delay-until]: /src/delay-until
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
