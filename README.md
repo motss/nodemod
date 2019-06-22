@@ -56,6 +56,7 @@ $ npm install --save @reallyland/node_mod
 
 * [deep-clone] - Simple and fast deep cloning
 * [delay-until] - A typical delay function but Promise based
+* [fetch-as] - Simple fetch helper with type resolver
 
 ## License
 
@@ -69,6 +70,7 @@ $ npm install --save @reallyland/node_mod
 
 [deep-clone]: /src/deep-clone
 [delay-until]: /src/delay-until
+[fetch-as]: /src/fetch-as
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
