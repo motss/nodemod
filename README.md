@@ -63,7 +63,8 @@ $ npm install --save @reallyland/node_mod
 * [polling-observer] - A new way of running polling function with observer pattern
 * [scryptify] - A stronger encryption and decryption in Node.js
 * [signatur] - Sign and unsign HTTP request with ease
-* [utc-date] - Generate UTC dates with various offsets
+* [utc-date] - Generate UTC date with various offsets
+* [utc-time] - Generate UTC time with various offsets
 
 ## Deno equivalent
 
@@ -92,6 +93,7 @@ Showing some ❤️ and support for [deno].
 [scryptify]: /src/scryptify
 [signatur]: /src/signatur
 [utc-date]: /src/utc-date
+[utc-time]: /src/utc-time
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E

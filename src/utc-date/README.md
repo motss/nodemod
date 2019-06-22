@@ -1,14 +1,14 @@
 <div align="center" style="text-align: center;">
   <h1 style="border-bottom: none;">utc-date</h1>
 
-  <p>Generate UTC dates with various offsets</p>
+  <p>Generate UTC date with various offsets</p>
 </div>
 
 <hr />
 
 [![MIT License][mit-license-badge]][mit-license-url]
 
-> 
+> Returns a [JavaScript date object][date-mdn-url] using the [UTC] timezone with optional offsets to adjust the `year`, `month`, or `date`.
 
 ## Table of contents <!-- omit in toc -->
 
