@@ -59,6 +59,7 @@ $ npm install --save @reallyland/node_mod
 * [delay-until] - A typical delay function but Promise based
 * [fetch-as] - Simple fetch helper with type resolver
 * [lit-ntml] - Expressive HTML Templates
+* [normalize-diacritics] - Remove accents/ diacritics in string
 
 ## Deno equivalent
 
@@ -82,6 +83,7 @@ Showing some ❤️ and support for [deno].
 [delay-until]: /src/delay-until
 [fetch-as]: /src/fetch-as
 [lit-ntml]: /src/lit-ntml
+[normalize-diacritics]: /src/normalize-diacritics
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
