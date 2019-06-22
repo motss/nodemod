@@ -66,7 +66,7 @@ $ npm install --save @reallyland/node_mod
 [npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
 
-[deep-clone]: /deep-clone
+[deep-clone]: /src/deep-clone
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
