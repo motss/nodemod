@@ -60,6 +60,7 @@ $ npm install --save @reallyland/node_mod
 * [fetch-as] - Simple fetch helper with type resolver
 * [lit-ntml] - Expressive HTML Templates
 * [normalize-diacritics] - Remove accents/ diacritics in string
+* [polling-observer] - A new way of running polling function with observer pattern
 
 ## Deno equivalent
 
@@ -84,6 +85,7 @@ Showing some ❤️ and support for [deno].
 [fetch-as]: /src/fetch-as
 [lit-ntml]: /src/lit-ntml
 [normalize-diacritics]: /src/normalize-diacritics
+[polling-observer]: /src/polling-observer
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
