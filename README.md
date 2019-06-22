@@ -28,7 +28,7 @@
 [![Codacy Badge][codacy-badge]][codacy-url]
 [![Code of Conduct][coc-badge]][coc-url]
 
-> Better greeting message
+> Helper functions made specifically for The Really Project.
 
 ## Table of contents <!-- omit in toc -->
 
@@ -36,6 +36,7 @@
 - [Setup](#Setup)
   - [Install](#Install)
 - [Available modules](#Available-modules)
+- [Deno equivalent](#Deno-equivalent)
 - [License](#License)
 
 ## Pre-requisites
@@ -57,6 +58,13 @@ $ npm install --save @reallyland/node_mod
 * [deep-clone] - Simple and fast deep cloning
 * [delay-until] - A typical delay function but Promise based
 * [fetch-as] - Simple fetch helper with type resolver
+* [lit-ntml] - Expressive HTML Templates
+
+## Deno equivalent
+
+Showing some ❤️ and support for [deno].
+
+* [deno_mod]
 
 ## License
 
@@ -67,10 +75,13 @@ $ npm install --save @reallyland/node_mod
 [nodejs-url]: https://nodejs.org
 [npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
+[deno]: https://github.com/denoland/deno
+[deno_mod]: https://github.com/motss/deno_mod
 
 [deep-clone]: /src/deep-clone
 [delay-until]: /src/delay-until
 [fetch-as]: /src/fetch-as
+[lit-ntml]: /src/lit-ntml
 
 <!-- Badges -->
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
