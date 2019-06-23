@@ -2,11 +2,10 @@ import { fetchAsJson } from '..';
 // import { url } from './CONSTANTS.js';
 
 it('throws when invalid URL', async () => {
-  try {
-    await fetchAsJson('/invalid-url');
-  } catch (e) {
-    expect(e).toStrictEqual(new TypeError('Only absolute URLs are supported'));
-  }
+  const { status, error } = await fetchAsJson('/invalid-url');
+
+  expect(status).toStrictEqual(-1);
+  expect(error).toStrictEqual(new TypeError('Only absolute URLs are supported'));
 });
 
 // it('throws when socket timed out', async () => {
