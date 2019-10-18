@@ -38,7 +38,7 @@ const multiBuild = allLibs.reduce((p, n) => {
   const cjs = {
     input: `${src}/${n}`,
     output: {
-      file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
+      file: `dist/lib/${n.replace(/ts$/i, 'cjs')}`,
       format: 'cjs',
       exports: 'named',
     },
@@ -50,7 +50,7 @@ const multiBuild = allLibs.reduce((p, n) => {
     ...cjs,
     output: {
       ...cjs.output,
-      file: `dist/lib/${n.replace(/ts$/i, 'mjs')}`,
+      file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
       format: 'esm',
     },
   };

@@ -53,12 +53,12 @@ const multiBuild = allModules.reduce((p, n) => {
   const dest = `dist${'index.ts' === n ? '' : `/${n}`}`;
   const tmpl = [
     {
-      file: `${dest}/index.mjs`,
+      file: `${dest}/index.js`,
       format: 'esm',
       exports: 'named',
     },
     {
-      file: `${dest}/index.js`,
+      file: `${dest}/index.cjs`,
       format: 'cjs',
       exports: 'named',
     },
