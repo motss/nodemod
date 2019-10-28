@@ -1,5 +1,5 @@
 <div align="center" style="text-align: center;">
-  <h1 style="border-bottom: none;">node_mod</h1>
+  <h1 style="border-bottom: none;">nodemod</h1>
 
   <p>A collection of node modules for The Really Project</p>
 </div>
@@ -32,12 +32,12 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Pre-requisites](#Pre-requisites)
-- [Setup](#Setup)
-  - [Install](#Install)
-- [Available modules](#Available-modules)
-- [Deno equivalent](#Deno-equivalent)
-- [License](#License)
+- [Pre-requisites](#pre-requisites)
+- [Setup](#setup)
+  - [Install](#install)
+- [Available modules](#available-modules)
+- [Deno equivalent](#deno-equivalent)
+- [License](#license)
 
 ## Pre-requisites
 
@@ -108,10 +108,10 @@ Showing some ❤️ and support for [deno].
 [packagephobia-badge]: https://flat.badgen.net/packagephobia/install/nodemod
 [bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/nodemod
 
-[circleci-badge]: https://flat.badgen.net/circleci/github/reallyland/node_mod?icon=circleci
-[daviddm-badge]: https://flat.badgen.net/david/dep/reallyland/node_mod
-[codecov-badge]: https://flat.badgen.net/codecov/c/github/reallyland/node_mod?label=codecov&icon=codecov
-[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/reallyland/node_mod?label=coveralls
+[circleci-badge]: https://flat.badgen.net/circleci/github/motss/node_mod?icon=circleci
+[daviddm-badge]: https://flat.badgen.net/david/dep/motss/node_mod
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_mod?label=codecov&icon=codecov
+[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_mod?label=coveralls
 
 [codebeat-badge]: https://codebeat.co/badges/060dcdf2-123d-430b-9c45-52bba50b5783
 [codacy-badge]: https://api.codacy.com/project/badge/Grade/bbebe77f59434390aa1b27cd5acd92ed
@@ -124,17 +124,17 @@ Showing some ❤️ and support for [deno].
 
 [version-url]: https://www.npmjs.com/package/nodemod
 [node-version-url]: https://nodejs.org/en/download
-[mit-license-url]: https://github.com/reallyland/node_mod/blob/master/LICENSE
+[mit-license-url]: https://github.com/motss/node_mod/blob/master/LICENSE
 
 [downloads-url]: https://www.npmtrends.com/nodemod
 [packagephobia-url]: https://packagephobia.now.sh/result?p=nodemod
 [bundlephobia-url]: https://bundlephobia.com/result?p=nodemod
 
-[circleci-url]: https://circleci.com/gh/reallyland/node_mod/tree/master
-[daviddm-url]: https://david-dm.org/reallyland/node_mod
-[codecov-url]: https://codecov.io/gh/reallyland/node_mod
-[coveralls-url]: https://coveralls.io/github/reallyland/node_mod?branch=master
+[circleci-url]: https://circleci.com/gh/motss/node_mod/tree/master
+[daviddm-url]: https://david-dm.org/motss/node_mod
+[codecov-url]: https://codecov.io/gh/motss/node_mod
+[coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
 
-[codebeat-url]: https://codebeat.co/projects/github-com-reallyland-node_mod-master
-[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=reallyland/node_mod&amp;utm_campaign=Badge_Grade
-[coc-url]: https://github.com/reallyland/node_mod/blob/master/CODE_OF_CONDUCT.md
+[codebeat-url]: https://codebeat.co/projects/github-com-motss-node_mod-master
+[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod&amp;utm_campaign=Badge_Grade
+[coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
