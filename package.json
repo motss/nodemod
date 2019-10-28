@@ -4,9 +4,9 @@
   "description": "A collection of node modules for The Really Project",
   "keywords": [
     "motss",
-    "node_mod",
-    "node-modules",
     "node",
+    "node-modules",
+    "node_mod",
     "nodemod",
     "nodemodules",
     "typescript"
@@ -28,11 +28,12 @@
     "dist/**/*.d.ts.map",
     "dist/**/*.d.ts"
   ],
-  "main": "dist/index.cjs",
+  "sideEffects": false,
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run build:mod && npm run build:lib",
+    "build": "npm run ts -- -p tsconfig.prod.json && npm run build:lib",
     "build:lib": "rollup --config ./rollup.config.lib.js",
     "build:lib:test": "rollup --config ./rollup.config.lib.test.js",
     "build:mod": "node --max-old-space-size=8192 ./node_modules/rollup/dist/bin/rollup --config ./rollup.config.js",
@@ -53,7 +54,8 @@
   },
   "dependencies": {
     "@types/parse5": "^5.0.2",
-    "@types/prismjs": "^1.16.0"
+    "@types/prismjs": "^1.16.0",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@reallyland/tsconfig": "^1.0.0",
