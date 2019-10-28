@@ -1,4 +1,4 @@
-import { cloneDeep } from '../lib/clone-deep';
+import { cloneDeep } from '../lib/clone-deep.js';
 
 export interface DeepCloneOptions {
   absolute?: boolean;
