@@ -24,8 +24,6 @@
 [![codecov][codecov-badge]][codecov-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
 
-[![codebeat badge][codebeat-badge]][codebeat-url]
-[![Codacy Badge][codacy-badge]][codacy-url]
 [![Code of Conduct][coc-badge]][coc-url]
 
 > Helper functions made specifically for The Really Project. All modules are shipped in ESM format and users are required to create their own CJS builds via Rollup or Webpack, or use [esm] for bundle-less module loader.
@@ -136,6 +134,4 @@ Showing some ❤️ and support for [deno].
 [codecov-url]: https://codecov.io/gh/motss/node_mod
 [coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
 
-[codebeat-url]: https://codebeat.co/projects/github-com-motss-node_mod-master
-[codacy-url]: https://www.codacy.com/app/motss/node_mod?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/node_mod&amp;utm_campaign=Badge_Grade
 [coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
