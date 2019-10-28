@@ -32,30 +32,34 @@ function pluginFn() {
 };
 
 const src = './src/lib';
-const allLibs = readdirSync(src).filter(n => /\.ts$/i.test(n));
+export const allLibs = readdirSync(src).filter(n => /\.ts$/i.test(n));
 
-const multiBuild = allLibs.reduce((p, n) => {
-  const cjs = {
+export const cjsBuild = (n) => {
+  return {
     input: `${src}/${n}`,
     output: {
-      file: `dist/lib/${n.replace(/ts$/i, 'cjs')}`,
+      file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
       format: 'cjs',
       exports: 'named',
     },
     experimentalOptimizeChunks: true,
     plugins: pluginFn(),
-    treeshake: { moduleSifeEffects: false },
+    treeshake: { moduleSideEffects: false },
   };
+};
+
+const multiBuild = allLibs.reduce((p, n) => {
+  const cjs = cjsBuild(n);
   const esm = {
     ...cjs,
     output: {
       ...cjs.output,
-      file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
+      // file: `dist/lib/${n.replace(/ts$/i, 'js')}`,
       format: 'esm',
     },
   };
 
-  p.push(cjs, esm);
+  p.push(esm);
 
   return p;
 }, []);

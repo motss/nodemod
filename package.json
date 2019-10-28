@@ -34,8 +34,9 @@
   "scripts": {
     "build": "npm run build:mod && npm run build:lib",
     "build:lib": "rollup --config ./rollup.config.lib.js",
+    "build:lib:test": "rollup --config ./rollup.config.lib.test.js",
     "build:mod": "node --max-old-space-size=8192 ./node_modules/rollup/dist/bin/rollup --config ./rollup.config.js",
-    "build:test": "npm run ts -- -p tsconfig.test.json && npm run build:lib",
+    "build:test": "npm run ts -- -p tsconfig.test.json && npm run build:lib:test",
     "clean": "shx rm -rf dist/",
     "jest": "jest --config ./.jestrc.json",
     "lint": "npm run lint:debug -- --config tslint.prod.json",

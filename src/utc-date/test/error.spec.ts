@@ -4,8 +4,11 @@ it(`throws when first argument is 'null'`, async () => {
   try {
     await utcDate(null!);
   } catch (e) {
-    expect(e).toStrictEqual(
-      new TypeError(`Cannot destructure property \`startDate\` of 'undefined' or 'null'.`));
+    expect(e.name).toStrictEqual('TypeError');
+    expect([
+      `Cannot destructure property \`startDate\` of 'undefined' or 'null'.`,
+      `Cannot destructure property 'startDate' of '(intermediate value)(intermediate value)(intermediate value)' as it is null.`,
+    ].some(n => e.message === n)).toStrictEqual(true);
   }
 });
 
