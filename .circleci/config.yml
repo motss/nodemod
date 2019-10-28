@@ -58,6 +58,11 @@ jobs:
     docker:
       - image: circleci/node:12
 
+  node-v13:
+    <<: *defaults
+    docker:
+      - image: circleci/node:13
+
 workflows:
   version: 2
   node-multi-build:
@@ -65,3 +70,4 @@ workflows:
       - node-v8
       - node-v10
       - node-v12
+      - node-v13
