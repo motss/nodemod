@@ -12,15 +12,15 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [delayUntil([delay])](#delayUntildelay)
-- [License](#License)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [delayUntil([delay])](#delayuntildelay)
+- [License](#license)
 
 ## Usage
 
 ```ts
-import { delayUntil } from 'nodemod/dist/delay-until';
+import { delayUntil } from 'nodemod/dist/delay-until.js';
 
 (async () => {
   await delayUntil(3e3);

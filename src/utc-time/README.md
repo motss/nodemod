@@ -12,17 +12,17 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [UTCTimeOpts](#UTCTimeOpts)
-  - [utcTime(&lsqb;UTCTimeOpts&rsqb;)](#utcTimelsqbUTCTimeOptsrsqb)
-  - [utcTimeSync(&lsqb;UTCTimeOpts&rsqb;)](#utcTimeSynclsqbUTCTimeOptsrsqb)
-- [License](#License)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [UTCTimeOpts](#utctimeopts)
+  - [utcTime(&lsqb;UTCTimeOpts&rsqb;)](#utctimelsqbutctimeoptsrsqb)
+  - [utcTimeSync(&lsqb;UTCTimeOpts&rsqb;)](#utctimesynclsqbutctimeoptsrsqb)
+- [License](#license)
 
 ## Usage
 
 ```ts
-import { utcTime } from 'nodemod/dist/utc-time';
+import { utcTime } from 'nodemod/dist/utc-time.js';
 
 (async () => {
   /** NOTE: Assuming today's date is '2020-02-02' */

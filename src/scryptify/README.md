@@ -14,20 +14,20 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
+- [Usage](#usage)
+- [API Reference](#api-reference)
   - [encrypt(text, secret)](#encrypttext-secret)
-  - [encryptSync(text, secret)](#encryptSynctext-secret)
+  - [encryptSync(text, secret)](#encryptsynctext-secret)
   - [decrypt(text, secret)](#decrypttext-secret)
-  - [decryptSync(text, secret)](#decryptSynctext-secret)
-- [License](#License)
+  - [decryptSync(text, secret)](#decryptsynctext-secret)
+- [License](#license)
 
 ## Usage
 
 ```ts
 import randomstring from 'randomstring';
 
-import { encrypt, decrypt } from 'nodemod/dist/scryptify';
+import { encrypt, decrypt } from 'nodemod/dist/scryptify.js';
 
 (async () => {
   /** 256 bytes or 32 characters salt */

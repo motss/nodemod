@@ -12,20 +12,20 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [SignaturError](#SignaturError)
-  - [SignaturOptions](#SignaturOptions)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [SignaturError](#signaturerror)
+  - [SignaturOptions](#signaturoptions)
   - [sign(data, secret[, options])](#signdata-secret-options)
   - [unsign(signature, secret[, options])](#unsignsignature-secret-options)
-  - [signSync(data, secret[, options])](#signSyncdata-secret-options)
-  - [unsignSync(data, secret[, options])](#unsignSyncdata-secret-options)
-- [License](#License)
+  - [signSync(data, secret[, options])](#signsyncdata-secret-options)
+  - [unsignSync(data, secret[, options])](#unsignsyncdata-secret-options)
+- [License](#license)
 
 ## Usage
 
 ```ts
-import { sign, unsign } from 'nodemod/dist/signatur';
+import { sign, unsign } from 'nodemod/dist/signatur.js';
 
 (async () => {
   const payload = {

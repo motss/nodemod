@@ -12,16 +12,16 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
+- [Usage](#usage)
+- [API Reference](#api-reference)
   - [normalize([input])](#normalizeinput)
-  - [normalizeSync([input])](#normalizeSyncinput)
-- [License](#License)
+  - [normalizeSync([input])](#normalizesyncinput)
+- [License](#license)
 
 ## Usage
 
 ```ts
-import { normalize } from 'nodemod/dist/normalize-diacritics';
+import { normalize } from 'nodemod/dist/normalize-diacritics.js';
 
 (async () => {
   const str = "söme stüff with áccènts";

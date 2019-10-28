@@ -28,7 +28,7 @@
 [![Codacy Badge][codacy-badge]][codacy-url]
 [![Code of Conduct][coc-badge]][coc-url]
 
-> Helper functions made specifically for The Really Project.
+> Helper functions made specifically for The Really Project. All modules are shipped in ESM format and users are required to create their own CJS builds via Rollup or Webpack, or use [esm] for bundle-less module loader.
 
 ## Table of contents <!-- omit in toc -->
 
@@ -83,6 +83,7 @@ Showing some ❤️ and support for [deno].
 [node-releases-url]: https://nodejs.org/en/download/releases
 [deno]: https://github.com/denoland/deno
 [deno_mod]: https://github.com/motss/deno_mod
+[esm]: https://github.com/standard-things/esm
 
 [deep-clone]: /src/deep-clone
 [delay-until]: /src/delay-until

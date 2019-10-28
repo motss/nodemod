@@ -21,7 +21,7 @@
 ## Usage
 
 ```ts
-import { deepClone } from 'node_mod/dist/deep-clone';
+import { deepClone } from 'node_mod/dist/deep-clone.js';
 
 (async () => {
   const simpleObject = {

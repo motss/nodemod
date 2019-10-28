@@ -12,24 +12,24 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Performance API](#Performance-API)
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [OnfinishFulfilled&lt;T&gt;](#OnfinishFulfilledltTgt)
-  - [OnfinishRejected](#OnfinishRejected)
-  - [PollingMeasure](#PollingMeasure)
-    - [Methods](#Methods)
-      - [PollingMeasure.toJSON()](#PollingMeasuretoJSON)
-  - [PollingObserver&lt;T&gt;](#PollingObserverltTgt)
-    - [Methods](#Methods-1)
-      - [PollingObserver.observe(callback[, options])](#PollingObserverobservecallback-options)
-      - [PollingObserver.disconnect()](#PollingObserverdisconnect)
-      - [PollingObserver.takeRecords()](#PollingObservertakeRecords)
-    - [Event handler](#Event-handler)
-      - [PollingObserver.onfinish](#PollingObserveronfinish)
-    - [Events](#Events)
+- [Performance API](#performance-api)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [OnfinishFulfilled&lt;T&gt;](#onfinishfulfilledlttgt)
+  - [OnfinishRejected](#onfinishrejected)
+  - [PollingMeasure](#pollingmeasure)
+    - [Methods](#methods)
+      - [PollingMeasure.toJSON()](#pollingmeasuretojson)
+  - [PollingObserver&lt;T&gt;](#pollingobserverlttgt)
+    - [Methods](#methods-1)
+      - [PollingObserver.observe(callback[, options])](#pollingobserverobservecallback-options)
+      - [PollingObserver.disconnect()](#pollingobserverdisconnect)
+      - [PollingObserver.takeRecords()](#pollingobservertakerecords)
+    - [Event handler](#event-handler)
+      - [PollingObserver.onfinish](#pollingobserveronfinish)
+    - [Events](#events)
       - [finish](#finish)
-- [License](#License)
+- [License](#license)
 
 ## Performance API
 
@@ -48,7 +48,7 @@ interface DataType {
   items: Record<string, any>[];
 }
 
-import { PollingObserver } from 'nodemod/dist/polling-observer';
+import { PollingObserver } from 'nodemod/dist/polling-observer.js';
 
 const obs = new PollingObserver((data/** list, observer */) => {
   const { status, items } = data || {};

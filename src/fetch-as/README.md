@@ -12,19 +12,19 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Fetch API](#Fetch-API)
-  - [Install `node-fetch`](#Install-node-fetch)
-  - [Make fetch available globally](#Make-fetch-available-globally)
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [FetchAsInfo](#FetchAsInfo)
-  - [FetchAsReturnType](#FetchAsReturnType)
-  - [fetchAs](#fetchAs)
-  - [fetchAsArrayBuffer(url[, options])](#fetchAsArrayBufferurl-options)
-  - [fetchAsBlob(url[, options])](#fetchAsBloburl-options)
-  - [fetchAsJson(url[, options])](#fetchAsJsonurl-options)
-  - [fetchAsText(url[, options])](#fetchAsTexturl-options)
-- [License](#License)
+- [Fetch API](#fetch-api)
+  - [Install `node-fetch`](#install-node-fetch)
+  - [Make fetch available globally](#make-fetch-available-globally)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [FetchAsInfo](#fetchasinfo)
+  - [FetchAsReturnType](#fetchasreturntype)
+  - [fetchAs](#fetchas)
+  - [fetchAsArrayBuffer(url[, options])](#fetchasarraybufferurl-options)
+  - [fetchAsBlob(url[, options])](#fetchasbloburl-options)
+  - [fetchAsJson(url[, options])](#fetchasjsonurl-options)
+  - [fetchAsText(url[, options])](#fetchastexturl-options)
+- [License](#license)
 
 ## Fetch API
 
@@ -47,7 +47,7 @@ global.fetch = fetch;
 
 ```ts
 /** Available options: arrayBuffer, blob, json, text */
-import { json } from 'nodemod/dist/fetch-as';
+import { json } from 'nodemod/dist/fetch-as.js';
 
 (async () => {
   /** Same function signature as native Fetch API, without the need to await .json() */

@@ -12,20 +12,20 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
+- [Usage](#usage)
     - [html()](#html)
-    - [htmlFragment()](#htmlFragment)
-- [API Reference](#API-Reference)
+    - [htmlFragment()](#htmlfragment)
+- [API Reference](#api-reference)
   - [html()](#html-1)
-  - [htmlFragment()](#htmlFragment-1)
-- [License](#License)
+  - [htmlFragment()](#htmlfragment-1)
+- [License](#license)
 
 ## Usage
 
 #### html()
 
 ```ts
-import { html } from 'nodemod/dist/lit-ntml';
+import { html } from 'nodemod/dist/lit-ntml.js';
 
 const peopleList = ['Cash Black', 'Vict Fisherman'];
 const syncTask = () => `<h1>Hello, World!</h1>`;
