@@ -107,13 +107,11 @@ Showing some ❤️ and support for [deno].
 [packagephobia-badge]: https://flat.badgen.net/packagephobia/install/nodemod
 [bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/nodemod
 
-[circleci-badge]: https://flat.badgen.net/circleci/github/motss/node_mod?icon=circleci
-[daviddm-badge]: https://flat.badgen.net/david/dep/motss/node_mod
-[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/node_mod?label=codecov&icon=codecov
-[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/node_mod?label=coveralls
+[circleci-badge]: https://flat.badgen.net/circleci/github/motss/nodemod?icon=circleci
+[daviddm-badge]: https://flat.badgen.net/david/dep/motss/nodemod
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/nodemod?label=codecov&icon=codecov
+[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/nodemod?label=coveralls
 
-[codebeat-badge]: https://codebeat.co/badges/060dcdf2-123d-430b-9c45-52bba50b5783
-[codacy-badge]: https://api.codacy.com/project/badge/Grade/bbebe77f59434390aa1b27cd5acd92ed
 [coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
 <!-- Links -->
@@ -123,15 +121,15 @@ Showing some ❤️ and support for [deno].
 
 [version-url]: https://www.npmjs.com/package/nodemod
 [node-version-url]: https://nodejs.org/en/download
-[mit-license-url]: https://github.com/motss/node_mod/blob/master/LICENSE
+[mit-license-url]: https://github.com/motss/nodemod/blob/master/LICENSE
 
 [downloads-url]: https://www.npmtrends.com/nodemod
 [packagephobia-url]: https://packagephobia.now.sh/result?p=nodemod
 [bundlephobia-url]: https://bundlephobia.com/result?p=nodemod
 
-[circleci-url]: https://circleci.com/gh/motss/node_mod/tree/master
-[daviddm-url]: https://david-dm.org/motss/node_mod
-[codecov-url]: https://codecov.io/gh/motss/node_mod
-[coveralls-url]: https://coveralls.io/github/motss/node_mod?branch=master
+[circleci-url]: https://circleci.com/gh/motss/nodemod/tree/master
+[daviddm-url]: https://david-dm.org/motss/nodemod
+[codecov-url]: https://codecov.io/gh/motss/nodemod
+[coveralls-url]: https://coveralls.io/github/motss/nodemod?branch=master
 
-[coc-url]: https://github.com/motss/node_mod/blob/master/CODE_OF_CONDUCT.md
+[coc-url]: https://github.com/motss/nodemod/blob/master/CODE_OF_CONDUCT.md
