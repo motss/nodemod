@@ -57,11 +57,11 @@ const multiBuild = allModules.reduce((p, n) => {
       format: 'esm',
       exports: 'named',
     },
-    {
-      file: `${dest}/index.cjs`,
-      format: 'cjs',
-      exports: 'named',
-    },
+    // {
+    //   file: `${dest}/index.cjs`,
+    //   format: 'cjs',
+    //   exports: 'named',
+    // },
   ];
 
   for (const o of tmpl) {
@@ -78,8 +78,8 @@ const multiBuild = allModules.reduce((p, n) => {
       experimentalOptimizeChunks: true,
       treeshake: { moduleSifeEffects: false },
       external: [
-        '../lib/clone-deep',
-        '../lib/parse5',
+        '../lib/clone-deep.js',
+        '../lib/parse5.js',
         './deep-clone/index.js',
         './fetch-as/index.js',
         './lit-ntml/index.js',
