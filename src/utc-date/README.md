@@ -22,7 +22,7 @@
 ## Usage
 
 ```ts
-import { utcDate } from '@reallyland/node_mod/dist/utc-date';
+import { utcDate } from 'nodemod/dist/utc-date';
 
 (async () => {
   /** Assuming today's date is '2020-02-02' */

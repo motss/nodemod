@@ -25,7 +25,7 @@
 ## Usage
 
 ```ts
-import { sign, unsign } from '@reallyland/node_mod/dist/signatur';
+import { sign, unsign } from 'nodemod/dist/signatur';
 
 (async () => {
   const payload = {

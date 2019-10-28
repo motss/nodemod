@@ -48,7 +48,7 @@ interface DataType {
   items: Record<string, any>[];
 }
 
-import { PollingObserver } from '@reallyland/node_mod/dist/polling-observer';
+import { PollingObserver } from 'nodemod/dist/polling-observer';
 
 const obs = new PollingObserver((data/** list, observer */) => {
   const { status, items } = data || {};

@@ -20,7 +20,7 @@
 ## Usage
 
 ```ts
-import { delayUntil } from '@reallyland/node_mod/dist/delay-until';
+import { delayUntil } from 'nodemod/dist/delay-until';
 
 (async () => {
   await delayUntil(3e3);

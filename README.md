@@ -50,7 +50,7 @@
 
 ```sh
 # Install via NPM
-$ npm install --save @reallyland/node_mod
+$ npm install --save nodemod
 ```
 
 ## Available modules
@@ -99,14 +99,14 @@ Showing some ❤️ and support for [deno].
 [tippin-me-badge]: https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@igarshmyb/F0918E
 [follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter
 
-[version-badge]: https://flat.badgen.net/npm/v/@reallyland/node_mod?icon=npm
-[node-version-badge]: https://flat.badgen.net/npm/node/@reallyland/node_mod
-[mit-license-badge]: https://flat.badgen.net/npm/license/@reallyland/node_mod
+[version-badge]: https://flat.badgen.net/npm/v/nodemod?icon=npm
+[node-version-badge]: https://flat.badgen.net/npm/node/nodemod
+[mit-license-badge]: https://flat.badgen.net/npm/license/nodemod
 
-[downloads-badge]: https://flat.badgen.net/npm/dm/@reallyland/node_mod
-[total-downloads-badge]: https://flat.badgen.net/npm/dt/@reallyland/node_mod?label=total%20downloads
-[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/@reallyland/node_mod
-[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/@reallyland/node_mod
+[downloads-badge]: https://flat.badgen.net/npm/dm/nodemod
+[total-downloads-badge]: https://flat.badgen.net/npm/dt/nodemod?label=total%20downloads
+[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/nodemod
+[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/nodemod
 
 [circleci-badge]: https://flat.badgen.net/circleci/github/reallyland/node_mod?icon=circleci
 [daviddm-badge]: https://flat.badgen.net/david/dep/reallyland/node_mod
@@ -122,13 +122,13 @@ Showing some ❤️ and support for [deno].
 [follow-me-url]: https://twitter.com/igarshmyb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/app-datepicker
 
 
-[version-url]: https://www.npmjs.com/package/@reallyland/node_mod
+[version-url]: https://www.npmjs.com/package/nodemod
 [node-version-url]: https://nodejs.org/en/download
 [mit-license-url]: https://github.com/reallyland/node_mod/blob/master/LICENSE
 
-[downloads-url]: https://www.npmtrends.com/@reallyland/node_mod
-[packagephobia-url]: https://packagephobia.now.sh/result?p=@reallyland/node_mod
-[bundlephobia-url]: https://bundlephobia.com/result?p=@reallyland/node_mod
+[downloads-url]: https://www.npmtrends.com/nodemod
+[packagephobia-url]: https://packagephobia.now.sh/result?p=nodemod
+[bundlephobia-url]: https://bundlephobia.com/result?p=nodemod
 
 [circleci-url]: https://circleci.com/gh/reallyland/node_mod/tree/master
 [daviddm-url]: https://david-dm.org/reallyland/node_mod

@@ -12,16 +12,16 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Usage](#Usage)
-- [API Reference](#API-Reference)
-  - [deepClone&lt;T&gt;(target[, options])](#deepCloneltTgttarget-options)
-  - [deepCloneSync(target[, options])](#deepCloneSynctarget-options)
-- [License](#License)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+  - [deepClone&lt;T&gt;(target[, options])](#deepclonelttgttarget-options)
+  - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
+- [License](#license)
 
 ## Usage
 
 ```ts
-import { deepClone } from '@reallyland/node_mod/dist/deep-clone';
+import { deepClone } from 'znode_mod/dist/deep-clone';
 
 (async () => {
   const simpleObject = {

@@ -21,7 +21,7 @@
 ## Usage
 
 ```ts
-import { normalize } from '@reallyland/node_mod/dist/normalize-diacritics';
+import { normalize } from 'nodemod/dist/normalize-diacritics';
 
 (async () => {
   const str = "söme stüff with áccènts";

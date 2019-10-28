@@ -5,13 +5,14 @@
   "keywords": [
     "node",
     "node_mod",
+    "nodemod",
     "reallyland",
     "typescript"
   ],
-  "homepage": "https://github.com/reallyland/node_mod",
+  "homepage": "https://github.com/motss/nodemod",
   "repository": {
     "type": "git",
-    "url": "git@github.com:reallyland/node_mod.git"
+    "url": "git@github.com:motss/nodemod.git"
   },
   "license": "MIT",
   "author": {
@@ -42,6 +43,11 @@
     "ts": "tsc",
     "watch": "npm run ts -- --watch"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run ts && npm run clean"
+    }
+  },
   "dependencies": {
     "@types/parse5": "^5.0.2",
     "@types/prismjs": "^1.16.0"
@@ -53,6 +59,7 @@
     "@types/lodash-es": "^4.17.3",
     "@types/nock": "^10.0.3",
     "@types/node": "^12.7.1",
+    "husky": "^3.0.9",
     "jest": "^24.8.0",
     "lodash-es": "^4.17.15",
     "nock": "^10.0.6",

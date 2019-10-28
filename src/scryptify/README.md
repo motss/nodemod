@@ -27,7 +27,7 @@
 ```ts
 import randomstring from 'randomstring';
 
-import { encrypt, decrypt } from '@reallyland/node_mod/dist/scryptify';
+import { encrypt, decrypt } from 'nodemod/dist/scryptify';
 
 (async () => {
   /** 256 bytes or 32 characters salt */

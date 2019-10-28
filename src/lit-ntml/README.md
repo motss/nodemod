@@ -25,7 +25,7 @@
 #### html()
 
 ```ts
-import { html } from '@reallyland/node_mod/dist/lit-ntml';
+import { html } from 'nodemod/dist/lit-ntml';
 
 const peopleList = ['Cash Black', 'Vict Fisherman'];
 const syncTask = () => `<h1>Hello, World!</h1>`;
@@ -41,7 +41,7 @@ await html`${syncTask}${asyncLiteral}${asyncListTask}`;
 #### htmlFragment()
 
 ```ts
-import { htmlFragment as html } from '@reallyland/node_mod/dist/lit-ntml';
+import { htmlFragment as html } from 'nodemod/dist/lit-ntml';
 
 const syncTask = () => `<h1>Hello, World!</h1>`;
 const externalStyleLiteral = `<style>body { margin: 0; padding: 0; box-sizing: border-box; }</style>`;
