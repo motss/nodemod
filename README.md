@@ -53,6 +53,7 @@ $ npm install --save nodemod
 
 ## Available modules
 
+* [calendar] - Minimal module to compute a calendar
 * [deep-clone] - Simple and fast deep cloning
 * [delay-until] - A typical delay function but Promise based
 * [fetch-as] - Simple fetch helper with type resolver
@@ -83,6 +84,7 @@ Showing some ❤️ and support for [deno].
 [deno_mod]: https://github.com/motss/deno_mod
 [esm]: https://github.com/standard-things/esm
 
+[calendar]: /src/calendar
 [deep-clone]: /src/deep-clone
 [delay-until]: /src/delay-until
 [fetch-as]: /src/fetch-as

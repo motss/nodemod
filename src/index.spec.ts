@@ -1,3 +1,4 @@
+import './calendar/index.spec.js';
 import './deep-clone/index.spec.js';
 import './delay-until/index.spec.js';
 import './fetch-as/index.spec.js';
