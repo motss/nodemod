@@ -1,12 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/index.ts"],
   "compilerOptions": {
     "importHelpers": true
   },
   "exclude": [
     "dist",
-    "src/**/*.spec.ts",
     "src/demo/**/*",
     "src/lib/**/*",
     "src/test/**/*"

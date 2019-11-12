@@ -26,7 +26,12 @@
     "dist/**/*.*js.map",
     "dist/**/*.*js",
     "dist/**/*.d.ts.map",
-    "dist/**/*.d.ts"
+    "dist/**/*.d.ts",
+    "!dist/**/*.spec.d.ts.map",
+    "!dist/**/*.spec.d.ts",
+    "!dist/**/*.spec.js.map",
+    "!dist/**/*.spec.js",
+    "!dist/**/test/**/*.*"
   ],
   "sideEffects": false,
   "main": "dist/index.js",
