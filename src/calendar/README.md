@@ -38,7 +38,7 @@ const weekdaysOptions = {
 
   // Optional properties and their default values:
   // firstDayOfWeek: 0,
-  // showWeekNumber: true,
+  // showWeekNumber: false,
   // weekLabel: 'Wk',
 };
 const weekdays = getWeekdays(weekdaysOptions);
@@ -61,8 +61,8 @@ const calendarOptions = {
 const calendarData = calendar(calendarOptions);
 
 console.table([
-  ...weekdays.map(n => n.value),
-  ...calendarData.calendar.map(n => n.map(n => n.value)),
+  weekdays.map(n => n.value),
+  ...calendarData.calendar.map(n => n.map(o => o.value)),
 ]);
 ```
 
@@ -122,7 +122,7 @@ longWeekdayFormat: Intl.DateTimeFormat['format'];
 narrowWeekdayFormat: Intl.DateTimeFormat['format'];
 
 firstDayOfWeek?: number; // Default: 0
-showWeekNumber?: boolean; // Default: true
+showWeekNumber?: boolean; // Default: false
 weekLabel?: string; // Default: 'Wk'
 ```
 
@@ -158,7 +158,7 @@ interface CalendarWeekday {
   - `longWeekdayFormat` <[Intl.DateTimeFormat.prototype.format]> DateTime formatter for long `weekday`. _It is recommended to use [getFormatter()]_.
   - `narrowWeekdayFormat` <[Intl.DateTimeFormat.prototype.format]> DateTime formatter for narrow `weekday`. _It is recommended to use [getFormatter()]_.
   - `firstDayOfWeek` <?[number][number-mdn-url]> Optional first day of a week. Defaults to `0` (Sunday).
-  - `showWeekNumber` <?[boolean][boolean-mdn-url]> If true, show week number. Defaults to `true`.
+  - `showWeekNumber` <?[boolean][boolean-mdn-url]> If true, show week number. Defaults to `false`.
   - `weekLabel` <?[string][string-mdn-url]> Optional label for week number. Defaults to `Wk`.
 - returns: <[Array][array-mdn-url]<[CalendarWeekday]>> A list of calendar weekday.
 
@@ -177,9 +177,10 @@ This helper function strips any LTR marking in a formatted date/ time string. IE
 
 [AppDatepicker]: https://github.com/motss/app-datepicker
 [Calendar]: #calendar
-[CalendarWeekday]: #calendarweekday
 [CalendarOptions]: #calendaroptions
+[CalendarWeekday]: #calendarweekday
 [getFormatter()]: #getFormatter
+[GetWeekdaysOptions]: #getweekdaysoptions
 [Intl.DateTimeFormat.prototype.format]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/format
 [ISO Language Code Table]: http://www.lingoes.net/en/translator/langcode.htm
 [Node.js]: https://github.com/nodejs/node

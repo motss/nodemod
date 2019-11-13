@@ -4,7 +4,7 @@ import { toUTCDate } from './to-utc-date.js';
 export function getWeekdays(options: GetWeekdaysOptions): CalendarWeekday[] {
   const {
     firstDayOfWeek = 0,
-    showWeekNumber = true,
+    showWeekNumber = false,
     weekLabel = 'Wk',
 
     longWeekdayFormat,
