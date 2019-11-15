@@ -64,7 +64,7 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "@reallyland/tsconfig": "^1.0.0",
+    "@reallyland/tsconfig": "^1.0.1",
     "@reallyland/tslint-config": "^1.1.1",
     "@types/jest": "^24.0.23",
     "@types/lodash-es": "^4.17.3",
