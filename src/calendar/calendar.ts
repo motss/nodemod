@@ -10,6 +10,14 @@ function normalizeWeekday(weekday: number): number {
   return (weekdayOffset + weekday) % 7;
 }
 
+function shiftDisabledDays(firstDayOfWeek: number, disabledDays: number[]) {
+  return disabledDays.map((n) => {
+    const day = n - firstDayOfWeek;
+
+    return day < 0 ? 7 + day : day;
+  });
+}
+
 export function calendar(options: CalendarOptions): Calendar {
   const {
     dayFormat,
@@ -59,7 +67,8 @@ export function calendar(options: CalendarOptions): Calendar {
   const minTime = null == min ? Number.MIN_SAFE_INTEGER : +min;
   const maxTime = null == max ? Number.MAX_SAFE_INTEGER : +max;
   const disabledDatesSet: Set<number> = new Set(disabledDates.map(n => +n));
-  const disabledDaysSet: Set<number> = new Set(disabledDays);
+  const disabledDaysSet: Set<number> = new Set(
+    !firstDayOfWeek ? disabledDays : shiftDisabledDays(firstDayOfWeek, disabledDays));
 
   let calendarRow: CalendarDay[] = [];
   let day = 1;
