@@ -5,15 +5,20 @@ export function getWeekdays(options: GetWeekdaysOptions): CalendarWeekday[] {
   const {
     firstDayOfWeek = 0,
     showWeekNumber = false,
-    weekLabel = 'Wk',
+    weekLabel,
 
     longWeekdayFormat,
     narrowWeekdayFormat,
   } = options || {};
 
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
-  const initialValue: CalendarWeekday[] = showWeekNumber ?
-    [{ label: weekLabel === 'Wk' ? 'Week' : weekLabel, value: weekLabel }] :
+  const weekLabel2 = weekLabel || 'Wk';
+  const initialValue: CalendarWeekday[] =
+    showWeekNumber ?
+    [{
+      label: weekLabel2 === 'Wk' ? 'Week' : weekLabel2,
+      value: weekLabel2,
+    }] :
     [];
 
   const weekdays = Array.from(Array(7)).reduce<CalendarWeekday[]>((p, _, i) => {

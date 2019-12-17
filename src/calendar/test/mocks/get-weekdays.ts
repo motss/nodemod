@@ -247,4 +247,47 @@ export const mockGetWeekdaysData: TestGetWeekdays[] = [
       },
     ],
   ],
+  [
+    `{ weekLabel: '' }`,
+    {
+      longWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'long' })),
+      narrowWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'narrow' })),
+      showWeekNumber: true,
+      weekLabel: '',
+    },
+    [
+      {
+        label: 'Week',
+        value: 'Wk',
+      },
+      {
+        label: '日曜日',
+        value: '日',
+      },
+      {
+        label: '月曜日',
+        value: '月',
+      },
+      {
+        label: '火曜日',
+        value: '火',
+      },
+      {
+        label: '水曜日',
+        value: '水',
+      },
+      {
+        label: '木曜日',
+        value: '木',
+      },
+      {
+        label: '金曜日',
+        value: '金',
+      },
+      {
+        label: '土曜日',
+        value: '土',
+      },
+    ],
+  ],
 ];
