@@ -1,5 +1,5 @@
-import { encrypt } from '..';
-import { rawData, secret } from './CONSTANTS';
+import { encrypt } from '../index.js';
+import { rawData, secret } from './CONSTANTS.js';
 
 test('encryption works', async () => {
   const encrypted = await encrypt(rawData, secret);

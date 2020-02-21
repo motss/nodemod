@@ -1,13 +1,4 @@
-export interface UTCTimeOffset {
-  hour?: number;
-  minute?: number;
-  second?: number;
-  millisecond?: number;
-}
-export interface UTCTimeOpts {
-  startDatetime?: string | number | Date;
-  offset?: UTCTimeOffset;
-}
+import type { UTCTimeOffset, UTCTimeOpts } from './custom_typings.js';
 
 function isValidDatetime(datetime: any) {
   return 'Invalid Date' !== `${new Date(datetime)}`;

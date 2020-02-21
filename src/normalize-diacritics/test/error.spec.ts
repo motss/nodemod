@@ -1,4 +1,4 @@
-import { normalize } from '..';
+import { normalize } from '../index.js';
 
 it(`throws when invalid input`, async () => {
   try {

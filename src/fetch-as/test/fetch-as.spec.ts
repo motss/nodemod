@@ -3,8 +3,9 @@ import nock from 'nock';
 import fetch from 'node-fetch';
 import { Buffer } from 'safe-buffer';
 
-import { fetchAsArrayBuffer, fetchAsBlob, fetchAsJson, fetchAsText } from '..';
-import { errorData, successData, TestErrorData, TestSuccessData, url } from './CONSTANTS';
+import { fetchAsArrayBuffer, fetchAsBlob, fetchAsJson, fetchAsText } from '../index.js';
+import { errorData, successData, url } from './CONSTANTS.js';
+import type { TestErrorData, TestSuccessData } from './test_typings.js';
 
 function errorNock(uri: string, data: TestErrorData) {
   return nock(uri)

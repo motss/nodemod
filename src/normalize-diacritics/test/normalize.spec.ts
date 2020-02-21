@@ -1,4 +1,4 @@
-import { normalize } from '..';
+import { normalize } from '../index.js';
 
 it(`skips normalization for empty character`, async () => {
   expect(await normalize('')).toStrictEqual('');

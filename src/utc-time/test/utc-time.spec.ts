@@ -1,4 +1,4 @@
-import { utcTime } from '..';
+import { utcTime } from '../index.js';
 
 const msReplacer = (expected: Date, datetime: Date) => {
   const msFromExpected = expected.toJSON().replace(/^.+T\d{2}\:\d{2}\:\d{2}\.(\d+)Z/i, '$1');

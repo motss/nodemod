@@ -1,21 +1,9 @@
-interface ExtendedFetchResponse extends Response {
-  size: number;
-  timeout: number;
-}
-
-export interface FetchAsInfo extends Pick<ExtendedFetchResponse, 'size'|'timeout'|'type'> {
-  headers: UnknownRecord;
-}
-export interface FetchAsReturnType<T = any, U = any> {
-  status: number;
-  info: FetchAsInfo;
-
-  data?: T;
-  error?: U;
-}
-
-type FetchType = Exclude<keyof Body, 'body' | 'bodyUsed'>;
-type UnknownRecord = Record<string, unknown>;
+import type {
+  ExtendedFetchResponse,
+  FetchAsReturnType,
+  FetchType,
+  UnknownRecord,
+} from './custom_typings.js';
 
 // import {
 //   Blob,

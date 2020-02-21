@@ -1,12 +1,4 @@
-interface UTCDateOffset {
-  year?: number;
-  month?: number;
-  day?: number;
-}
-interface UTCDateParams {
-  startDate?: string|number|Date;
-  offset?: UTCDateOffset;
-}
+import type { UTCDateOffset, UTCDateParams } from './custom_typings.js';
 
 export function utcDateSync({
   startDate,

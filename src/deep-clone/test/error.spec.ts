@@ -1,4 +1,4 @@
-import { deepClone } from '..';
+import { deepClone } from '../index.js';
 
 test('throws when deeply clone a Null', async () => {
   try {

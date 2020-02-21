@@ -1,20 +1,11 @@
-export interface SignaturOptions {
-  separator?: string;
-}
-
-interface DecodedData<T> {
-  data: T;
-}
-interface SignaturReturnError {
-  error: {
-    type: string;
-    message: string;
-  };
-}
-
-type UnknownRecord = Record<string, unknown>;
-
 import { createHmac } from 'crypto';
+
+import type {
+  DecodedData,
+  SignaturOptions,
+  SignaturReturnError,
+  UnknownRecord,
+} from './custom_typings.js';
 
 export class SignaturError extends Error {
   public type: string;

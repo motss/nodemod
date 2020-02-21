@@ -1,4 +1,4 @@
-import { utcDate } from '..';
+import { utcDate } from '../index.js';
 
 it('returns UTC date with any arguments', async () => {
   const d = await utcDate();

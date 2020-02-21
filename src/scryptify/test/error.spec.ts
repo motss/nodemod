@@ -1,5 +1,5 @@
-import { encrypt } from '..';
-import { rawData } from './CONSTANTS';
+import { encrypt } from '../index.js';
+import { rawData } from './CONSTANTS.js';
 
 test(`'text' not string`, async () => {
   try {

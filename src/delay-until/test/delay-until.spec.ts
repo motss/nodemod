@@ -1,4 +1,4 @@
-import { delayUntil } from '..';
+import { delayUntil } from '../index.js';
 
 it(`delays`, async () => {
   const delayTask = delayUntil(3e3);

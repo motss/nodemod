@@ -3,6 +3,7 @@ import { cloneDeep } from '../lib/clone-deep.js';
 export interface DeepCloneOptions {
   absolute?: boolean;
 }
+
 export function deepCloneSync<T>(
   target: T,
   options?: DeepCloneOptions

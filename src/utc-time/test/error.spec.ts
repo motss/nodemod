@@ -1,4 +1,4 @@
-import { utcTime } from '..';
+import { utcTime } from '../index.js';
 
 test(`invalid 'startDatetime'`, async () => {
   try {

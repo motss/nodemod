@@ -1,4 +1,4 @@
-import { html, htmlFragment } from '..';
+import { html, htmlFragment } from '../index.js';
 
 it(`throws when error happens (html)`, async () => {
   try {

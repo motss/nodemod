@@ -1,5 +1,5 @@
-import { sign } from '..';
-import { data, secret } from './CONSTANTS';
+import { sign } from '../index.js';
+import { data, secret } from './CONSTANTS.js';
 
 it('returns', async () => {
   const d = await sign(data, secret);

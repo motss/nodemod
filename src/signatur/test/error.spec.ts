@@ -1,5 +1,5 @@
-import { sign, unsign } from '..';
-import { data, secret } from './CONSTANTS';
+import { sign, unsign } from '../index.js';
+import { data, secret } from './CONSTANTS.js';
 
 it(`throws when undefined 'data'`, async () => {
   try {

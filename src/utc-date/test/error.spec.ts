@@ -1,4 +1,4 @@
-import { utcDate } from '..';
+import { utcDate } from '../index.js';
 
 it(`throws when first argument is 'null'`, async () => {
   try {

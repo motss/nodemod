@@ -1,4 +1,5 @@
-import { OnfinishFulfilled, PollingObserver } from '..';
+import { PollingObserver } from '../index.js';
+import type { OnfinishFulfilled } from '../index.js';
 import type { PollingMeasure } from '../polling-measure.js';
 import type { MockData } from './test_typings.js';
 

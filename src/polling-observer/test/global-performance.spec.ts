@@ -15,7 +15,7 @@ it(`uses 'perf_hooks' on Node.js`, async () => {
 });
 
 it(`uses 'window.Performance' on browser`, async () => {
-  /** NOTE(motss): Fake a browser runtime enviroment */
+  /** NOTE(motss): Fake a browser runtime environment */
   globalThat.window = {};
 
   const { globalPerformance } = await import('../global-performance.js');

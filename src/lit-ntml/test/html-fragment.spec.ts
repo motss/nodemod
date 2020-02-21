@@ -1,5 +1,5 @@
-import { htmlFragment as html } from '..';
-import { helloWorld, peopleList } from './CONSTANTS';
+import { htmlFragment as html } from '../index.js';
+import { helloWorld, peopleList } from './CONSTANTS.js';
 
 it(`renders`, async () => {
   const d = await html`${helloWorld}`;

@@ -1,5 +1,5 @@
-import { html } from '..';
-import { helloWorld, peopleList } from './CONSTANTS';
+import { html } from '../index.js';
+import { helloWorld, peopleList } from './CONSTANTS.js';
 
 it(`renders`, async () => {
   const d = await html`${helloWorld}`;

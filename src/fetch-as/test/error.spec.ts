@@ -1,4 +1,4 @@
-import { fetchAsJson } from '..';
+import { fetchAsJson } from '../index.js';
 // import { url } from './CONSTANTS.js';
 
 it('throws when invalid URL', async () => {

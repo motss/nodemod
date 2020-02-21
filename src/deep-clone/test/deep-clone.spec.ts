@@ -1,5 +1,5 @@
-import { deepClone } from '..';
-import { awno, owno, towno } from './CONSTANTS';
+import { deepClone } from '../index.js';
+import { awno, owno, towno } from './CONSTANTS.js';
 
 test('deeply clone an nested Object', async () => {
   try {

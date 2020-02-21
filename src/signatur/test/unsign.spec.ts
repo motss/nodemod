@@ -1,5 +1,6 @@
 import { unsign } from '..';
-import { data, secret, TestData } from './CONSTANTS';
+import { data, secret } from './CONSTANTS.js';
+import type { TestData } from './test_typings.js';
 
 // tslint:disable-next-line:max-line-length
 const signature = 'eyJkYXRhIjp7InNlY3JldEluc2lkZSI6IjEyMyIsInNlY3JldEtleSI6NDU2fX0.WlF_-gDYzfBBPksdvhVvaP_MQ9PWoRiwADbI3MapRg4';
