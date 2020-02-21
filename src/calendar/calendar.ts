@@ -1,4 +1,4 @@
-import { Calendar, CalendarDay, CalendarOptions } from './calendar_typing.js';
+import type { Calendar, CalendarDay, CalendarOptions } from './calendar_typing.js';
 import { getWeekNumber } from './get-week-number.js';
 import { toUTCDate } from './to-utc-date.js';
 

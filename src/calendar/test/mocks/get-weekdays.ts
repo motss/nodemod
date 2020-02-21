@@ -1,4 +1,4 @@
-import { CalendarWeekday, GetWeekdaysOptions } from '../../calendar_typing.js';
+import type { CalendarWeekday, GetWeekdaysOptions } from '../../calendar_typing.js';
 import { getFormatter } from '../../get-formatter';
 
 export type TestGetWeekdays = [string, GetWeekdaysOptions, CalendarWeekday[]];

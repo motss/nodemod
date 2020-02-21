@@ -1,4 +1,4 @@
-import { CalendarWeekday, GetWeekdaysOptions } from './calendar_typing.js';
+import type { CalendarWeekday, GetWeekdaysOptions } from './calendar_typing.js';
 import { toUTCDate } from './to-utc-date.js';
 
 export function getWeekdays(options: GetWeekdaysOptions): CalendarWeekday[] {

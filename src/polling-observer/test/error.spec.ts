@@ -1,5 +1,5 @@
-import { OnfinishRejected, PollingObserver } from '..';
-import { MockData } from './CONSTANTS';
+import { OnfinishRejected, PollingObserver } from '../index.js';
+import type { MockData } from './test_typings.js';
 
 it(`throws when 'conditionCallback' is undefined`, () => {
   expect(() => new PollingObserver(undefined!))

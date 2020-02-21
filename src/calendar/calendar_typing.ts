@@ -39,9 +39,9 @@ export interface CalendarDay extends Nullable<CalendarOutputBase> {
 
 export interface Calendar {
   key: string;
-  calendar: CalendarDay[][] | null;
-  disabledDatesSet: Set<number> | null;
-  disabledDaysSet: Set<number> | null;
+  calendar: CalendarDay[][];
+  disabledDatesSet: Set<number>;
+  disabledDaysSet: Set<number>;
 }
 // #endregion calendar
 

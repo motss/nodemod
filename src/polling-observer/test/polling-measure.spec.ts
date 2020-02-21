@@ -1,4 +1,4 @@
-import { PollingMeasure } from '../polling-measure';
+import { PollingMeasure } from '../polling-measure.js';
 
 it(`instantiates 'PollingMeasure'`, () => {
   const entry = new PollingMeasure('polling:0', 100, 100);

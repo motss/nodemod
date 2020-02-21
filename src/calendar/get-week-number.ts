@@ -1,4 +1,4 @@
-import { WeekNumber, WeekNumberType } from './calendar_typing.js';
+import type { WeekNumber, WeekNumberType } from './calendar_typing.js';
 import { toUTCDate } from './to-utc-date.js';
 
 function toFixedDate(weekNumberType: WeekNumberType, date: Date): Date {

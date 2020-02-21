@@ -1,4 +1,4 @@
-import { Calendar, CalendarOptions } from '../../calendar_typing.js';
+import type { Calendar, CalendarOptions } from '../../calendar_typing.js';
 import { getFormatter } from '../../get-formatter.js';
 
 export type TestCalendar = [string, CalendarOptions, Calendar];

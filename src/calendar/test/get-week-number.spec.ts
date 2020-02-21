@@ -1,4 +1,4 @@
-import { WeekNumberType } from '../calendar_typing.js';
+import type { WeekNumberType } from '../calendar_typing.js';
 import { getWeekNumber } from '../get-week-number.js';
 
 type TestError = [string, [undefined | null, undefined | null]];

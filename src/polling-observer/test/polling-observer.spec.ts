@@ -1,6 +1,6 @@
 import { OnfinishFulfilled, PollingObserver } from '..';
-import { PollingMeasure } from '../polling-measure.js';
-import { MockData } from './CONSTANTS.js';
+import type { PollingMeasure } from '../polling-measure.js';
+import type { MockData } from './test_typings.js';
 
 it(`finishes polling with condition fulfills`, (done) => {
   const data: MockData = { items: [Math.floor(Math.random() * Math.PI)] };
