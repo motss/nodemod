@@ -31,8 +31,8 @@
 ## Table of contents <!-- omit in toc -->
 
 - [Pre-requisites](#pre-requisites)
-- [Setup](#setup)
-  - [Install](#install)
+- [Install](#install)
+- [Usage](#usage)
 - [Available modules](#available-modules)
 - [Deno equivalent](#deno-equivalent)
 - [License](#license)
@@ -41,14 +41,35 @@
 
 - [Node.js][nodejs-url] >= 10.18.1
 - [NPM][npm-url] >= 6.13.4 ([NPM][npm-url] comes with [Node.js][nodejs-url] so there is no need to install separately.)
-
-## Setup
-
-### Install
+- [esm] >= 3.2.25 (Any version below this should work as expected.)
+- 
+## Install
 
 ```sh
 # Install via NPM
-$ npm install --save nodemod
+$ npm i nodemod
+```
+
+```sh
+# [OPTIONAL] Only install this as `devDependencies` if you do not use
+# any bundler or compiler for your project. Note that all modules are 
+# exported using ES modules. See Usage section for more details.
+$ npm i -D esm
+```
+
+## Usage
+
+All modules are exported using JavaScript's ES modules. Users are recommended to use [esm] to run their scripts.
+
+```js
+// index.js
+import { html } from 'nodemod/lit-ntml/index.js';
+
+await html`<h1>Hello, World!</h1>`;
+```
+
+```sh
+$ node -r esm index.js # Run script with `esm` to transpile ES Modules on the fly.
 ```
 
 ## Available modules
