@@ -4,14 +4,17 @@ interface CalendarOptionsBase {
   weekLabel?: string;
 }
 
-interface CalendarOutputBase {
+// #region getWeekdays
+export interface GetWeekdaysOptions extends CalendarOptionsBase {
+  longWeekdayFormat: DateTimeFormatter;
+  narrowWeekdayFormat: DateTimeFormatter;
+}
+
+export interface CalendarWeekday {
   label: string;
   value: string;
 }
-
-export declare type Nullable<T> = {
-  [P in keyof T]: T[P] | null;
-};
+// #endregion getWeekdays
 
 export type DateTimeFormatter = Intl.DateTimeFormat['format'];
 
@@ -31,7 +34,7 @@ export interface CalendarOptions extends CalendarOptionsBase {
   weekNumberType?: WeekNumberType;
 }
 
-export interface CalendarDay extends Nullable<CalendarOutputBase> {
+export interface CalendarDay extends CalendarWeekday {
   fullDate: Date | null;
   key: string;
   disabled: boolean;
@@ -44,20 +47,3 @@ export interface Calendar {
   disabledDaysSet: Set<number>;
 }
 // #endregion calendar
-
-// #region getWeekdays
-export interface GetWeekdaysOptions extends CalendarOptionsBase {
-  longWeekdayFormat: DateTimeFormatter;
-  narrowWeekdayFormat: DateTimeFormatter;
-}
-
-export type CalendarWeekday = CalendarOutputBase;
-// #endregion getWeekdays
-
-// #region getWeekNumber
-export interface WeekNumber {
-  originalDate: Date;
-  fixedDate: Date;
-  weekNumber: number;
-}
-// #endregion getWeekNumber

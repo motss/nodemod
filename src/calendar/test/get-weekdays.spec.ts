@@ -5,7 +5,7 @@ type TestError = [string, undefined | null];
 test.each<TestError>([
   [`void`, void 0],
   [`null`, null],
-])(`getWeekdays(%s)`, (_, a) => {
+])(`weekdays (%s)`, (_, a) => {
   try {
     getWeekdays(a!);
   } catch (e) {
@@ -14,7 +14,7 @@ test.each<TestError>([
   }
 });
 
-test.each<TestGetWeekdays>(mockGetWeekdaysData)(`getWeekdays(%s)`, (_, a, expected) => {
+test.each<TestGetWeekdays>(mockGetWeekdaysData)(`weekdays (%s)`, (_, a, expected) => {
   const d = getWeekdays(a);
 
   expect(d).toStrictEqual(expected);

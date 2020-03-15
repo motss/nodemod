@@ -6,7 +6,7 @@ type TestError = [string, undefined | null];
 test.each<TestError>([
   [`void`, void 0],
   [`null`, null],
-])(`calendar(%s)`, (_, a) => {
+])(`calendar (%s)`, (_, a) => {
   try {
     calendar(a!);
   } catch (e) {
@@ -19,5 +19,12 @@ type TestSuccess = [string, CalendarOptions, Calendar];
 test.each<TestSuccess>(mockCalendarData)(`calendar(%s)`, (_, a, expected) => {
   const d = calendar(a);
 
-  expect(d).toEqual(expected);
+  expect({
+    ...d,
+    calendar: [
+      d.calendar[0],
+      d.calendar[4],
+      d.calendar[5],
+    ],
+  }).toEqual(expected);
 });

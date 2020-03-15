@@ -1,4 +1,4 @@
-import { toUTCDate } from '../to-utc-date.js';
+import { toUTCDate } from '../../helpers/to-utc-date.js';
 
 type TestInput = undefined | null | string | number;
 type TestSuccess = [string, [TestInput, TestInput, TestInput], Date];
@@ -8,7 +8,7 @@ test.each<TestSuccess>([
   [`null, null, null`, [null, null, null], new Date('1899-12-31')],
   [`2020, 1, 2`, [2020, 1, 2], new Date('2020-02-02')],
   [`'2020', '1', '2'`, ['2020', '1', '2'], new Date('2020-02-02')],
-])(`toUTCDate(%s)`, (_, a, expected) => {
+])(`utc date (%s)`, (_, a, expected) => {
   const d = toUTCDate(...(a as [any, any, any]));
 
   if (Number.isNaN(+expected)) {

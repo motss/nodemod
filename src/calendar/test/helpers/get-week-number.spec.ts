@@ -1,5 +1,5 @@
-import type { WeekNumberType } from '../calendar_typing.js';
-import { getWeekNumber } from '../get-week-number.js';
+import type { WeekNumberType } from '../../calendar_typing.js';
+import { getWeekNumber } from '../../helpers/get-week-number.js';
 
 type TestError = [string, [undefined | null, undefined | null]];
 test.each<TestError>([
@@ -7,26 +7,25 @@ test.each<TestError>([
   [`void, null`, [void 0, null]],
   [`null, void`, [null, void 0]],
   [`null, null`, [null, null]],
-])(`getWeekNumber(%s)`, (_, a) => {
+])(`week number (%s)`, (_, a) => {
   try {
     getWeekNumber(...(a as [any, any]));
   } catch (e) {
     expect(e.name).toStrictEqual(TypeError.name);
-    expect(e.message).toMatch('getUTCDay');
+    expect(e.message).toMatch('Cannot read property');
   }
 });
 
 type TestSuccess = [string, [number, number, number, number]];
 test.each<TestSuccess>([
-  // tslint:disable: array-bracket-spacing
   ['2010-01-01', [52, 1, 52, 1]],
   ['2011-01-01', [52, 1, 52, 1]],
-  ['2012-01-01', [ 1, 1,  1, 1]],
+  ['2012-01-01', [1,  1,  1, 1]],
   ['2013-01-01', [53, 1,  1, 1]],
   ['2014-01-01', [52, 1,  1, 1]],
   ['2015-01-01', [52, 1, 53, 1]],
   ['2016-01-01', [52, 1, 52, 1]],
-  ['2017-01-01', [ 1, 1,  1, 1]],
+  ['2017-01-01', [1,  1,  1, 1]],
   ['2018-01-01', [53, 1,  1, 1]],
   ['2019-01-01', [52, 1,  1, 1]],
   ['2020-01-01', [52, 1,  1, 1]],
@@ -42,8 +41,7 @@ test.each<TestSuccess>([
   ['2018-12-31', [52,  1,  1, 53]],
   ['2019-12-31', [52,  1,  1, 53]],
   ['2020-12-31', [52,  1, 53, 53]],
-  // tslint:enable: array-bracket-spacing
-])(`getWeekNumber(%s, ...)`, (a, expected) => {
+])(`week number (%s, ...)`, (a, expected) => {
   const d = (
     [
       'first-full-week',
@@ -53,5 +51,5 @@ test.each<TestSuccess>([
     ] as WeekNumberType[]
   ).map(n => getWeekNumber(n, new Date(a)));
 
-  expect(d.map(n => n.weekNumber)).toEqual(expected);
+  expect(d).toEqual(expected);
 });
