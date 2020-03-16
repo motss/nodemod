@@ -61,6 +61,7 @@
   "dependencies": {
     "@types/parse5": "^5.0.2",
     "@types/prismjs": "^1.16.0",
+    "lit-ntml": "^2.14.0",
     "tslib": "^1.11.1"
   },
   "devDependencies": {
