@@ -1,1 +1,1 @@
-export * from 'lit-ntml/dist/index.js';
+export * from 'lit-ntml';

@@ -42,7 +42,6 @@ export const cjsBuild = (n) => {
       format: 'cjs',
       exports: 'named',
     },
-    experimentalOptimizeChunks: true,
     plugins: pluginFn(),
     treeshake: { moduleSideEffects: false },
   };

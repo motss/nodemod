@@ -75,7 +75,6 @@ const multiBuild = allModules.reduce((p, n) => {
         sourcemapExcludeSources: true,
       },
       plugins: pluginFn(format),
-      experimentalOptimizeChunks: true,
       treeshake: { moduleSifeEffects: false },
       external: [
         '../lib/clone-deep.js',

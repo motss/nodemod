@@ -1,5 +1,5 @@
-import { calendar } from '../calendar.js';
 import type { Calendar, CalendarOptions } from '../calendar_typing.js';
+import { calendar } from '../index.js';
 import { mockCalendarData } from './mocks/calendar.js';
 
 type TestError = [string, undefined | null];
