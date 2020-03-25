@@ -62,7 +62,7 @@ export function calendar(options: CalendarOptions): Calendar {
   ].filter(Boolean).join(':');
 
   const firstDayOfWeekOffset =
-    normalizeWeekday(firstDateOfMonth.getDay(), firstDayOfWeek2, showWeekNumber);
+    normalizeWeekday(firstDateOfMonth.getUTCDay(), firstDayOfWeek2, showWeekNumber);
   const minTime = null == min ? +new Date('2000-01-01') : +min;
   const maxTime = null == max ? +new Date('2100-12-31') : +max;
   const colNum = showWeekNumber ? 8 : 7;
