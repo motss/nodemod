@@ -14,14 +14,14 @@
 
 - [Usage](#usage)
 - [API Reference](#api-reference)
-  - [deepClone&lt;T&gt;(target[, options])](#deepclonelttgttarget-options)
+  - [deepClone&lt;T&gt;(target[, options])](#deepclonettarget-options)
   - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
 - [License](#license)
 
 ## Usage
 
 ```ts
-import { deepClone } from 'nodemod/dist/deep-clone.js';
+import { deepClone } from 'nodemod/dist/deep-clone/index.js';
 
 (async () => {
   const simpleObject = {

@@ -15,14 +15,14 @@
 - [Usage](#usage)
 - [API Reference](#api-reference)
   - [UTCTimeOpts](#utctimeopts)
-  - [utcTime(&lsqb;UTCTimeOpts&rsqb;)](#utctimelsqbutctimeoptsrsqb)
-  - [utcTimeSync(&lsqb;UTCTimeOpts&rsqb;)](#utctimesynclsqbutctimeoptsrsqb)
+  - [utcTime(&lsqb;UTCTimeOpts&rsqb;)](#utctimeutctimeopts)
+  - [utcTimeSync(&lsqb;UTCTimeOpts&rsqb;)](#utctimesyncutctimeopts)
 - [License](#license)
 
 ## Usage
 
 ```ts
-import { utcTime } from 'nodemod/dist/utc-time.js';
+import { utcTime } from 'nodemod/dist/utc-time/index.js';
 
 (async () => {
   /** NOTE: Assuming today's date is '2020-02-02' */

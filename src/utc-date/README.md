@@ -15,14 +15,14 @@
 - [Usage](#usage)
 - [API Reference](#api-reference)
   - [UTCDateParams](#utcdateparams)
-  - [utcDate(&lsqb;UTCDateParams&rsqb;)](#utcdatelsqbutcdateparamsrsqb)
-  - [utcDateSync(&lsqb;UTCDateParams&rsqb;)](#utcdatesynclsqbutcdateparamsrsqb)
+  - [utcDate(&lsqb;UTCDateParams&rsqb;)](#utcdateutcdateparams)
+  - [utcDateSync(&lsqb;UTCDateParams&rsqb;)](#utcdatesyncutcdateparams)
 - [License](#license)
 
 ## Usage
 
 ```ts
-import { utcDate } from 'nodemod/dist/utc-date.js';
+import { utcDate } from 'nodemod/dist/utc-date/index.js';
 
 (async () => {
   /** Assuming today's date is '2020-02-02' */

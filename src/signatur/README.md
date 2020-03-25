@@ -25,7 +25,7 @@
 ## Usage
 
 ```ts
-import { sign, unsign } from 'nodemod/dist/signatur.js';
+import { sign, unsign } from 'nodemod/dist/signatur/index.js';
 
 (async () => {
   const payload = {

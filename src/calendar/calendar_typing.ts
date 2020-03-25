@@ -35,15 +35,15 @@ export interface CalendarOptions extends CalendarOptionsBase {
 }
 
 export interface CalendarDay extends CalendarWeekday {
+  disabled: boolean;
   fullDate: Date | null;
   key: string;
-  disabled: boolean;
 }
 
 export interface Calendar {
-  key: string;
   calendar: CalendarDay[][];
   disabledDatesSet: Set<number>;
   disabledDaysSet: Set<number>;
+  key: string;
 }
 // #endregion calendar

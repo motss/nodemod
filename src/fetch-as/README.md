@@ -47,7 +47,7 @@ global.fetch = fetch;
 
 ```ts
 /** Available options: arrayBuffer, blob, json, text */
-import { json } from 'nodemod/dist/fetch-as.js';
+import { json } from 'nodemod/dist/fetch-as/index.js';
 
 (async () => {
   /** Same function signature as native Fetch API, without the need to await .json() */

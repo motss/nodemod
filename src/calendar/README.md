@@ -20,17 +20,17 @@
     - [Calendar](#calendar)
     - [GetWeekdaysOptions](#getweekdaysoptions)
     - [CalendarWeekday](#calendarweekday)
-  - [calendar(options)](#calendaroptions)
-  - [getWeekdays(options)](#getweekdaysoptions)
+  - [calendar(options)](#calendaroptions-1)
+  - [getWeekdays(options)](#getweekdaysoptions-1)
   - [getFormatter(formatter)](#getformatterformatter)
 - [License](#license)
 
 ## Usage
 
 ```ts
-import { calendar } from 'nodemod/dist/calendar.js';
-import { getWeekdays } from 'nodemod/dist/get-weekdays.js';
-import { getFormatter } from 'nodemod/dist/get-formatter.js';
+import { calendar } from 'nodemod/dist/calendar/index.js';
+import { getWeekdays } from 'nodemod/dist/calendar/helpers/get-weekdays.js';
+import { getFormatter } from 'nodemod/dist/calendar/helpers/get-formatter.js';
 
 const weekdaysOptions = {
   longWeekdayFormat: getFormatter(Intl.DateTimeFormat('en-US', { weekday: 'long' })),
@@ -108,9 +108,9 @@ interface CalendarDay {
 }
 
 interface Calendar {
-  calendar: CalendarDay[][] | null;
-  disabledDatesSet: Set<number> | null;
-  disabledDaysSet: Set<number> | null;
+  calendar: CalendarDay[][];
+  disabledDatesSet: Set<number>;
+  disabledDaysSet: Set<number>;
   key: string;
 }
 ```

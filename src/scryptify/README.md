@@ -27,7 +27,7 @@
 ```ts
 import randomstring from 'randomstring';
 
-import { encrypt, decrypt } from 'nodemod/dist/scryptify.js';
+import { encrypt, decrypt } from 'nodemod/dist/scryptify/index.js';
 
 (async () => {
   /** 256 bytes or 32 characters salt */
