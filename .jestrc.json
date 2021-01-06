@@ -14,8 +14,8 @@
     "!**/node_modules/**",
     "!**/src/demo/**/*.js",
     "!**/dist/lib/**/*.js",
-    "!**/dist/test*/**/CONSTANTS.js",
-    "!**/dist/test*/**/*.spec.js"
+    "!**/dist/__test*__/**/CONSTANTS.js",
+    "!**/dist/__test*__/**/*.spec.js"
   ],
   "verbose": true,
   "bail": true,
@@ -23,7 +23,7 @@
     "<rootDir>/dist/"
   ],
   "testMatch": [
-    "<rootDir>/dist/test*/**/*.spec.js"
+    "<rootDir>/dist/__test*__/**/*.spec.js"
   ],
   "moduleFileExtensions": [
     "js",
