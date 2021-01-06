@@ -12,13 +12,10 @@
   },
   "collectCoverageFrom": [
     "!**/node_modules/**",
-    "!**/src/demo/**/*.js?(x)",
-    "!<rootDir>/dist/**/*_typing?(s).js?(x)",
-    "!<rootDir>/dist/**/*.spec.js?(x)",
-    "!<rootDir>/dist/**/test/CONSTANTS.js?(x)",
-    "!<rootDir>/dist/index.js?(x)",
-    "!<rootDir>/dist/lib/**",
-    "<rootDir>/dist/**/*.js?(x)"
+    "!**/src/demo/**/*.js",
+    "!**/dist/lib/**/*.js",
+    "!**/dist/test*/**/CONSTANTS.js",
+    "!**/dist/test*/**/*.spec.js"
   ],
   "verbose": true,
   "bail": true,
@@ -26,7 +23,7 @@
     "<rootDir>/dist/"
   ],
   "testMatch": [
-    "<rootDir>/dist/index.spec.js?(x)"
+    "<rootDir>/dist/test*/**/*.spec.js"
   ],
   "moduleFileExtensions": [
     "js",

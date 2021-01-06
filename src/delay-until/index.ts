@@ -1,8 +1,8 @@
 export async function delayUntil(delay: number = 0) {
-  return new Promise((yay) => {
+  return new Promise<void>((resolve) => {
     const delayNum = 'number' === typeof(delay) ? +delay : 0;
 
-    if (delayNum < 1) yay();
-    else setTimeout(yay, delayNum);
+    if (delayNum < 1) resolve();
+    else setTimeout(resolve, delayNum);
   });
 }
