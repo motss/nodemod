@@ -62,12 +62,16 @@ function fetchAs<T, U>(fetchType: FetchType): (
 }
 
 export async function fetchAsArrayBuffer<T = ArrayBuffer, U = ArrayBuffer>(
-  url: string, options?: RequestInit) {
+  url: string,
+  options?: RequestInit
+): Promise<FetchAsReturnType<T, U>> {
   return fetchAs<T, U>('arrayBuffer')(url, options);
 }
 
 export async function fetchAsBlob<T = Blob, U = Blob>(
-  url: string, options?: RequestInit) {
+  url: string,
+  options?: RequestInit
+): Promise<FetchAsReturnType<T, U>> {
   return fetchAs<T, U>('blob')(url, options);
 }
 
@@ -76,12 +80,17 @@ export async function fetchAsBlob<T = Blob, U = Blob>(
 //   return fetchAs<T, U>('buffer')(url, options);
 // }
 
-export async function fetchAsJson<T = {}, U = {}>(url: string, options?: RequestInit) {
+export async function fetchAsJson<T = Record<string, unknown>, U = Error>(
+  url: string,
+  options?: RequestInit
+): Promise<FetchAsReturnType<T, U>> {
   return fetchAs<T, U>('json')(url, options);
 }
 
-export async function fetchAsText<T = string, U = any>(
-  url: string, options?: RequestInit) {
+export async function fetchAsText<T = string, U = Error>(
+  url: string,
+  options?: RequestInit
+): Promise<FetchAsReturnType<T, U>> {
   return fetchAs<T, U>('text')(url, options);
 }
 

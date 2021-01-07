@@ -1,5 +1,12 @@
-export class PollingMeasure {
-  public readonly entryType: string = 'polling-measure';
+export interface PollingMeasureJson {
+  duration: number;
+  entryType: 'polling-measure';
+  name: string;
+  startTime: number;
+}
+
+export class PollingMeasure implements PollingMeasureJson {
+  public readonly entryType = 'polling-measure';
 
   constructor(
     public readonly name: string,
@@ -7,7 +14,7 @@ export class PollingMeasure {
     public readonly startTime: number
   ) {}
 
-  public toJSON() {
+  public toJSON(): PollingMeasureJson {
     return {
       duration: this.duration,
       entryType: this.entryType,

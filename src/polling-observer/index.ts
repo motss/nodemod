@@ -35,9 +35,9 @@ function isPromise<T>(r: T | Promise<T>): r is Promise<T> {
 export class PollingObserver<T> {
   public onfinish?: OnfinishCallback<T>;
 
-  private _forceStop: boolean = false;
+  private _forceStop = false;
   private _records: PollingMeasure[] = [];
-  private _isPolling: boolean = false;
+  private _isPolling = false;
 
   constructor(public conditionCallback: ConditionCallback<T>) {
     if ('function' !== typeof(conditionCallback)) {
@@ -45,13 +45,16 @@ export class PollingObserver<T> {
     }
   }
 
-  public disconnect() {
+  public disconnect(): void {
     this._forceStop = true;
 
     if (!this._isPolling) this._records = [];
   }
 
-  public async observe(callback: PollingCallback<T>, options?: PollingObserverOptions) {
+  public async observe(
+    callback: PollingCallback<T>,
+    options?: PollingObserverOptions
+  ): Promise<void> {
     /**
      * NOTE(motss): To ensure `this._forceStop` is always reset before start observing.
      */
@@ -60,22 +63,23 @@ export class PollingObserver<T> {
     const { interval, timeout }: PollingObserverOptions = options || {};
     const isValidInterval = 'number' === typeof(interval) && interval > 0;
     const obsTimeout = 'number' === typeof(timeout) ? +timeout : -1;
-    const obsInterval = isValidInterval ? +interval! : -1;
+    const obsInterval = isValidInterval ? +(interval as number) : -1;
 
     const perf = await globalPerformance();
     const isInfinitePolling = obsTimeout < 1;
     const records = this._records;
     const onfinishCallback = this.onfinish;
     const conditionCallback = this.conditionCallback;
+    const loop = true;
 
     let totalTime = 0;
     let value: T | null | undefined = void 0;
     let i = 0;
     let status: OnfinishFulfilled<T>['status'] = 'finish';
-    let result: OnfinishValue<T> = {} as any;
+    let result: OnfinishValue<T> = {} as OnfinishValue<T>;
 
     try {
-      polling: while (true) {
+      polling: while (loop) {
         if (this._forceStop) break polling;
 
         /** NOTE(motss): Set to indicate polling initiates */
@@ -123,7 +127,7 @@ export class PollingObserver<T> {
     }
   }
 
-  public takeRecords() {
+  public takeRecords(): PollingMeasure[] {
     return this._records;
   }
 }

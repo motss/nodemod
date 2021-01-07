@@ -4,7 +4,7 @@ import { rawData, secret } from './CONSTANTS.js';
 test('encryption works', async () => {
   const encrypted = await encrypt(rawData, secret);
 
-  expect(encrypted).toMatch(/^([a-z0-9]+)\:(?:[a-z0-9]+)$/i);
+  expect(encrypted).toMatch(/^([a-z\d]+):(?:[a-z\d]+)$/i);
 });
 
 test('encryption always produces unique output', async () => {

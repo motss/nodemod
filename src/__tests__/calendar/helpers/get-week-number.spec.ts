@@ -9,7 +9,7 @@ test.each<TestError>([
   [`null, null`, [null, null]],
 ])(`week number (%s)`, (_, a) => {
   try {
-    getWeekNumber(...(a as [any, any]));
+    getWeekNumber(...(a as [never, never]));
   } catch (e) {
     expect(e.name).toStrictEqual(TypeError.name);
     expect(e.message).toMatch('Cannot read property');

@@ -1,4 +1,4 @@
-export async function delayUntil(delay: number = 0) {
+export async function delayUntil(delay = 0): Promise<void> {
   return new Promise<void>((resolve) => {
     const delayNum = 'number' === typeof(delay) ? +delay : 0;
 

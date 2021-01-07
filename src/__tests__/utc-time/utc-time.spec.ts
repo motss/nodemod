@@ -1,13 +1,13 @@
 import { utcTime } from '../../utc-time/index.js';
 
 const msReplacer = (expected: Date, datetime: Date) => {
-  const msFromExpected = expected.toJSON().replace(/^.+T\d{2}\:\d{2}\:\d{2}\.(\d+)Z/i, '$1');
+  const msFromExpected = expected.toJSON().replace(/^.+T\d{2}:\d{2}:\d{2}\.(\d+)Z/i, '$1');
 
   return new Date(
     datetime
       .toJSON()
       .replace(
-        /^(.+T\d{2}\:\d{2}\:\d{2})\.\d+Z/i,
+        /^(.+T\d{2}:\d{2}:\d{2})\.\d+Z/i,
         (_, s) => {
           return `${s}.${msFromExpected}Z`;
         }
@@ -19,21 +19,21 @@ test(`utcTime works w/o any params`, async () => {
   const d = await utcTime();
 
   expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}\-\d{2}\-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d{3}Z/i);
+  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'startDatetime' is null`, async () => {
-  const d = await utcTime({ startDatetime: null! });
+  const d = await utcTime({ startDatetime: null as never });
 
   expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}\-\d{2}\-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d{3}Z/i);
+  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'offset' is null`, async () => {
-  const d = await utcTime({ offset: null! });
+  const d = await utcTime({ offset: null as never });
 
   expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}\-\d{2}\-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d{3}Z/i);
+  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'offset' is empty object`, async () => {
@@ -42,7 +42,7 @@ test(`'offset' is empty object`, async () => {
   });
 
   expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}\-\d{2}\-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d{3}Z/i);
+  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'startDatetime' is specified`, async () => {

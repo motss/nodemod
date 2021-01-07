@@ -1,5 +1,6 @@
 import { getWeekdays } from '../../calendar/get-weekdays.js';
-import { mockGetWeekdaysData, TestGetWeekdays } from './mocks/get-weekdays.js';
+import type { TestGetWeekdays } from './mocks/get-weekdays.js';
+import { mockGetWeekdaysData } from './mocks/get-weekdays.js';
 
 type TestError = [string, undefined | null];
 test.each<TestError>([
@@ -7,7 +8,7 @@ test.each<TestError>([
   [`null`, null],
 ])(`weekdays (%s)`, (_, a) => {
   try {
-    getWeekdays(a!);
+    getWeekdays(a as never);
   } catch (e) {
     expect(e.name).toStrictEqual(TypeError.name);
     expect(e.message).toMatch('longWeekdayFormat');

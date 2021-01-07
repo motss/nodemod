@@ -5,7 +5,7 @@ export const towno = {
         d: {
           e: [1, 2, 3],
           f: 'random-string',
-          g: () => null,
+          g: (): null => null,
           re: /haha/gi,
           createdAt: new Date(),
         },
@@ -37,7 +37,7 @@ export const towno = {
               },
             ],
           }, {
-            w: () => null,
+            w: (): null => null,
             re: /^hello\sworld/gi,
           }, {
             x: {

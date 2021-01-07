@@ -10,7 +10,7 @@ export interface FetchAsInfo extends Pick<ExtendedFetchResponse, 'size'|'timeout
   headers: UnknownRecord;
 }
 
-export interface FetchAsReturnType<T = any, U = any> {
+export interface FetchAsReturnType<T = Record<string, unknown>, U = Error> {
   status: number;
   info: FetchAsInfo;
 

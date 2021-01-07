@@ -14,7 +14,7 @@ function validateInputs(text: string, secret: string) {
   }
 }
 
-export function encryptSync(text: string, secret: string) {
+export function encryptSync(text: string, secret: string): string {
   validateInputs(text, secret);
 
   const iv = randomBytes(IV_LENGTH);
@@ -25,7 +25,7 @@ export function encryptSync(text: string, secret: string) {
   return `${iv.toString('hex')}:${encrypted.toString('hex')}`;
 }
 
-export function decryptSync(text: string, secret: string) {
+export function decryptSync(text: string, secret: string): string {
   validateInputs(text, secret);
 
   const [iv, encrypted] = text.split(':');
@@ -40,10 +40,10 @@ export function decryptSync(text: string, secret: string) {
   return decrypted.toString();
 }
 
-export async function encrypt(text: string, secret: string) {
+export async function encrypt(text: string, secret: string): Promise<string> {
   return encryptSync(text, secret);
 }
 
-export async function decrypt(text: string, secret: string) {
+export async function decrypt(text: string, secret: string): Promise<string> {
   return decryptSync(text, secret);
 }

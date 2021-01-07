@@ -9,8 +9,8 @@ it(`finishes polling with condition fulfills`, (done) => {
   const obs = new PollingObserver<MockData>(d => Boolean(d && d.items.length > 0));
   obs.observe(
     async () => {
-      return new Promise<MockData>((yay) => {
-        setTimeout(() => yay(data), 2e3);
+      return new Promise<MockData>((resolve) => {
+        setTimeout(() => resolve(data), 2e3);
       });
     },
     { interval: 1e3, timeout: 5e3 });
@@ -29,7 +29,7 @@ it(`timeouts a polling`, (done) => {
   const obs = new PollingObserver<MockData>(() => false);
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 7e3));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 7e3));
     },
     { interval: 1e3, timeout: 5e3 });
 
@@ -51,7 +51,7 @@ it(`timeouts a polling with > 1 repeat`, (done) => {
        * NOTE(motss): The promise resolves after 1s timeout and the next run will be
        * scheduled to happen in roughly (1e3 - 1) milliseconds.
        */
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 1e3, timeout: 5e3 });
 
@@ -69,7 +69,7 @@ it(`reads records when polling finishes`, (done) => {
   const obs = new PollingObserver<MockData>(() => false);
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 1e3, timeout: 5e3 });
 
@@ -101,7 +101,7 @@ it(`clears records when observer disconnects`, (done) => {
   const obs = new PollingObserver<MockData>(() => false);
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 1e3, timeout: 5e3 });
 
@@ -132,7 +132,7 @@ it(`forces polling to stop by disconnecting the observer`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 2e3, timeout: 5e3 });
 
@@ -153,7 +153,7 @@ it(`disconnects observer before first polling initiates`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 2e3, timeout: 5e3 });
 
@@ -161,7 +161,7 @@ it(`disconnects observer before first polling initiates`, (done) => {
     const { status, value } = d as OnfinishFulfilled<MockData>;
 
     expect(status).toStrictEqual('finish');
-    expect(value).toStrictEqual(undefined!);
+    expect(value).toStrictEqual(undefined);
     expect(records).toStrictEqual([]);
     expect(obs.takeRecords()).toStrictEqual([]);
     done();
@@ -173,7 +173,7 @@ it(`disconnects observer before first polling initiates`, (done) => {
 it(`re-observes after disconnected`, async (done) => {
   const getMockData = (): MockData => ({ items: [Math.floor(Math.random() * Math.PI)] });
   const pollingFn = (d: MockData) => async () => {
-    return new Promise<MockData>(yay => setTimeout(() => yay(d), 1));
+    return new Promise<MockData>(resolve => setTimeout(() => resolve(d), 1));
   };
 
   const obs = new PollingObserver<MockData>(() => false);
@@ -221,7 +221,7 @@ it(`polls with optional 'interval'`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { timeout: 5e3 });
 
@@ -246,7 +246,7 @@ it(`polls with optional 'timeout'`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 2e3 });
 
@@ -272,7 +272,7 @@ it(`polls with optional 'options'`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     });
 
   obs.onfinish = (d, records) => {
@@ -292,7 +292,7 @@ it(`polls with async 'conditionCallback'`, (done) => {
 
   obs.observe(
     async () => {
-      return new Promise<MockData>(yay => setTimeout(() => yay(data), 1));
+      return new Promise<MockData>(resolve => setTimeout(() => resolve(data), 1));
     },
     { interval: 2e3, timeout: 5e3 });
 

@@ -1,9 +1,10 @@
-import { OnfinishRejected, PollingObserver } from '../../polling-observer/index.js';
+import type { OnfinishRejected} from '../../polling-observer/index.js';
+import { PollingObserver } from '../../polling-observer/index.js';
 import './setup.js';
 import type { MockData } from './test_typings.js';
 
 it(`throws when 'conditionCallback' is undefined`, () => {
-  expect(() => new PollingObserver(undefined!))
+  expect(() => new PollingObserver(undefined as never))
     .toThrowError(new TypeError(`'conditionCallback' is not defined`));
 });
 

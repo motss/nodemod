@@ -36,7 +36,7 @@ export function signSync<T = UnknownRecord>(
   data: T,
   secret: string,
   options?: SignaturOptions
-) {
+): string {
   const { separator = '.' }: SignaturOptions = options || {};
 
   if (null == data) {
@@ -73,7 +73,7 @@ export function unsignSync<T = UnknownRecord>(
   const [hash, enc] = signature.split(separator, 2);
   const decoded = Buffer.from(
     (hash + '==='.slice((hash.length + 3) % 4))
-      .replace(/\-/gi, '+')
+      .replace(/-/gi, '+')
       .replace(/_/gi, '/'), 'base64')
     .toString('utf8');
   const signedDecoded = urlSafeBase64(
@@ -90,7 +90,7 @@ export async function sign<T = UnknownRecord>(
   data: T,
   secret: string,
   options?: SignaturOptions
-) {
+): Promise<string> {
   return signSync<T>(data, secret, options);
 }
 

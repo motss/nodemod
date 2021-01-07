@@ -5,7 +5,7 @@ test.each<TestError>([
   [`void`, void 0],
   [`null`, null],
 ])(`formatter (%s)`, (_, a) => {
-  expect(getFormatter(a!)).toThrowError(TypeError);
+  expect(getFormatter(a as never)).toThrowError(TypeError);
 });
 
 type TestSuccess = [string, Intl.DateTimeFormat, Date, string];

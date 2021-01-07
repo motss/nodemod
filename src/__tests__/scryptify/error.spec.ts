@@ -3,7 +3,7 @@ import { rawData } from './CONSTANTS.js';
 
 test(`'text' not string`, async () => {
   try {
-    await encrypt(null!, null!);
+    await encrypt(null as never, null as never);
   } catch (e) {
     expect(e).toStrictEqual(new TypeError(`Expected 'text' to be a string, but received 'null'`));
   }
@@ -11,7 +11,7 @@ test(`'text' not string`, async () => {
 
 test(`'secret' not string`, async () => {
   try {
-    await encrypt(rawData, null!);
+    await encrypt(rawData, null as never);
   } catch (e) {
     expect(e).toStrictEqual(new TypeError(`Expected 'secret' to be a string, but received 'null'`));
   }

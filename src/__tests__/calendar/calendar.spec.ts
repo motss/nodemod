@@ -8,7 +8,7 @@ test.each<TestError>([
   [`null`, null],
 ])(`calendar (%s)`, (_, a) => {
   try {
-    calendar(a!);
+    calendar(a as never);
   } catch (e) {
     expect(e.name).toStrictEqual(TypeError.name);
     expect(e.message).toMatch('getUTCFullYear');

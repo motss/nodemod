@@ -1,6 +1,12 @@
 import { html, htmlFragment, htmlFragmentSync, htmlSync } from '../../lit-ntml/index.js';
 
-it.each<[string, (...args: any[]) => any]>([
+type A =
+  | typeof html
+  | typeof htmlFragment
+  | typeof htmlFragmentSync
+  | typeof htmlSync;
+
+it.each<[string, A]>([
   ['html()', html],
   ['htmlFragment()', htmlFragment],
   ['htmlFragmentSync()', htmlFragmentSync],

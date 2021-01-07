@@ -2,7 +2,7 @@ import { utcDate } from '../../utc-date/index.js';
 
 it(`throws when first argument is 'null'`, async () => {
   try {
-    await utcDate(null!);
+    await utcDate(null as never);
   } catch (e) {
     expect(e.name).toStrictEqual('TypeError');
     expect([

@@ -1,17 +1,17 @@
 import type { UTCTimeOffset, UTCTimeOpts } from './custom_typings.js';
 
-function isValidDatetime(datetime: any) {
-  return 'Invalid Date' !== `${new Date(datetime)}`;
+function isValidDatetime(datetime: unknown) {
+  return 'Invalid Date' !== `${new Date(datetime as never)}`;
 }
 
-function isNotANumber(value: any) {
-  return value != null && isNaN(+value);
+function isNotANumber(value: unknown): boolean {
+  return value != null && isNaN(+(value as number));
 }
 
 export function utcTimeSync({
   startDatetime,
   offset,
-}: UTCTimeOpts = {} as UTCTimeOpts) {
+}: UTCTimeOpts = {} as UTCTimeOpts): Date {
   const isNullishDatetime = null == startDatetime;
 
   if (!isNullishDatetime && !isValidDatetime(startDatetime)) {
@@ -58,6 +58,6 @@ export function utcTimeSync({
   ));
 }
 
-export async function utcTime(opts?: UTCTimeOpts) {
+export async function utcTime(opts?: UTCTimeOpts): Promise<Date> {
   return utcTimeSync(opts);
 }

@@ -1,6 +1,10 @@
 import { normalize, normalizeSync } from '../../normalize-diacritics/index.js';
 
-it.each<[string, (...args: any[]) => any]>([
+type A =
+  | typeof normalize
+  | typeof normalizeSync;
+
+it.each<[string, A]>([
   ['normalize()', normalize],
   ['normalizeSync()', normalizeSync],
 ])(`contains %s`, (_, a) => {

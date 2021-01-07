@@ -3,7 +3,7 @@ import { data, secret } from './CONSTANTS.js';
 
 it(`throws when undefined 'data'`, async () => {
   try {
-    await sign(null!, null!);
+    await sign(null as never, null as never);
   } catch (e) {
     expect(e).toStrictEqual(
       new TypeError(`Expected 'data' to be defined, but received 'null'`));
@@ -12,7 +12,7 @@ it(`throws when undefined 'data'`, async () => {
 
 it(`throws when undefined 'secret'`, async () => {
   try {
-    await sign(data, null!);
+    await sign(data, null as never);
   } catch (e) {
     expect(e).toStrictEqual(
       new TypeError(`Expected 'secret' to be defined, but received 'null'`));
@@ -24,7 +24,7 @@ const signature = 'eyJkYXRhIjp7InNlY3JldEluc2lkZSI6IjEyMyIsInNlY3JldEtleSI6NDU2f
 
 it(`throws when undefined 'signature'`, async () => {
   try {
-    await unsign(null!, null!);
+    await unsign(null as never, null as never);
   } catch (e) {
     expect(e).toStrictEqual(
       new TypeError(`Expected 'signature' to be defined, but received 'null'`));
@@ -33,7 +33,7 @@ it(`throws when undefined 'signature'`, async () => {
 
 it(`throws when undefined 'secret'`, async () => {
   try {
-    await unsign(signature, null!);
+    await unsign(signature, null as never);
   } catch (e) {
     expect(e).toStrictEqual(
       new TypeError(`Expected 'secret' to be defined, but received 'null'`));
