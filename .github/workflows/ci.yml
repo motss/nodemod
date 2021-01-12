@@ -34,14 +34,14 @@ jobs:
             echo "CI_SKIP=true" >> $GITHUB_ENV
           fi
 
-          echo "TEST=true" >> $GITHUB_ENV
+          echo "TEST2=true" >> $GITHUB_ENV
 
           echo "github.ref: ${{ github.ref }}"
           echo "github.event.ref: ${{ github.event.ref }}"
           echo "glo: $(git log --format=%B -n 1)"
           echo "env: ${{ env.CI_SKIP }} ${{ env.CI_SKIP == 'false' }}"
           echo "env2: ${{ env.CI_SKIP != 'true' }} ${{ env.CI_SKIP != true }}"
-          echo "env3: ${{ env.TEST }} ${{ env.TEST == true }} ${{ env.TEST == 'true' }}"
+          echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
 
       - name: Setup node@${{ matrix.target }}
         if: env.CI_SKIP == 'false'
