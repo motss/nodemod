@@ -34,8 +34,6 @@ jobs:
             echo "CI_SKIP=true" >> $GITHUB_ENV
           fi
 
-          echo "TEST2=true" >> $GITHUB_ENV
-
           echo "github.ref: ${{ github.ref }}"
           echo "github.event.ref: ${{ github.event.ref }}"
           echo "glo: $(git log --format=%B -n 1)"
@@ -45,17 +43,38 @@ jobs:
           echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
           echo "env4: $TEST2"
 
+      - name: Test Set ENV
+        shell: bash
+        run: |
+          echo "TEST2=true" >> $GITHUB_ENV
+
       - name: Test
         if: env.TEST2 == true
         shell: bash
         run: |
           echo "test2: $TEST2"
+          echo "test2: ${{ env.TEST2 }}"
+
+      - name: Test`
+        if: env.TEST2 == 'true'
+        shell: bash
+        run: |
+          echo "test2: $TEST2"
+          echo "test2: ${{ env.TEST2 }}"
 
       - name: Test2
         if: env.TEST2 != true
         shell: bash
         run: |
           echo "test2: $TEST2"
+          echo "test2: ${{ env.TEST2 }}"
+
+      - name: Test3
+        if: env.TEST3 != 'true'
+        shell: bash
+        run: |
+          echo "test3: $TEST2"
+          echo "test2: ${{ env.TEST2 }}"
 
       - name: Setup node@${{ matrix.target }}
         if: env.CI_SKIP == 'false'
