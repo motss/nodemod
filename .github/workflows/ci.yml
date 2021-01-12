@@ -34,15 +34,6 @@ jobs:
             echo "CI_SKIP=true" >> $GITHUB_ENV
           fi
 
-          echo "github.ref: ${{ github.ref }}"
-          echo "github.event.ref: ${{ github.event.ref }}"
-          echo "glo: $(git log --format=%B -n 1)"
-          echo "env: ${{ env.CI_SKIP }} ${{ env.CI_SKIP == 'false' }}"
-          echo "env2: ${{ env.CI_SKIP != 'true' }} ${{ env.CI_SKIP != true }}"
-          echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
-          echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
-          echo "env4: $TEST2"
-
       - name: Test Set ENV
         shell: bash
         run: |
@@ -77,7 +68,7 @@ jobs:
           echo "test2: ${{ env.TEST2 }}"
 
       - name: Setup node@${{ matrix.target }}
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.target }}
@@ -85,39 +76,39 @@ jobs:
       - name: List versions
         shell: bash
         continue-on-error: true
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           node -v && npm -v && which npm
 
       - name: Install dependencies
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           npm ci --quiet
 
       - name: Lint
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           npm run lint
 
       - name: Build
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           npm run build:test
 
       - name: Check build
         shell: bash
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           pwd && ls -la
 
       - name: Test
-        if: env.CI_SKIP == 'false'
+        if: env.CI_SKIP != 'true'
         run: |
           npm run jest
 
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v1
-        if: env.CI_SKIP == 'false' && success()
+        if: env.CI_SKIP != 'true' && success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
