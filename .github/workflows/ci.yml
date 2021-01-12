@@ -55,7 +55,7 @@ jobs:
           echo "test2: $TEST2"
           echo "test2: ${{ env.TEST2 }}"
 
-      - name: Test`
+      - name: Test1
         if: env.TEST2 == 'true'
         shell: bash
         run: |
@@ -70,10 +70,10 @@ jobs:
           echo "test2: ${{ env.TEST2 }}"
 
       - name: Test3
-        if: env.TEST3 != 'true'
+        if: env.TEST2 != 'true'
         shell: bash
         run: |
-          echo "test3: $TEST2"
+          echo "test2: $TEST2"
           echo "test2: ${{ env.TEST2 }}"
 
       - name: Setup node@${{ matrix.target }}
