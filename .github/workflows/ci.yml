@@ -30,14 +30,14 @@ jobs:
       - name: Git log
         shell: bash
         run: |
-          echo "github.ref: ${{ github.ref }}"
-          echo "github.event.ref: ${{ github.event.ref }}"
-          
-          echo "glo: $(git log --format=%B -n 1)"
-
           if [ -n "$(git log --format=%B -n 1 | grep -iE '^[0-9]+[.]{1,}[0-9]+[.]{1,}[0-9]+')" ]; then
             echo "CI_SKIP=true" >> $GITHUB_ENV
           fi
+
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.event.ref: ${{ github.event.ref }}"
+          echo "glo: $(git log --format=%B -n 1)"
+          echo "env: ${{ env.CI_SKIP }} ${{ env.CI_SKIP == 'false' }}"
 
       - name: Setup node@${{ matrix.target }}
         if: env.CI_SKIP == 'false'
