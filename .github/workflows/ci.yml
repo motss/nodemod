@@ -43,7 +43,7 @@ jobs:
           echo "env2: ${{ env.CI_SKIP != 'true' }} ${{ env.CI_SKIP != true }}"
           echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
           echo "env3: ${{ env.TEST2 }} ${{ github.env.TEST2 }} ${{ env.TEST2 == true }} ${{ env.TEST2 == 'true' }}"
-          echo "env4: $TEST2 ${{ github.$TEST2 }} ${{ $TEST2 == true }} ${{ $TEST2 == 'true' }}"
+          echo "env4: $TEST2"
 
       - name: Test
         if: env.TEST2 == true
