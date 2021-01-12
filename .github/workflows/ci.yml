@@ -38,6 +38,7 @@ jobs:
           echo "github.event.ref: ${{ github.event.ref }}"
           echo "glo: $(git log --format=%B -n 1)"
           echo "env: ${{ env.CI_SKIP }} ${{ env.CI_SKIP == 'false' }}"
+          echo "env2: ${{ env.CI_SKIP != 'true' }} ${{ env.CI_SKIP != true }}"
 
       - name: Setup node@${{ matrix.target }}
         if: env.CI_SKIP == 'false'
