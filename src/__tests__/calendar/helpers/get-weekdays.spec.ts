@@ -1,6 +1,6 @@
-import { getWeekdays } from '../../calendar/get-weekdays.js';
-import type { TestGetWeekdays } from './mocks/get-weekdays.js';
-import { mockGetWeekdaysData } from './mocks/get-weekdays.js';
+import { getWeekdays } from '../../../calendar/index.js';
+import type { TestGetWeekdays } from '../mocks/get-weekdays.js';
+import { mockGetWeekdaysData } from '../mocks/get-weekdays.js';
 
 type TestError = [string, undefined | null];
 test.each<TestError>([

@@ -1,5 +1,5 @@
 import type { Calendar, CalendarOptions } from '../../../calendar/calendar_typing.js';
-import { getFormatter } from '../../../calendar/get-formatter.js';
+import { getFormatter } from '../../../calendar/index.js';
 
 export type TestCalendar = [string, CalendarOptions, Calendar];
 export const mockCalendarData: TestCalendar[] = [

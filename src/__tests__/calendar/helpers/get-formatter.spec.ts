@@ -1,4 +1,4 @@
-import { getFormatter } from '../../calendar/get-formatter.js';
+import { getFormatter } from '../../../calendar/index.js';
 
 type TestError = [string, undefined | null];
 test.each<TestError>([

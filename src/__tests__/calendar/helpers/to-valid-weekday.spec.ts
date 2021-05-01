@@ -1,4 +1,4 @@
-import { toValidWeekday } from '../../../calendar/helpers/to-valid-weekday.js';
+import { toValidWeekday } from '../../../calendar/index.js';
 
 type TestSuccess = [number, number];
 test.each<TestSuccess>([

@@ -1,4 +1,4 @@
-import { normalizeWeekday } from '../../../calendar/helpers/normalize-weekday.js';
+import { normalizeWeekday } from '../../../calendar/index.js';
 
 type TestSuccess = [number, number, boolean, number];
 test.each<TestSuccess>([

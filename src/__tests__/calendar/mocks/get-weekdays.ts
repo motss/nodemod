@@ -1,5 +1,5 @@
 import type { CalendarWeekday, GetWeekdaysOptions } from '../../../calendar/calendar_typing.js';
-import { getFormatter } from '../../../calendar/get-formatter';
+import { getFormatter } from '../../../calendar/index.js';
 
 export type TestGetWeekdays = [string, GetWeekdaysOptions, CalendarWeekday[]];
 export const mockGetWeekdaysData: TestGetWeekdays[] = [

@@ -22,7 +22,6 @@
     "email": "wes.ngrongsen@gmail.com",
     "url": "https://github.com/motss"
   },
-  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": "./dist/index.js",

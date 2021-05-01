@@ -1,4 +1,4 @@
-import { toUTCDate } from '../../../calendar/helpers/to-utc-date.js';
+import { toUTCDate } from '../../../calendar/index.js';
 
 type TestInput = undefined | null | string | number;
 type TestSuccess = [string, [TestInput, TestInput, TestInput], Date];

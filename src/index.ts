@@ -1,4 +1,4 @@
-export * from './calendar/index.js';
+export * from './calendar/calendar.js';
 export * from './deep-clone/index.js';
 export * from './delay-until/index.js';
 export * from './fetch-as/index.js';
