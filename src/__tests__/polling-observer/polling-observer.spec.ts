@@ -1,6 +1,5 @@
 import { PollingObserver } from '../../polling-observer/index.js';
-import type { OnfinishFulfilled } from '../../polling-observer/index.js';
-import type { PollingMeasure } from '../../polling-observer/polling-measure.js';
+import type { OnfinishFulfilled, PollingMeasure } from '../../polling-observer/index.js';
 import './setup.js';
 import type { MockData } from './test_typings.js';
 

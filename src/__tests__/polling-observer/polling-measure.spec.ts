@@ -1,4 +1,4 @@
-import { PollingMeasure } from '../../polling-observer/polling-measure.js';
+import { PollingMeasure } from '../../polling-observer/index.js';
 import './setup.js';
 
 it(`instantiates 'PollingMeasure'`, () => {

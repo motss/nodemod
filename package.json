@@ -46,6 +46,7 @@
     "./utc-date/*": "./dist/utc-date/*",
     "./utc-time": "./dist/utc-time/index.js",
     "./utc-time/*": "./dist/utc-time/*",
+    "./lib": "./dist/lib/index.js",
     "./lib/*": "./dist/lib/*",
     "./lib/clone-deep": "./dist/lib/clone-deep.js",
     "./lib/parse5": "./dist/lib/parse5.js",
