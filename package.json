@@ -78,7 +78,7 @@
     "test": "npm run clean && npm run lint && npm run build:test && npm run jest",
     "ts": "tsc",
     "watch": "tsc --watch",
-    "prepare": "husky install"
+    "prepare": "npm x --no -- husky install"
   },
   "commitlint": {
     "extends": [
