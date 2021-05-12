@@ -1,3 +1,3 @@
-import cloneDeep from 'lodash-es/cloneDeep.js';
-
-export { cloneDeep };
+export {
+  default as cloneDeep
+} from 'lodash-es/cloneDeep.js';
