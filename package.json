@@ -85,6 +85,7 @@
     ]
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.4",
     "@types/parse5": "^6.0.0",
     "@types/prismjs": "^1.16.5",
     "lit-ntml": "^2.18.2",
@@ -96,7 +97,6 @@
     "@reallyland/tsconfig": "^3.0.2",
     "@skypack/package-check": "^0.2.2",
     "@types/jest": "^26.0.23",
-    "@types/lodash-es": "^4.17.3",
     "@types/node": "^15.0.2",
     "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
