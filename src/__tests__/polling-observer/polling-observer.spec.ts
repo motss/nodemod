@@ -1,6 +1,7 @@
-import { PollingObserver } from '../../polling-observer/index.js';
-import type { OnfinishFulfilled, PollingMeasure } from '../../polling-observer/index.js';
 import './setup.js';
+
+import type { OnfinishFulfilled, PollingMeasure } from '../../polling-observer/index.js';
+import { PollingObserver } from '../../polling-observer/index.js';
 import type { MockData } from './test_typings.js';
 
 it(`finishes polling with condition fulfills`, (done) => {

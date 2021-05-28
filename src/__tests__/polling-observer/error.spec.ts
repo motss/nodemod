@@ -1,6 +1,7 @@
+import './setup.js';
+
 import type { OnfinishRejected} from '../../polling-observer/index.js';
 import { PollingObserver } from '../../polling-observer/index.js';
-import './setup.js';
 import type { MockData } from './test_typings.js';
 
 it(`throws when 'conditionCallback' is undefined`, () => {

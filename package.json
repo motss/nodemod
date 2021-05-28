@@ -72,7 +72,7 @@
     "clean": "shx rm -rf .*cache *.log coverage/ dist/ logs/",
     "postinstall": "npm dedupe",
     "jest": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config ./.jestrc.json",
-    "lint": "eslint src/**/*.ts --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "prepublishOnly": "npm run clean && npm run lint && npm run build",
     "test": "npm run clean && npm run lint && npm run build:test && npm run jest",

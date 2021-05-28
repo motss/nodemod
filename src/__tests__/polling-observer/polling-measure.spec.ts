@@ -1,5 +1,6 @@
-import { PollingMeasure } from '../../polling-observer/index.js';
 import './setup.js';
+
+import { PollingMeasure } from '../../polling-observer/index.js';
 
 it(`instantiates 'PollingMeasure'`, () => {
   const entry = new PollingMeasure('polling:0', 100, 100);
