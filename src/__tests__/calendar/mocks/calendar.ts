@@ -1,7 +1,7 @@
-import type { Calendar, CalendarOptions } from '../../../calendar/calendar_typing.js';
 import { getFormatter } from '../../../calendar/index.js';
+import type { Calendar, CalendarInit } from '../../../calendar/typings.js';
 
-export type TestCalendar = [string, CalendarOptions, Calendar];
+export type TestCalendar = [string, CalendarInit, Calendar];
 export const mockCalendarData: TestCalendar[] = [
   [
     `{ date: new Date('2020-02-02'), locale: 'ja-JP' }`,
@@ -10,7 +10,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
     },
     {
       calendar: [
@@ -180,7 +180,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       firstDayOfWeek: -1,
     },
     {
@@ -351,7 +351,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       firstDayOfWeek: 8,
     },
     {
@@ -522,7 +522,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
     },
     {
@@ -714,7 +714,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
     },
@@ -907,7 +907,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       min: new Date('2020-02-05'),
     },
     {
@@ -1083,7 +1083,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       max: new Date('2020-02-25'),
@@ -1282,7 +1282,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       min: new Date('2020-02-05'),
@@ -1486,7 +1486,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       disabledDates: [
@@ -1686,7 +1686,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       disabledDays: [1],
@@ -1887,7 +1887,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       weekNumberType: 'first-full-week',
       firstDayOfWeek: 2,
       disabledDays: [1, 5],
@@ -2069,7 +2069,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       firstDayOfWeek: 2,
@@ -2273,7 +2273,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       firstDayOfWeek: 2,
@@ -2477,7 +2477,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       firstDayOfWeek: 2,
@@ -2681,7 +2681,7 @@ export const mockCalendarData: TestCalendar[] = [
       fullDateFormat: getFormatter(
         Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'short', day: 'numeric' })),
       locale: 'ja-JP',
-      selectedDate: new Date('2020-02-02'),
+      date: new Date('2020-02-02'),
       showWeekNumber: true,
       weekNumberType: 'first-full-week',
       firstDayOfWeek: 2,

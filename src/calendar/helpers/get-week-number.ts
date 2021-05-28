@@ -1,4 +1,4 @@
-import type { WeekNumberType } from '../calendar_typing.js';
+import type { WeekNumberType } from '../typings.js';
 import { toUTCDate } from './to-utc-date.js';
 
 function getNormalizedDate(weekNumberType: WeekNumberType, date: Date): Date {

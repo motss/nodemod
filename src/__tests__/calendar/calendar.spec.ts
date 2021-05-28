@@ -1,5 +1,5 @@
-import type { Calendar, CalendarOptions } from '../../calendar/calendar_typing.js';
 import { calendar } from '../../calendar/index.js';
+import type { Calendar, CalendarInit } from '../../calendar/typings.js';
 import { mockCalendarData } from './mocks/calendar.js';
 
 type TestError = [string, undefined | null];
@@ -15,7 +15,7 @@ test.each<TestError>([
   }
 });
 
-type TestSuccess = [string, CalendarOptions, Calendar];
+type TestSuccess = [string, CalendarInit, Calendar];
 test.each<TestSuccess>(mockCalendarData)(`calendar(%s)`, (_, a, expected) => {
   const d = calendar(a);
 

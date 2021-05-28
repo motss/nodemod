@@ -1,5 +1,5 @@
-import type { WeekNumberType } from '../../../calendar/calendar_typing.js';
 import { getWeekNumber } from '../../../calendar/index.js';
+import type { WeekNumberType } from '../../../calendar/typings.js';
 
 type TestError = [string, [undefined | null, undefined | null]];
 test.each<TestError>([

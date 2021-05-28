@@ -14,7 +14,6 @@ const {
 } = Prism;
 
 export {
-  Token,
   highlight,
   highlightAll,
   highlightAllUnder,
@@ -22,7 +21,9 @@ export {
   hooks,
   languages,
   plugins,
+  Token,
   tokenize,
   util,
 };
+
 export default Prism;

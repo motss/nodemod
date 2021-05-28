@@ -1,7 +1,8 @@
-import type { CalendarWeekday, GetWeekdaysOptions } from '../calendar_typing.js';
+import type { CalendarWeekday } from '../typings.js';
 import { toUTCDate } from './to-utc-date.js';
+import type { GetWeekdaysInit } from './typings.js';
 
-export function getWeekdays(options: GetWeekdaysOptions): CalendarWeekday[] {
+export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
   const {
     firstDayOfWeek = 0,
     showWeekNumber = false,
@@ -9,7 +10,7 @@ export function getWeekdays(options: GetWeekdaysOptions): CalendarWeekday[] {
 
     longWeekdayFormat,
     narrowWeekdayFormat,
-  } = options || {};
+  } = init || {};
 
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
   const weekLabel2 = weekLabel || 'Wk';

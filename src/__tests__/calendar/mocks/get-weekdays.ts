@@ -1,7 +1,8 @@
-import type { CalendarWeekday, GetWeekdaysOptions } from '../../../calendar/calendar_typing.js';
+import type { GetWeekdaysInit } from '../../../calendar/helpers/typings.js';
 import { getFormatter } from '../../../calendar/index.js';
+import type { CalendarWeekday } from '../../../calendar/typings.js';
 
-export type TestGetWeekdays = [string, GetWeekdaysOptions, CalendarWeekday[]];
+export type TestGetWeekdays = [string, GetWeekdaysInit, CalendarWeekday[]];
 export const mockGetWeekdaysData: TestGetWeekdays[] = [
   [
     `{ ... }`,

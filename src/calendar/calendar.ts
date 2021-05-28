@@ -1,8 +1,8 @@
-import type { Calendar, CalendarDay, CalendarOptions } from './calendar_typing.js';
 import { getWeekNumber } from './helpers/get-week-number.js';
 import { normalizeWeekday } from './helpers/normalize-weekday.js';
 import { toUTCDate } from './helpers/to-utc-date.js';
 import { toValidWeekday } from './helpers/to-valid-weekday.js';
+import type { Calendar, CalendarDay, CalendarInit } from './typings.js';
 
 //  Month Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 //  Days   31  28  31  30  31  30  31  31  30  31  30  31
@@ -23,27 +23,26 @@ import { toValidWeekday } from './helpers/to-valid-weekday.js';
 //   1  2  3  4  5  6  7        5 - 5 < 0 ? 6 : 5 - 5;
 //  Sa Su Mo Tu We Th Fr
 //                     1        5 - 6 < 0 ? 6 : 5 - 6;
-export function calendar(options: CalendarOptions): Calendar {
+export function calendar(init: CalendarInit): Calendar {
   const {
+    date,
     dayFormat,
-    fullDateFormat,
-    locale = 'en-US',
-    selectedDate,
-
     disabledDates = [],
     disabledDays = [],
     firstDayOfWeek = 0,
+    fullDateFormat,
+    locale = 'en-US',
     max,
     min,
     showWeekNumber = false,
     weekLabel = 'Week',
     weekNumberType = 'first-4-day-week',
-  }: CalendarOptions = options || {};
+  }: CalendarInit = init || {};
 
   const firstDayOfWeek2 = toValidWeekday(firstDayOfWeek);
 
-  const dateYear = selectedDate.getUTCFullYear();
-  const dateMonth = selectedDate.getUTCMonth();
+  const dateYear = date.getUTCFullYear();
+  const dateMonth = date.getUTCMonth();
   const firstDateOfMonth = toUTCDate(dateYear, dateMonth, 1);
 
   const disabledDaysSet = new Set(
