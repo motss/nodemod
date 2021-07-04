@@ -131,7 +131,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "prepublishOnly": "npm run check && npm run lint:build && npm run build",
-    "test": "c8 --reporter=lcov --exclude=src/tests uvu -r @swc/register src/__tests__/calendar",
+    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__/deep-clone",
     "test:watch": "npm run clean && npm t && watchlist src -- npm t",
     "ts": "tsc",
     "watch": "tsc --watch",
@@ -143,7 +143,7 @@
     ]
   },
   "dependencies": {
-    "@types/lodash-es": "^4.17.4",
+    "@reallyland/esm": "^0.0.3",
     "lit-ntml": "^2.20.0-rc.0",
     "normalize-diacritics": "^2.15.1-rc.2",
     "tslib": "^2.1.0"
@@ -152,6 +152,7 @@
     "@commitlint/config-conventional": "^12.1.3",
     "@reallyland/tsconfig": "^3.0.2",
     "@skypack/package-check": "^0.2.2",
+    "@swc/core": "^1.2.62",
     "@swc/register": "^0.1.7",
     "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.10",
@@ -163,8 +164,8 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-regexp": "^0.13.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "esm": "github:agoric-labs/esm#Agoric-built",
     "full-icu": "^1.3.4",
-    "lodash-es": "^4.17.21",
     "nock": "^13.0.11",
     "node-fetch": "^2.6.0",
     "parse5": "^6.0.1",
@@ -184,5 +185,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "esm": {
+    "cjs": true,
+    "mode": "all",
+    "await": true,
+    "force": true,
+    "wasm": true
   }
 }
