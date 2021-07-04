@@ -1,7 +1,10 @@
-import { toValidWeekday } from '../../../calendar/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { toValidWeekday } from '../../../calendar/index';
 
 type TestSuccess = [number, number];
-test.each<TestSuccess>([
+([
   [0, 0],
   [1, 1],
   [2, 2],
@@ -23,6 +26,15 @@ test.each<TestSuccess>([
   [-7, 0],
   [-8, 6],
   [-9, 5],
-])(`valid weekday (%i)`, (a, expected) => {
-  expect(toValidWeekday(a)).toStrictEqual(expected);
+] as TestSuccess[]).forEach(([
+  testWeekday,
+  expected,
+]) => {
+  test(`valid weekday (weekday=${testWeekday})`, () => {
+    const result = toValidWeekday(testWeekday);
+
+    assert.is(result, expected);
+  });
 });
+
+test.run();

@@ -1,5 +1,5 @@
-import type { WeekNumberType } from '../typings.js';
-import { toUTCDate } from './to-utc-date.js';
+import type { WeekNumberType } from '../typings';
+import { toUTCDate } from './to-utc-date';
 
 function getNormalizedDate(weekNumberType: WeekNumberType, date: Date): Date {
   const fy = date.getUTCFullYear();

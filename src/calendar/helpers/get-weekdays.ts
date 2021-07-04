@@ -1,6 +1,6 @@
-import type { CalendarWeekday } from '../typings.js';
-import { toUTCDate } from './to-utc-date.js';
-import type { GetWeekdaysInit } from './typings.js';
+import type { CalendarWeekday } from '../typings';
+import { toUTCDate } from './to-utc-date';
+import type { GetWeekdaysInit } from './typings';
 
 export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
   const {

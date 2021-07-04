@@ -1,7 +1,10 @@
-import { normalizeWeekday } from '../../../calendar/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { normalizeWeekday } from '../../../calendar/index';
 
 type TestSuccess = [number, number, boolean, number];
-test.each<TestSuccess>([
+([
   [0, 0, false, 0],
   [0, 1, false, 6],
   [0, 2, false, 5],
@@ -49,6 +52,17 @@ test.each<TestSuccess>([
   [6, 4, true, 3],
   [6, 5, true, 2],
   [6, 6, true, 1],
-])(`normalized weekday (%i, %i, %s)`, (a, b, c, expected) => {
-  expect(normalizeWeekday(a, b, c)).toStrictEqual(expected);
+] as TestSuccess[]).forEach(([
+  testWeekday,
+  testFirstDayOfWeek,
+  testShowWeekNumber,
+  expected,
+]) => {
+  test(`normalized weekday (weekday=${testWeekday}; firstDayOfWeek=${testFirstDayOfWeek}; showWeekNumber=${testShowWeekNumber})`, () => {
+    const result = normalizeWeekday(testWeekday, testFirstDayOfWeek, testShowWeekNumber);
+
+    assert.is(result, expected);
+  });
 });
+
+test.run();

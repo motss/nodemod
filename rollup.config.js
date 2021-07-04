@@ -28,7 +28,7 @@ const allModules = readdirSync('./src').filter((n) => {
 function pluginFn(format, minify) {
   return [
     typescript({
-      tsconfig: './tsconfig.prod.json',
+      tsconfig: './tsconfig.json',
       useTsconfigDeclarationDir: true,
     }),
     minify && terser({
@@ -77,9 +77,6 @@ const multiBuild = allModules.reduce((p, n) => {
       plugins: pluginFn(format),
       treeshake: { moduleSifeEffects: false },
       external: [
-        '../lib/clone-deep.js',
-        '../lib/parse5.js',
-        './deep-clone/index.js',
         './fetch-as/index.js',
         './lit-ntml/index.js',
         './normalize-diacritics/index.js',

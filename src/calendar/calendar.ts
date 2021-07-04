@@ -1,8 +1,8 @@
-import { getWeekNumber } from './helpers/get-week-number.js';
-import { normalizeWeekday } from './helpers/normalize-weekday.js';
-import { toUTCDate } from './helpers/to-utc-date.js';
-import { toValidWeekday } from './helpers/to-valid-weekday.js';
-import type { Calendar, CalendarDay, CalendarInit } from './typings.js';
+import { getWeekNumber } from './helpers/get-week-number';
+import { normalizeWeekday } from './helpers/normalize-weekday';
+import { toUTCDate } from './helpers/to-utc-date';
+import { toValidWeekday } from './helpers/to-valid-weekday';
+import type { Calendar, CalendarDay, CalendarInit } from './typings';
 
 //  Month Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 //  Days   31  28  31  30  31  30  31  31  30  31  30  31

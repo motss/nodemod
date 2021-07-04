@@ -2,6 +2,7 @@
   "extends": "@reallyland/tsconfig/browser",
   "compilerOptions": {
     "declarationDir": "dist",
+    "importHelpers": true,
     "outDir": "dist",
     "rootDir": "src",
   },

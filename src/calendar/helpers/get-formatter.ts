@@ -1,4 +1,4 @@
-import type { DateTimeFormatter } from '../typings.js';
+import type { DateTimeFormatter } from '../typings';
 
 export function getFormatter(formatter: Intl.DateTimeFormat): DateTimeFormatter {
   /**
