@@ -1,4 +1,7 @@
-import { html, htmlFragment, htmlFragmentSync, htmlSync } from '../../lit-ntml/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { html, htmlFragment, htmlFragmentSync, htmlSync } from '../../lit-ntml/index';
 
 type A =
   | typeof html
@@ -6,11 +9,15 @@ type A =
   | typeof htmlFragmentSync
   | typeof htmlSync;
 
-it.each<[string, A]>([
+([
   ['html()', html],
   ['htmlFragment()', htmlFragment],
   ['htmlFragmentSync()', htmlFragmentSync],
   ['htmlSync()', htmlSync],
-])(`contains %s`, (_, a) => {
-  expect(a).toBeTruthy();
+] as [string, A][]).forEach(([testName, testFn]) => {
+  test(`contains ${testName}`, () => {
+    assert.ok(testFn);
+  });
 });
+
+test.run();
