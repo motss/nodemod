@@ -3,7 +3,7 @@ import type {
   FetchAsReturnType,
   FetchType,
   UnknownRecord,
-} from './custom_typings.js';
+} from './custom_typings';
 
 // import {
 //   Blob,
