@@ -1,6 +1,5 @@
-import { delayUntil } from '../delay-until/index.js';
-import { globalPerformance } from './global-performance.js';
-import { PollingMeasure } from './polling-measure.js';
+import { delayUntil } from '../delay-until/index';
+import { PollingMeasure } from './polling-measure';
 
 export interface PollingObserverOptions {
   timeout?: number;
@@ -18,7 +17,7 @@ export interface OnfinishFulfilled<T> {
   value: T | null | undefined;
 }
 export interface OnfinishRejected {
-  status: 'error';
+  readonly status: 'error';
   reason: Error;
 }
 export type OnfinishValue<T> = OnfinishFulfilled<T> | OnfinishRejected;
@@ -31,6 +30,8 @@ type OnfinishCallback<T> = (
 function isPromise<T>(r: T | Promise<T>): r is Promise<T> {
   return 'function' === typeof((r as Promise<T>).then);
 }
+
+const perf = globalThis.performance;
 
 export class PollingObserver<T> {
   public onfinish?: OnfinishCallback<T>;
@@ -63,9 +64,8 @@ export class PollingObserver<T> {
     const { interval, timeout }: PollingObserverOptions = options || {};
     const isValidInterval = 'number' === typeof(interval) && interval > 0;
     const obsTimeout = 'number' === typeof(timeout) ? +timeout : -1;
-    const obsInterval = isValidInterval ? +(interval as number) : -1;
+    const obsInterval = isValidInterval ? +(interval as number) : 100;
 
-    const perf = await globalPerformance();
     const isInfinitePolling = obsTimeout < 1;
     const records = this._records;
     const onfinishCallback = this.onfinish;

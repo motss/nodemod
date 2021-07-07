@@ -1,27 +1,28 @@
-import './setup.js';
+import './setup';
 
-import { PollingMeasure } from '../../polling-observer/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
 
-it(`instantiates 'PollingMeasure'`, () => {
+import { PollingMeasure } from '../../polling-observer/index';
+
+test(`instantiates 'PollingMeasure'`, () => {
   const entry = new PollingMeasure('polling:0', 100, 100);
 
-  expect(entry).toBeInstanceOf(PollingMeasure);
-  expect(entry).toMatchObject({
-    duration: expect.any(Number),
-    entryType: expect.stringMatching('polling-measure'),
-    name: expect.stringMatching(/^polling:\d+/i),
-    startTime: expect.any(Number),
-  } as PollingMeasure);
+  assert.instance(entry, PollingMeasure);
+  assert.type(entry.duration, 'number');
+  assert.is(entry.entryType, 'polling-measure');
+  assert.match(entry.name, 'polling:');
+  assert.type(entry.startTime, 'number');
 });
 
-it(`returns JSON object via '.toJSON()'`, () => {
+test(`returns JSON object via '.toJSON()'`, () => {
   const entry = new PollingMeasure('polling:0', 100, 100);
 
-  expect(entry.toJSON()).not.toBeInstanceOf(PollingMeasure);
-  expect(entry).toMatchObject({
-    duration: expect.any(Number),
-    entryType: expect.stringMatching('polling-measure'),
-    name: expect.stringMatching(/^polling:\d+/i),
-    startTime: expect.any(Number),
-  } as PollingMeasure);
+  assert.not.instance(entry.toJSON, PollingMeasure);
+  assert.type(entry.duration, 'number');
+  assert.is(entry.entryType, 'polling-measure');
+  assert.match(entry.name, 'polling:');
+  assert.type(entry.startTime, 'number');
 });
+
+test.run();

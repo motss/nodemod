@@ -1,27 +1,36 @@
-import './setup.js';
+import './setup';
 
-import type { OnfinishRejected} from '../../polling-observer/index.js';
-import { PollingObserver } from '../../polling-observer/index.js';
-import type { MockData } from './test_typings.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
 
-it(`throws when 'conditionCallback' is undefined`, () => {
-  expect(() => new PollingObserver(undefined as never))
-    .toThrowError(new TypeError(`'conditionCallback' is not defined`));
+import type { OnfinishRejected} from '../../polling-observer/index';
+import { PollingObserver } from '../../polling-observer/index';
+import type { MockData } from './test_typings';
+
+test(`throws when 'conditionCallback' is undefined`, () => {
+  assert.throws(
+    () => new PollingObserver(undefined as never),
+    new TypeError(`'conditionCallback' is not defined`)
+  );
 });
 
-it(`stops polling when error occurs`, (done) => {
+test(`stops polling when error occurs`, async () => {
   const obs = new PollingObserver<MockData>(() => false);
+  const task = new Promise<OnfinishRejected>((resolve) => {
+    obs.onfinish = data => resolve(data as OnfinishRejected);
+  });
+
   obs.observe(
     async () => {
       throw new Error('polling error');
     },
-    { interval: 1e3 });
+    { interval: 1e3 }
+  );
 
-  obs.onfinish = (d) => {
-    const { status, reason } = d as OnfinishRejected;
+  const { reason, status } = await task;
 
-    expect(status).toStrictEqual('error');
-    expect(reason).toStrictEqual(new Error('polling error'));
-    done();
-  };
-}, 10e3);
+  assert.is(status, 'error');
+  assert.equal(reason, new Error('polling error'));
+});
+
+test.run();
