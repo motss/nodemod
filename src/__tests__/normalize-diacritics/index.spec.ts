@@ -1,12 +1,21 @@
-import { normalize, normalizeSync } from '../../normalize-diacritics/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { normalize, normalizeSync } from '../../normalize-diacritics/index';
 
 type A =
   | typeof normalize
   | typeof normalizeSync;
 
-it.each<[string, A]>([
-  ['normalize()', normalize],
-  ['normalizeSync()', normalizeSync],
-])(`contains %s`, (_, a) => {
-  expect(a).toBeTruthy();
+(
+  [
+    ['normalize()', normalize],
+    ['normalizeSync()', normalizeSync],
+  ] as [string, A][]
+).forEach(([, fn]) => {
+  test('contains %s', () => {
+    assert.ok(fn);
+  });
 });
+
+test.run();
