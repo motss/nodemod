@@ -1,4 +1,7 @@
-import { utcTime } from '../../utc-time/index.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { utcTime } from '../../utc-time/index';
 
 const msReplacer = (expected: Date, datetime: Date) => {
   const msFromExpected = expected.toJSON().replace(/^.+T\d{2}:\d{2}:\d{2}\.(\d+)Z/i, '$1');
@@ -18,22 +21,22 @@ const msReplacer = (expected: Date, datetime: Date) => {
 test(`utcTime works w/o any params`, async () => {
   const d = await utcTime();
 
-  expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
+  assert.instance(d, Date);
+  assert.match(d.toJSON(), /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'startDatetime' is null`, async () => {
   const d = await utcTime({ startDatetime: null as never });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
+  assert.instance(d, Date);
+  assert.match(d.toJSON(), /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'offset' is null`, async () => {
   const d = await utcTime({ offset: null as never });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
+  assert.instance(d, Date);
+  assert.match(d.toJSON(), /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'offset' is empty object`, async () => {
@@ -41,8 +44,8 @@ test(`'offset' is empty object`, async () => {
     offset: {},
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d.toJSON()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
+  assert.instance(d, Date);
+  assert.match(d.toJSON(), /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/i);
 });
 
 test(`'startDatetime' is specified`, async () => {
@@ -51,8 +54,8 @@ test(`'startDatetime' is specified`, async () => {
     startDatetime: datetime,
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(new Date(datetime));
+  assert.instance(d, Date);
+  assert.equal(d, new Date(datetime));
 });
 
 test(`'startDatetime' is specified with offset`, async () => {
@@ -67,8 +70,8 @@ test(`'startDatetime' is specified with offset`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(new Date('2018-03-03T06:00:06.027Z'));
+  assert.instance(d, Date);
+  assert.equal(d, new Date('2018-03-03T06:00:06.027Z'));
 });
 
 test(`'offset.hour' is positive`, async () => {
@@ -80,8 +83,9 @@ test(`'offset.hour' is positive`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -102,8 +106,9 @@ test(`'offset.hour' is negative`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -124,8 +129,9 @@ test(`'offset.minute' is positive`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -146,8 +152,9 @@ test(`'offset.minute' is negative`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -168,8 +175,9 @@ test(`'offset.second' is positive`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -190,8 +198,9 @@ test(`'offset.second' is negative`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -212,8 +221,9 @@ test(`'offset.millisecond' is positive`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -235,8 +245,9 @@ test(`'offset.millisecond' is negative`, async () => {
     },
   });
 
-  expect(d instanceof Date).toBe(true);
-  expect(d).toEqual(
+  assert.instance(d, Date);
+  assert.equal(
+    d,
     msReplacer(d, new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -248,3 +259,5 @@ test(`'offset.millisecond' is negative`, async () => {
     )))
   );
 });
+
+test.run();
