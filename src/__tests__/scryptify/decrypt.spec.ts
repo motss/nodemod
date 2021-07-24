@@ -1,11 +1,14 @@
-import { decrypt, encrypt } from '../../scryptify/index.js';
-import { rawData, secret } from './CONSTANTS.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { decrypt, encrypt } from '../../scryptify/index';
+import { rawData, secret } from './CONSTANTS';
 
 test('decryption works', async () => {
   const encrypted = await encrypt(rawData, secret);
   const decrypted = await decrypt(encrypted, secret);
 
-  expect(decrypted).toStrictEqual(rawData);
+  assert.equal(decrypted, rawData);
 });
 
 test('decryption always works on unique encrypted sets from the same raw data', async () => {
@@ -19,6 +22,9 @@ test('decryption always works on unique encrypted sets from the same raw data', 
 
   for (const n of encryptedSet) {
     const decrypted = await decrypt(n, secret);
-    expect(decrypted).toStrictEqual(rawData);
+
+    assert.equal(decrypted, rawData);
   }
 });
+
+test.run();

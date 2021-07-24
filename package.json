@@ -131,7 +131,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "prepublishOnly": "npm run check && npm run lint:build && npm run build",
-    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__/polling-observer",
+    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__/scryptify",
     "test:watch": "npm run clean && npm t && watchlist src -- npm t",
     "ts": "tsc",
     "watch": "tsc --watch",

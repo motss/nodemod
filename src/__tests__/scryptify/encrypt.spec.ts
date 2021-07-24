@@ -1,10 +1,13 @@
-import { encrypt } from '../../scryptify/index.js';
-import { rawData, secret } from './CONSTANTS.js';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
+
+import { encrypt } from '../../scryptify/index';
+import { rawData, secret } from './CONSTANTS';
 
 test('encryption works', async () => {
   const encrypted = await encrypt(rawData, secret);
 
-  expect(encrypted).toMatch(/^([a-z\d]+):(?:[a-z\d]+)$/i);
+  assert.match(encrypted, /^([a-z\d]+):(?:[a-z\d]+)$/i);
 });
 
 test('encryption always produces unique output', async () => {
@@ -17,5 +20,7 @@ test('encryption always produces unique output', async () => {
 
   await Promise.all(tasks);
 
-  expect(encryptedSet.size).toStrictEqual(len);
+  assert.is(encryptedSet.size, len);
 });
+
+test.run();
