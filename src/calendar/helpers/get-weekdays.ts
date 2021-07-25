@@ -12,12 +12,10 @@ export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
     narrowWeekdayFormat,
   } = init || {};
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
-  /** FIXME(rongsen): c8 outputs incorrect test coverage mapping for unknown reason */
   /* c8 ignore start */
-  const $weekLabel = (console.debug('1'), weekLabel) || (console.debug('2'), 'Wk');
+  /** FIXME(rongsen): c8 outputs incorrect test coverage mapping for unknown reason */
+  const $weekLabel = weekLabel || 'Wk';
   /* c8 ignore stop */
-
-  console.debug({ weekLabel, $weekLabel });
 
   const weekdays: CalendarWeekday[] = [
     ...(
