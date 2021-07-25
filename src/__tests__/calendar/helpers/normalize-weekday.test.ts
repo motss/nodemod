@@ -65,4 +65,4 @@ type TestSuccess = [number, number, boolean, number];
   });
 });
 
-test.run();
+test.run()

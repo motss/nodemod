@@ -4,7 +4,8 @@ import { readdirSync } from 'fs';
 
 import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
-import typescript from 'rollup-plugin-typescript2';
+// import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 
 // if (!('toPascalCase' in String.prototype)) {
 //   Object.defineProperty(String.prototype, 'toPascalCase', {
@@ -29,7 +30,8 @@ function pluginFn(format, minify) {
   return [
     typescript({
       tsconfig: './tsconfig.json',
-      useTsconfigDeclarationDir: true,
+      exclude: ['dist', 'src/__tests__'],
+      // useTsconfigDeclarationDir: true,
     }),
     minify && terser({
       compress: true,

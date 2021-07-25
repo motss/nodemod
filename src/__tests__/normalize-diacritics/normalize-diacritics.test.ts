@@ -18,4 +18,4 @@ type A =
   });
 });
 
-test.run();
+test.run()

@@ -1,5 +1,6 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
+import fetch from 'node-fetch';
 import { Buffer } from 'safe-buffer';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
@@ -32,6 +33,7 @@ const server = setupServer(
 );
 
 test.before(() => {
+  Object.assign(globalThis, { fetch });
   server.listen();
 });
 
@@ -40,7 +42,15 @@ test.after.each(() => {
 });
 
 test.after(() => {
+  Object.assign(globalThis, { fetch: undefined });
   server.close();
+});
+
+test('throws when invalid URL', async () => {
+  const { status, error } = await fetchAsJson('/invalid-url');
+
+  assert.is(status, -1);
+  assert.equal(error, new TypeError('Only absolute URLs are supported'));
 });
 
 test(`returns response with 'fetchAsArrayBuffer'`, async () => {
@@ -113,7 +123,7 @@ test(`returns failed response with 'fetchAsText'`, async () => {
   assert.is(error, JSON.stringify({ ...errorData }));
 });
 
-test.run();
+test.run()
 
 // it(`returns response with 'fetchAsBuffer'`, async () => {
   //   try {

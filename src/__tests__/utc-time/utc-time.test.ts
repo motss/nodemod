@@ -260,4 +260,4 @@ test(`'offset.millisecond' is negative`, async () => {
   );
 });
 
-test.run();
+test.run()

@@ -121,7 +121,7 @@
     "dist/**/*.*js",
     "dist/**/*.d.ts.map",
     "dist/**/*.d.ts",
-    "!dist/test*/**/*.*"
+    "!dist/**/*test*/**/*.*"
   ],
   "scripts": {
     "build": "node --max-old-space-size=8192 ./node_modules/rollup/dist/bin/rollup --config ./rollup.config.js",
@@ -130,12 +130,12 @@
     "postinstall": "npm dedupe",
     "lint": "eslint src/**/*.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
-    "prepublishOnly": "npm run check && npm run lint:build && npm run build",
-    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__/scryptify",
+    "prepublishOnly": "npm run check && npm run lint:build && npm run ts",
+    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__",
     "test:watch": "npm run clean && npm t && watchlist src -- npm t",
     "ts": "tsc",
     "watch": "tsc --watch",
-    "prepare": "npm x -- husky@latest install"
+    "prepare": "npm x -y -- husky@latest install"
   },
   "commitlint": {
     "extends": [
@@ -151,6 +151,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
     "@reallyland/tsconfig": "^3.0.2",
+    "@rollup/plugin-typescript": "^8.2.3",
     "@skypack/package-check": "^0.2.2",
     "@swc/core": "^1.2.62",
     "@swc/register": "^0.1.7",
@@ -164,7 +165,6 @@
     "eslint-plugin-regexp": "^0.13.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "esm": "github:agoric-labs/esm#Agoric-built",
-    "hanbi": "^1.0.1",
     "msw": "^0.33.0",
     "parse5": "^6.0.1",
     "prismjs": "^1.20.0",

@@ -122,4 +122,4 @@ test(`deep cloning with 'absolute: true' before mutating cloned object`, async (
   assert.not.equal(result, object0);
 });
 
-test.run();
+test.run()

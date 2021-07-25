@@ -31,4 +31,4 @@ type TestSuccess = [string, Intl.DateTimeFormat, Date, string];
   });
 });
 
-test.run();
+test.run()

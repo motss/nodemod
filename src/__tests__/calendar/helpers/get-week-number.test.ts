@@ -65,4 +65,4 @@ type TestSuccess = [string, [number, number, number, number]];
   });
 });
 
-test.run();
+test.run()

@@ -51,4 +51,4 @@ type TestSuccess = [string, CalendarInit, Calendar];
   });
 });
 
-test.run();
+test.run()

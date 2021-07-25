@@ -43,4 +43,4 @@ test('returns with string', async () => {
   assert.is(d, '{ 123');
 });
 
-test.run();
+test.run()

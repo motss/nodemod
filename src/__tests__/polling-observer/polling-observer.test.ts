@@ -1,30 +1,9 @@
-import './setup';
-
-import { stubMethod } from 'hanbi';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
 import type { OnfinishFulfilled, PollingMeasure } from '../../polling-observer/index';
 import { PollingObserver } from '../../polling-observer/index';
 import type { MockData } from './test_typings';
-
-const mockSetTimeout = stubMethod(globalThis, 'setTimeout');
-
-test.before.each(() => {
-  mockSetTimeout.callsFake((cb) => {
-    return cb() as unknown as NodeJS.Timeout;
-  });
-  assert.not.equal(globalThis.setTimeout, mockSetTimeout.original);
-});
-
-test.after.each(() => {
-  mockSetTimeout.reset();
-});
-
-test.after(() => {
-  mockSetTimeout.restore();
-  assert.equal(globalThis.setTimeout, mockSetTimeout.original);
-});
 
 ([
   ['finishes', d => Boolean(d?.items.length), 'finish'],

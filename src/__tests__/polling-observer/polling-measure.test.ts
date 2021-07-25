@@ -1,5 +1,3 @@
-import './setup';
-
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
@@ -25,4 +23,4 @@ test(`returns JSON object via '.toJSON()'`, () => {
   assert.type(entry.startTime, 'number');
 });
 
-test.run();
+test.run()

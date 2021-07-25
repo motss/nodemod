@@ -28,4 +28,4 @@ type TestSuccess = [[TestInput, TestInput, TestInput], Date];
   });
 });
 
-test.run();
+test.run()

@@ -18,4 +18,4 @@ test(`returns with defined 'options[separator]'`, async () => {
   assert.is(d, 'eyJkYXRhIjp7InNlY3JldEluc2lkZSI6IjEyMyIsInNlY3JldEtleSI6NDU2fX0:WlF_-gDYzfBBPksdvhVvaP_MQ9PWoRiwADbI3MapRg4');
 });
 
-test.run();
+test.run()

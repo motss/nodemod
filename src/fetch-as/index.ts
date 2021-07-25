@@ -13,8 +13,6 @@ import type {
 //   Response,
 // } from 'node-fetch';
 
-// import fetch from 'node-fetch';
-
 function getResponseHeaders(headers: Headers) {
   const d: UnknownRecord = {};
 
