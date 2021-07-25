@@ -144,14 +144,13 @@
   },
   "dependencies": {
     "@reallyland/esm": "^0.0.3",
-    "lit-ntml": "^2.20.0-rc.0",
+    "lit-ntml": "^2.20.0",
     "normalize-diacritics": "^2.15.1-rc.2",
     "tslib": "^2.1.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
     "@reallyland/tsconfig": "^3.0.2",
-    "@rollup/plugin-typescript": "^8.2.3",
     "@skypack/package-check": "^0.2.2",
     "@swc/core": "^1.2.62",
     "@swc/register": "^0.1.7",
@@ -168,10 +167,6 @@
     "msw": "^0.33.0",
     "parse5": "^6.0.1",
     "prismjs": "^1.20.0",
-    "rollup": "^2.47.0",
-    "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
     "shx": "^0.3.2",
     "typescript": "^4.3.2",
     "uvu": "^0.5.1",
