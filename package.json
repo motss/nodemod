@@ -144,7 +144,7 @@
   },
   "dependencies": {
     "@reallyland/esm": "^0.0.3",
-    "lit-ntml": "^2.20.0",
+    "lit-ntml": "^3.0.0-rc.0",
     "normalize-diacritics": "^2.15.1-rc.2",
     "tslib": "^2.1.0"
   },
