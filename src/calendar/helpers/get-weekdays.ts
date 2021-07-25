@@ -11,28 +11,33 @@ export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
     longWeekdayFormat,
     narrowWeekdayFormat,
   } = init || {};
-
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
-  const weekLabel2 = weekLabel || 'Wk';
-  const initialValue: CalendarWeekday[] =
-    showWeekNumber ?
-    [{
-      label: weekLabel2 === 'Wk' ? 'Week' : weekLabel2,
-      value: weekLabel2,
-    }] :
-    [];
+  /** FIXME(rongsen): c8 outputs incorrect test coverage mapping for unknown reason */
+  /* c8 ignore start */
+  const $weekLabel = (console.debug('1'), weekLabel) || (console.debug('2'), 'Wk');
+  /* c8 ignore stop */
 
-  const weekdays = Array.from(Array(7)).reduce<CalendarWeekday[]>((p, _, i) => {
-    const d = toUTCDate(2017, 0, fixedFirstDayOfWeek + i);
+  console.debug({ weekLabel, $weekLabel });
 
-    /** NOTE: Stripping LTR mark away for x-browser compatibilities and consistency reason */
-    p.push({
-      label: longWeekdayFormat(d),
-      value: narrowWeekdayFormat(d),
-    });
+  const weekdays: CalendarWeekday[] = [
+    ...(
+      showWeekNumber ?
+        [{
+          label: $weekLabel === 'Wk' ? 'Week' : $weekLabel,
+          value: $weekLabel,
+        }] :
+        []
+    ),
+    ...Array.from(Array(7)).map<CalendarWeekday>((_, i) => {
+      const d = toUTCDate(2017, 0, fixedFirstDayOfWeek + i);
 
-    return p;
-  }, initialValue);
+      /** NOTE: Stripping LTR mark away for x-browser compatibilities and consistency reason */
+      return {
+        label: longWeekdayFormat(d),
+        value: narrowWeekdayFormat(d),
+      };
+    }),
+  ];
 
   return weekdays;
 }
