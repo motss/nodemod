@@ -2,7 +2,7 @@ import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
 import { deepClone } from '../../deep-clone/index';
-import { object0,object1, object2 } from './CONSTANTS';
+import { object0, object1, object2 } from './CONSTANTS';
 
 [undefined, null].forEach((testInit) => {
   test(`throws when deeply cloning a ${testInit}`, async () => {
