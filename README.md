@@ -26,7 +26,7 @@
 
 [![Code of Conduct][coc-badge]][coc-url]
 
-> Helper functions made specifically for The Really Project. All modules are shipped in [ES Modules] and users are required to create their own CJS builds if any, or use [esm] for bundle-less module loader.
+> Helper functions made specifically for The Really Project. All modules are shipped in [ES Modules] and users are required to create their own CJS builds if needed, or use [esm] for bundle-less module loader.
 
 ## Table of contents <!-- omit in toc -->
 
