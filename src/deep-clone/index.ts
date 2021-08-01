@@ -1,4 +1,4 @@
-import { cloneDeep } from '@reallyland/esm/dist/clone-deep';
+import cloneDeep from 'lodash-es/cloneDeep';
 
 export interface DeepCloneOptions {
   absolute?: boolean;
