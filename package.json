@@ -1,6 +1,6 @@
 {
   "name": "nodemod",
-  "version": "2.8.4",
+  "version": "3.0.0-rc.2",
   "description": "A collection of node modules for The Really Project",
   "keywords": [
     "motss",
@@ -24,33 +24,94 @@
   },
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./dist/*": "./dist/*",
-    "./calendar": "./dist/calendar/index.js",
-    "./calendar/*": "./dist/calendar/*",
-    "./deep-clone": "./dist/deep-clone/index.js",
-    "./deep-clone/*": "./dist/deep-clone/*",
-    "./delay-until": "./dist/delay-until/index.js",
-    "./delay-until/*": "./dist/delay-until/*",
-    "./fetch-as": "./dist/fetch-as/index.js",
-    "./fetch-as/*": "./dist/fetch-as/*",
-    "./normalize-diacritics": "./dist/normalize-diacritics/index.js",
-    "./normalize-diacritics/*": "./dist/normalize-diacritics/*",
-    "./polling-observer": "./dist/polling-observer/index.js",
-    "./polling-observer/*": "./dist/polling-observer/*",
-    "./signatur": "./dist/signatur/index.js",
-    "./signatur/*": "./dist/signatur/*",
-    "./scryptify": "./dist/scryptify/index.js",
-    "./scryptify/*": "./dist/scryptify/*",
-    "./utc-date": "./dist/utc-date/index.js",
-    "./utc-date/*": "./dist/utc-date/*",
-    "./utc-time": "./dist/utc-time/index.js",
-    "./utc-time/*": "./dist/utc-time/*",
-    "./lib": "./dist/lib/index.js",
-    "./lib/*": "./dist/lib/*",
-    "./lib/clone-deep": "./dist/lib/clone-deep.js",
-    "./lib/parse5": "./dist/lib/parse5.js",
-    "./lib/prismjs": "./dist/lib/prismjs.js"
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./dist/*": {
+      "import": "./dist/*",
+      "default": "./dist/*"
+    },
+    "./calendar": {
+      "import": "./dist/calendar/index.js",
+      "default": "./dist/calendar/index.js"
+    },
+    "./calendar/*": {
+      "import": "./dist/calendar/*",
+      "default": "./dist/calendar/*"
+    },
+    "./deep-clone": {
+      "import": "./dist/deep-clone/index.js",
+      "default": "./dist/deep-clone/index.js"
+    },
+    "./deep-clone/*": {
+      "import": "./dist/deep-clone/*",
+      "default": "./dist/deep-clone/*"
+    },
+    "./delay-until": {
+      "import": "./dist/delay-until/index.js",
+      "default": "./dist/delay-until/index.js"
+    },
+    "./delay-until/*": {
+      "import": "./dist/delay-until/*",
+      "default": "./dist/delay-until/*"
+    },
+    "./fetch-as": {
+      "import": "./dist/fetch-as/index.js",
+      "default": "./dist/fetch-as/index.js"
+    },
+    "./fetch-as/*": {
+      "import": "./dist/fetch-as/*",
+      "default": "./dist/fetch-as/*"
+    },
+    "./normalize-diacritics": {
+      "import": "./dist/normalize-diacritics/index.js",
+      "default": "./dist/normalize-diacritics/index.js"
+    },
+    "./normalize-diacritics/*": {
+      "import": "./dist/normalize-diacritics/*",
+      "default": "./dist/normalize-diacritics/*"
+    },
+    "./polling-observer": {
+      "import": "./dist/polling-observer/index.js",
+      "default": "./dist/polling-observer/index.js"
+    },
+    "./polling-observer/*": {
+      "import": "./dist/polling-observer/*",
+      "default": "./dist/polling-observer/*"
+    },
+    "./signatur": {
+      "import": "./dist/signatur/index.js",
+      "default": "./dist/signatur/index.js"
+    },
+    "./signatur/*": {
+      "import": "./dist/signatur/*",
+      "default": "./dist/signatur/*"
+    },
+    "./scryptify": {
+      "import": "./dist/scryptify/index.js",
+      "default": "./dist/scryptify/index.js"
+    },
+    "./scryptify/*": {
+      "import": "./dist/scryptify/*",
+      "default": "./dist/scryptify/*"
+    },
+    "./utc-date": {
+      "import": "./dist/utc-date/index.js",
+      "default": "./dist/utc-date/index.js"
+    },
+    "./utc-date/*": {
+      "import": "./dist/utc-date/*",
+      "default": "./dist/utc-date/*"
+    },
+    "./utc-time": {
+      "import": "./dist/utc-time/index.js",
+      "default": "./dist/utc-time/index.js"
+    },
+    "./utc-time/*": {
+      "import": "./dist/utc-time/*",
+      "default": "./dist/utc-time/*"
+    }
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -60,24 +121,20 @@
     "dist/**/*.*js",
     "dist/**/*.d.ts.map",
     "dist/**/*.d.ts",
-    "!dist/test*/**/*.*"
+    "!dist/**/*test*/**/*.*"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.prod.json && npm run build:lib",
-    "build:lib": "rollup --config ./rollup.config.lib.js",
-    "build:lib:test": "rollup --config ./rollup.config.lib.test.js",
-    "build:mod": "node --max-old-space-size=8192 ./node_modules/rollup/dist/bin/rollup --config ./rollup.config.js",
-    "build:test": "tsc -p tsconfig.test.json && npm run build:lib:test",
     "check": "package-check",
     "clean": "shx rm -rf .*cache *.log coverage/ dist/ logs/",
     "postinstall": "npm dedupe",
-    "jest": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config ./.jestrc.json",
-    "lint": "eslint src --ext .js,.ts",
+    "lint": "eslint src/**/*.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
-    "prepublishOnly": "npm run clean && npm run lint && npm run build",
-    "test": "npm run clean && npm run lint && npm run build:test && npm run jest",
+    "prepublishOnly": "npm run check && npm run lint:build && npm run ts",
+    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__",
+    "test:watch": "npm run clean && npm t && watchlist src -- npm t",
     "ts": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "prepare": "npm x -y -- husky@latest install"
   },
   "commitlint": {
     "extends": [
@@ -85,48 +142,44 @@
     ]
   },
   "dependencies": {
-    "@types/lodash-es": "^4.17.4",
-    "@types/parse5": "^6.0.0",
-    "@types/prismjs": "^1.16.5",
-    "lit-ntml": "^2.18.2",
-    "normalize-diacritics": "^2.13.2",
+    "@reallyland/esm": "^0.0.3",
+    "lit-ntml": "^3.0.0-rc.1",
+    "normalize-diacritics": "^3.0.0-rc.2",
     "tslib": "^2.1.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^12.1.3",
+    "@commitlint/config-conventional": "^13.1.0",
     "@reallyland/tsconfig": "^3.0.2",
     "@skypack/package-check": "^0.2.2",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.0.2",
+    "@swc/register": "^0.1.7",
+    "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
-    "cross-env": "^7.0.2",
+    "c8": "^7.7.3",
     "eslint": "^7.26.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-regexp": "^0.11.0",
+    "eslint-plugin-regexp": "^0.13.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "full-icu": "^1.3.4",
-    "jest": "^26.6.3",
-    "lodash-es": "^4.17.21",
-    "nock": "^13.0.11",
-    "node-fetch": "^2.6.0",
-    "parse5": "^6.0.1",
-    "prismjs": "^1.20.0",
-    "rollup": "^2.47.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
+    "esm": "github:agoric-labs/esm#Agoric-built",
+    "msw": "^0.33.0",
     "shx": "^0.3.2",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "uvu": "^0.5.1",
+    "watchlist": "^0.2.3"
   },
   "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4"
+    "node": ">= 14.17.3",
+    "npm": ">= 6.14.13"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "esm": {
+    "cjs": true,
+    "mode": "all",
+    "await": true,
+    "force": true,
+    "wasm": true
   }
 }

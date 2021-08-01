@@ -3,7 +3,7 @@ import type {
   FetchAsReturnType,
   FetchType,
   UnknownRecord,
-} from './custom_typings.js';
+} from './custom_typings';
 
 // import {
 //   Blob,
@@ -12,8 +12,6 @@ import type {
 //   RequestInit,
 //   Response,
 // } from 'node-fetch';
-
-// import fetch from 'node-fetch';
 
 function getResponseHeaders(headers: Headers) {
   const d: UnknownRecord = {};

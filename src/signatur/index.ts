@@ -5,7 +5,7 @@ import type {
   SignaturOptions,
   SignaturReturnError,
   UnknownRecord,
-} from './custom_typings.js';
+} from './custom_typings';
 
 export class SignaturError extends Error {
   public type: string;

@@ -1,4 +1,4 @@
-import type { CalendarInitBase, DateTimeFormatter } from '../typings.js';
+import type { CalendarInitBase, DateTimeFormatter } from '../typings';
 
 export interface GetWeekdaysInit extends CalendarInitBase {
   longWeekdayFormat: DateTimeFormatter;

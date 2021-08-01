@@ -1,2 +1,2 @@
-export * from './polling-measure.js';
-export * from './polling-observer.js';
+export * from './polling-measure';
+export * from './polling-observer';

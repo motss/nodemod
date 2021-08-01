@@ -1,4 +1,4 @@
-import { toValidWeekday } from './to-valid-weekday.js';
+import { toValidWeekday } from './to-valid-weekday';
 
 export function normalizeWeekday(
   weekDay: number,

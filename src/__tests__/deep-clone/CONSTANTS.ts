@@ -1,4 +1,4 @@
-export const towno = {
+export const object0 = {
   a: {
     b: {
       c: {
@@ -54,7 +54,7 @@ export const towno = {
   i: 'random-string-depth-0',
 };
 
-export const owno = {
+export const object1 = {
   a: {
     b: {
       c: {
@@ -79,7 +79,7 @@ export const owno = {
   n: 999,
 };
 
-export const awno = [
+export const object2 = [
   [
     [
       {
