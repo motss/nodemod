@@ -1,6 +1,6 @@
 {
   "name": "nodemod",
-  "version": "3.0.0-rc.3",
+  "version": "3.0.0-rc.4",
   "description": "A collection of node modules for The Really Project",
   "keywords": [
     "motss",
@@ -142,8 +142,8 @@
     ]
   },
   "dependencies": {
-    "@reallyland/esm": "^0.0.3",
     "lit-ntml": "^3.0.0-rc.1",
+    "lodash-es": "^4.17.21",
     "normalize-diacritics": "^3.0.0-rc.2",
     "tslib": "^2.1.0"
   },
@@ -152,6 +152,7 @@
     "@reallyland/tsconfig": "^3.0.2",
     "@skypack/package-check": "^0.2.2",
     "@swc/register": "^0.1.7",
+    "@types/lodash-es": "^4.17.4",
     "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
