@@ -26,7 +26,7 @@
 
 [![Code of Conduct][coc-badge]][coc-url]
 
-> Helper functions made specifically for The Really Project. All modules are shipped in ESM format and users are required to create their own CJS builds via Rollup or Webpack, or use [esm] for bundle-less module loader.
+> Helper functions made specifically for The Really Project. All modules are shipped in [ES Modules] and users are required to create their own CJS builds if any, or use [esm] for bundle-less module loader.
 
 ## Table of contents <!-- omit in toc -->
 
@@ -39,10 +39,10 @@
 
 ## Pre-requisites
 
-- [Node.js][nodejs-url] >= 10.18.1
-- [NPM][npm-url] >= 6.13.4 ([NPM][npm-url] comes with [Node.js][nodejs-url] so there is no need to install separately.)
-- [esm] >= 3.2.25 (Any version below this should work as expected.)
-- 
+- [Node.js][nodejs-url] >= 14.17.3
+- [NPM][npm-url] >= 6.14.13 ([NPM][npm-url] comes with [Node.js][nodejs-url] so there is no need to install separately.)
+- [ES Modules]
+
 ## Install
 
 ```sh
@@ -63,7 +63,7 @@ All modules are exported using JavaScript's ES modules. Users are recommended to
 
 ```js
 // index.js
-import { html } from 'nodemod/lit-ntml/index.js';
+import { html } from 'nodemod/dist/lit-ntml/index.js';
 
 await html`<h1>Hello, World!</h1>`;
 ```
@@ -104,6 +104,7 @@ Showing some ❤️ and support for [deno].
 [deno]: https://github.com/denoland/deno
 [deno_mod]: https://github.com/motss/deno_mod
 [esm]: https://github.com/standard-things/esm
+[ES Modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
 [calendar]: /src/calendar
 [deep-clone]: /src/deep-clone
