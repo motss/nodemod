@@ -13,5 +13,5 @@ export function getFormatter(formatter: Intl.DateTimeFormat): DateTimeFormatter 
    *   a.split(''); // On IE11, this returns ['', '1'].
    *   ```
    */
-  return n => formatter.format(n).replace(/\u200e/gi, '');
+  return n => formatter.format(n).replace(/\u200e/g, '');
 }

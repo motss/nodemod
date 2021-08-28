@@ -7,7 +7,7 @@ import { rawData, secret } from './CONSTANTS';
 test('encryption works', async () => {
   const encrypted = await encrypt(rawData, secret);
 
-  assert.match(encrypted, /^([a-z\d]+):(?:[a-z\d]+)$/i);
+  assert.match(encrypted, /^([a-z\d]+):[a-z\d]+$/i);
 });
 
 test('encryption always produces unique output', async () => {
