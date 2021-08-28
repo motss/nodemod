@@ -112,7 +112,7 @@ export class PollingObserver<T> {
 
       result = { status, value };
     } catch (e) {
-      result = { status: 'error', reason: e };
+      result = { status: 'error', reason: e as Error };
     } finally {
       const recordsSlice = records.slice();
 

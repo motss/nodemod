@@ -7,11 +7,11 @@ test(`throws when first argument is 'null'`, async () => {
   try {
     await utcDate(null as never);
   } catch (e) {
-    assert.is(e.name, 'TypeError');
+    assert.is((e as TypeError).name, 'TypeError');
     assert.ok([
       `Cannot destructure property \`startDate\` of 'undefined' or 'null'.`,
       `Cannot destructure property 'startDate' of '(intermediate value)(intermediate value)(intermediate value)' as it is null.`,
-    ].some(n => e.message === n));
+    ].some(n => (e as Error).message === n));
   }
 });
 

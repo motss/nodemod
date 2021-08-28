@@ -1,6 +1,7 @@
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
+import type { SignaturError } from '../../signatur/index';
 import { sign, unsign } from '../../signatur/index';
 import { data, secret } from './CONSTANTS';
 
@@ -42,7 +43,7 @@ test('throws when signature not match', async () => {
   try {
     await unsign('123.456', secret);
   } catch (e) {
-    assert.equal(e.toJSON(), {
+    assert.equal((e as SignaturError)?.toJSON(), {
       error: {
         type: 'invalid_signature',
         message: 'Signature not match',

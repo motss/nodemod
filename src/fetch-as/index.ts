@@ -53,7 +53,7 @@ function fetchAs<T, U>(fetchType: FetchType): (
       return {
         status,
         info: { headers, size, timeout, type },
-        error: e,
+        error: e as U,
       };
     }
   };

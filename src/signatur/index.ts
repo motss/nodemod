@@ -29,7 +29,7 @@ export class SignaturError extends Error {
 }
 
 function urlSafeBase64(s: string) {
-  return s.replace(/\+/gi, '-').replace(/\//gi, '_').replace(/=/gi, '');
+  return s.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 }
 
 export function signSync<T = UnknownRecord>(
@@ -73,8 +73,8 @@ export function unsignSync<T = UnknownRecord>(
   const [hash, enc] = signature.split(separator, 2);
   const decoded = Buffer.from(
     (hash + '==='.slice((hash.length + 3) % 4))
-      .replace(/-/gi, '+')
-      .replace(/_/gi, '/'), 'base64')
+      .replace(/-/g, '+')
+      .replace(/_/g, '/'), 'base64')
     .toString('utf8');
   const signedDecoded = urlSafeBase64(
     createHmac('sha256', secret).update(decoded).digest('base64'));
