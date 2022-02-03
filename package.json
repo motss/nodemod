@@ -130,7 +130,7 @@
     "postinstall": "npm x --prefer-online -y -- zx@latest ./postinstall.mjs",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
-    "lint:commit": "npm x -y -- commitlint --edit",
+    "lint:commit": "npm x --prefer-online -y -- commitlint@latest --edit",
     "pre-commit": "package-check && nano-staged && tsc --noEmit",
     "prepublishOnly": "package-check && npm run lint:build && npm run build",
     "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__",
