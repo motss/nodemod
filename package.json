@@ -127,7 +127,7 @@
   "scripts": {
     "build": "npm run clean && npm run ts",
     "clean": "rm -rf .*cache *.log coverage/ dist/ logs/",
-    "postinstall": "npm x -y -- zx ./postinstall.mjs",
+    "postinstall": "npm x --prefer-online -y -- zx@latest ./postinstall.mjs",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "lint:commit": "npm x -y -- commitlint --edit",

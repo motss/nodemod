@@ -72,7 +72,6 @@ jobs:
       - name: Install dependencies
         if: env.CI_SKIP == 'false'
         run: |
-          rm -rf ${{ env.NPM_CACHE_DIR }}/_npx # Always clear npx cache first
           npm ci --quiet
 
       - name: Lint
