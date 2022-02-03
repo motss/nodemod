@@ -65,8 +65,6 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ matrix.os }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ matrix.os }}-npm-
 
       - name: Install dependencies
         if: env.CI_SKIP == 'false'
