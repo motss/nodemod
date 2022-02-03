@@ -18,6 +18,7 @@ defaults:
 
 env:
   CI_SKIP: false
+  NPM_VERSION: 0.0.0
 
 jobs:
   test:
@@ -56,13 +57,14 @@ jobs:
         if: env.CI_SKIP == 'false'
         run: |
           node -v && npm -v && which npm && pwd && ls -la
+          echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
 
       - name: Cache dependencies
         id: npm-cache
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ matrix.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ matrix.os }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ matrix.os }}-npm-
 
