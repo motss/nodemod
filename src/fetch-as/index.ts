@@ -16,9 +16,9 @@ import type {
 function getResponseHeaders(headers: Headers) {
   const d: UnknownRecord = {};
 
-  for (const [k, v] of headers) {
+  headers.forEach(([k, v]) => {
     d[k] = v;
-  }
+  });
 
   return d;
 }

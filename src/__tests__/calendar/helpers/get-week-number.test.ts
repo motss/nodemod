@@ -20,7 +20,7 @@ type TestError = [undefined | null, undefined | null];
       const error = e as TypeError;
 
       assert.is(error.name, TypeError.name);
-      assert.match(error.message, 'Cannot read property');
+      assert.match(error.message, /^cannot read (properties|property) of (null|undefined)/i);
     }
   });
 });
