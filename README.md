@@ -19,10 +19,8 @@
 [![Packagephobia][packagephobia-badge]][packagephobia-url]
 [![Bundlephobia][bundlephobia-badge]][bundlephobia-url]
 
-[![CircleCI][circleci-badge]][circleci-url]
-[![Dependency Status][daviddm-badge]][daviddm-url]
+[![ci][ga-badge]][ga-url]
 [![codecov][codecov-badge]][codecov-url]
-[![Coverage Status][coveralls-badge]][coveralls-url]
 
 [![Code of Conduct][coc-badge]][coc-url]
 
@@ -131,17 +129,14 @@ Showing some ❤️ and support for [deno].
 [packagephobia-badge]: https://flat.badgen.net/packagephobia/install/nodemod
 [bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/nodemod
 
-[circleci-badge]: https://flat.badgen.net/circleci/github/motss/nodemod?icon=circleci
-[daviddm-badge]: https://flat.badgen.net/david/dep/motss/nodemod
+[ga-badge]: https://github.com/motss/nodemod/actions/workflows/ci.yml/badge.svg?branch=main
 [codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/nodemod?label=codecov&icon=codecov
-[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/nodemod?label=coveralls
 
 [coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
 <!-- Links -->
 [tippin-me-url]: https://tippin.me/@igarshmyb
 [follow-me-url]: https://twitter.com/igarshmyb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/app-datepicker
-
 
 [version-url]: https://www.npmjs.com/package/nodemod
 [node-version-url]: https://nodejs.org/en/download
@@ -151,9 +146,7 @@ Showing some ❤️ and support for [deno].
 [packagephobia-url]: https://packagephobia.now.sh/result?p=nodemod
 [bundlephobia-url]: https://bundlephobia.com/result?p=nodemod
 
-[circleci-url]: https://circleci.com/gh/motss/nodemod/tree/master
-[daviddm-url]: https://david-dm.org/motss/nodemod
+[ga-url]: https://github.com/motss/nodemod/actions/workflows/ci.yml
 [codecov-url]: https://codecov.io/gh/motss/nodemod
-[coveralls-url]: https://coveralls.io/github/motss/nodemod?branch=master
 
 [coc-url]: https://github.com/motss/nodemod/blob/master/CODE_OF_CONDUCT.md
