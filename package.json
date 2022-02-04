@@ -125,17 +125,17 @@
     "!dist/**/*test*/**/*.*"
   ],
   "scripts": {
-    "build": "npm run clean && npm run ts",
-    "clean": "rm -rf .*cache *.log coverage/ dist/ logs/",
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
     "postinstall": "npm x --prefer-online -y -- zx@latest ./postinstall.mjs",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
-    "lint:commit": "npm x --prefer-online -y -- commitlint@latest --edit",
+    "lint:commit": "npm x -y -- commitlint@latest --edit",
     "pre-commit": "package-check && nano-staged && tsc --noEmit",
     "prepublishOnly": "package-check && npm run lint:build && npm run build",
-    "test": "c8 --reporter=lcov --exclude=src/__tests__ uvu -r @swc/register -r esm src/__tests__",
-    "test:watch": "npm run clean && npm t && watchlist src -- npm t",
-    "ts": "tsc",
+    "test": "uvu -r @swc/register -r esm src/__tests__",
+    "test:coverage": "c8 --reporter=lcov --exclude=src/__tests__ npm t",
+    "test:watch": "npm run clean && npm run test:coverage && watchlist src -- npm run test:coverage",
     "watch": "tsc --watch"
   },
   "simple-git-hooks": {
@@ -148,7 +148,7 @@
     ]
   },
   "dependencies": {
-    "lit-ntml": "^3.0.2",
+    "lit-ntml": "^3.0.3-rc.1",
     "lodash-es": "^4.17.21",
     "normalize-diacritics": "^3.0.1",
     "tslib": "^2.3.0"
