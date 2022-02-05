@@ -90,8 +90,8 @@ jobs:
       - name: Lint
         if: env.CI_SKIP == 'false'
         run: |
-          npm run lint:build
           bash ./list-npx-cache.bash
+          npm run lint:build
 
       - name: Test
         if: env.CI_SKIP == 'false' && !contains(matrix.os, 'ubuntu')
@@ -101,7 +101,7 @@ jobs:
       - name: Test with coverage
         if: env.CI_SKIP == 'false' && contains(matrix.os, 'ubuntu')
         run: |
-          npm run test:coverage
+          # npm run test:coverage
 
       - name: Upload coverage to codecov
         if: env.CI_SKIP == 'false' && contains(matrix.os, 'ubuntu') && success()
