@@ -73,6 +73,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@v2
         with:
+          # See this glob workaround at https://github.com/actions/toolkit/issues/713.
           path: |
             ${{ env.NPM_CACHE_DIR }}/*
             !${{ env.NPM_CACHE_DIR }}/_npx
