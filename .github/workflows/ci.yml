@@ -67,7 +67,6 @@ jobs:
           echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
           echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
           echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
-          bash ./list-npx-cache.bash
 
       - name: Cache dependencies
         if: env.CI_SKIP == 'false'
@@ -82,15 +81,15 @@ jobs:
             ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}
 
       - name: Install dependencies
-        if: env.CI_SKIP == 'false' && steps.npm-cache.outputs.cache-hit != 'true'
+        if: env.CI_SKIP == 'false'
         run: |
+          bash ./list-npx-cache.bash
           npm ci --quiet
           bash ./list-npx-cache.bash
 
       - name: Lint
         if: env.CI_SKIP == 'false'
         run: |
-          bash ./list-npx-cache.bash
           # npm run lint:build
 
       - name: Test
@@ -110,7 +109,3 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
           flags: unit_tests
-
-      - name: Remove npx cache
-        run: |
-          # rm -rf ${{ env.NPM_CACHE_DIR }}/_npx
