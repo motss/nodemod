@@ -33,8 +33,7 @@ jobs:
     timeout-minutes: 120
     strategy:
       matrix:
-        # os: [macos-latest, ubuntu-latest, windows-latest]
-        os: [ubuntu-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
         target: [16.x]
 
     steps:
@@ -91,7 +90,7 @@ jobs:
       - name: Lint
         if: env.CI_SKIP == 'false'
         run: |
-          # npm run lint:build
+          npm run lint:build
 
       - name: Test
         if: env.CI_SKIP == 'false' && !contains(matrix.os, 'ubuntu')
@@ -101,7 +100,7 @@ jobs:
       - name: Test with coverage
         if: env.CI_SKIP == 'false' && contains(matrix.os, 'ubuntu')
         run: |
-          # npm run test:coverage
+          npm run test:coverage
 
       - name: Upload coverage to codecov
         if: env.CI_SKIP == 'false' && contains(matrix.os, 'ubuntu') && success()
