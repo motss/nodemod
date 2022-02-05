@@ -7,10 +7,9 @@ NPX_CACHE_DIR="$(npm config get cache)/_npx"
 
 if [[ -d $NPX_CACHE_DIR ]]; then
   FILES=$(find $NPX_CACHE_DIR -type f | grep -v 'node_modules' | grep -v 'package-lock.json')
-  # files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules')
+  # FILES=$(find $NPX_CACHE_DIR -type f | grep -v 'node_modules')
 
   echo '[INFO] Listing all files in the npx cache...'
-  echo $'\n'
 
   for a in $FILES
   do
@@ -21,9 +20,9 @@ if [[ -d $NPX_CACHE_DIR ]]; then
   done
 else
   echo '[INFO] npx cache not found!'
-  echo $'\n'
 fi
 
 # NOTE: List all files with human readable size in the npm cache
+
 # echo "::group::$(ls -lhR $(npm config get cache) || echo 'nil')"
 # echo "::endgroup::"
