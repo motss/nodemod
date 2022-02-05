@@ -14,4 +14,4 @@
 #   echo "::endgroup::"
 # done
 
-ls -lhR $(npm config get cache)
+ls -lhR $(npm config get cache) || echo 'nil'
