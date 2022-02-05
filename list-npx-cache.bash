@@ -4,12 +4,13 @@
 # There is an additional zx found in the npx cache when compared to the local npx cache using 8.1.4.
 
 # files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules' | grep -v 'package-lock.json')
-files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules')
+# files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules')
+files=$(find $(npm config get cache) -type f | grep -v 'node_modules')
 
 for a in $files
 do
   echo "::group::$a"
-  cat $a
+  # cat $a
   echo $'\n'
   echo "::endgroup::"
 done
