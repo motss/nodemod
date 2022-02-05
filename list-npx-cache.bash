@@ -8,7 +8,8 @@ files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules' | gre
 
 for a in $files
 do
-  echo $a
+  echo "::group::$a"
   cat $a
   echo $'\n'
+  echo "::endgroup::"
 done

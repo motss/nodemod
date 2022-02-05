@@ -79,6 +79,8 @@ jobs:
           key: ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-
+        post: |
+          bash ./list-npx-cache.bash
 
       - name: Install dependencies
         if: env.CI_SKIP == 'false' && steps.npm-cache.outputs.cache-hit != 'true'

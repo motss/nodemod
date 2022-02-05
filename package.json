@@ -127,10 +127,10 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
-    "postinstall": "npm x -y -- zx@4.x ./postinstall.mjs",
+    "postinstall": "npm x -y -- zx@latest ./postinstall.mjs",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
-    "lint:commit": "npm x -y -- commitlint@16.x --edit",
+    "lint:commit": "npm x -y -- commitlint@latest --edit",
     "pre-commit": "package-check && nano-staged && tsc --noEmit",
     "prepublishOnly": "package-check && npm run lint:build && npm run build",
     "test": "uvu -r @swc/register -r esm src/__tests__",
