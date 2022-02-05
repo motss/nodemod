@@ -79,8 +79,6 @@ jobs:
           key: ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-
-        post: |
-          bash ./list-npx-cache.bash
 
       - name: Install dependencies
         if: env.CI_SKIP == 'false' && steps.npm-cache.outputs.cache-hit != 'true'
@@ -92,6 +90,7 @@ jobs:
         if: env.CI_SKIP == 'false'
         run: |
           npm run lint:build
+          bash ./list-npx-cache.bash
 
       - name: Test
         if: env.CI_SKIP == 'false' && !contains(matrix.os, 'ubuntu')
