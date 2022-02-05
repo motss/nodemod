@@ -58,9 +58,6 @@ jobs:
       #   if: env.CI_SKIP == 'false'
       #   run: |
       #     npm i -g npm@latest
-      #     echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
-      #     echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
-      #     echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
 
       - name: List versions
         if: env.CI_SKIP == 'false'
