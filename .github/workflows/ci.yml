@@ -75,11 +75,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ env.NPM_CACHE_DIR }}
+            ${{ env.NPM_CACHE_DIR }}/**
             !${{ env.NPM_CACHE_DIR }}/_npx
-          key: ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}-1
+          key: ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-1-
+            ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}
 
       - name: Install dependencies
         if: env.CI_SKIP == 'false' && steps.npm-cache.outputs.cache-hit != 'true'
@@ -113,4 +113,4 @@ jobs:
 
       - name: Remove npx cache
         run: |
-          rm -rf ${{ env.NPM_CACHE_DIR }}/_npx
+          # rm -rf ${{ env.NPM_CACHE_DIR }}/_npx
