@@ -54,22 +54,22 @@ jobs:
         with:
           node-version: ${{ matrix.target }}
 
-      - name: Install latest npm
-        if: env.CI_SKIP == 'false'
-        run: |
-          npm i -g npm@latest
-          which npm
-          echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
-          echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
-          echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
+      # - name: Install latest npm
+      #   if: env.CI_SKIP == 'false'
+      #   run: |
+      #     npm i -g npm@latest
+      #     which npm
+      #     echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
+      #     echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
+      #     echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
 
       - name: List versions
         if: env.CI_SKIP == 'false'
         run: |
           pwd && ls -la
-          # echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
-          # echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
-          # echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
+          echo "NODE_VERSION=$(node -v)" >> $GITHUB_ENV
+          echo "NPM_CACHE_DIR=$(npm config get cache)" >> $GITHUB_ENV
+          echo "NPM_VERSION=$(npm -v)" >> $GITHUB_ENV
 
       - name: Cache dependencies
         if: env.CI_SKIP == 'false'
