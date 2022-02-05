@@ -127,7 +127,7 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
-    "postinstall": "ls -la ~/.npm && npm x -y -- zx@latest ./postinstall.mjs",
+    "postinstall": "npm x -y -- zx@latest ./postinstall.mjs",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "lint:commit": "npm x -y -- commitlint@latest --edit",
@@ -148,9 +148,9 @@
     ]
   },
   "dependencies": {
-    "lit-ntml": "^3.0.4",
+    "lit-ntml": "^3.0.5-rc.0",
     "lodash-es": "^4.17.21",
-    "normalize-diacritics": "^3.0.3",
+    "normalize-diacritics": "^3.0.4-rc.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
