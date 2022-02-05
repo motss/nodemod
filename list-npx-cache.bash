@@ -11,6 +11,7 @@ for a in $files
 do
   echo "::group::$a"
   # cat $a
+  du -h $a
   echo $'\n'
   echo "::endgroup::"
 done
