@@ -110,3 +110,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
           flags: unit_tests
+
+      - name: Remove npx cache
+        run: |
+          rm -rf ${{ env.NPM_CACHE_DIR }}/_npx
