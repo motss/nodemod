@@ -75,8 +75,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ env.NPM_CACHE_DIR }}
-            !${{ env.NPM_CACHE_DIR }}/_npx
+            ${{ env.NPM_CACHE_DIR }}/**
+            !${{ env.NPM_CACHE_DIR }}/_npx/**
           key: ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ matrix.os }}-node-${{ env.NODE_VERSION }}-npm-${{ env.NPM_VERSION }}-
