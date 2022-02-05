@@ -5,13 +5,13 @@
 
 # files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules' | grep -v 'package-lock.json')
 # files=$(find $(npm config get cache)/_npx -type f | grep -v 'node_modules')
-files=$(find $(npm config get cache) -type f | grep -v 'node_modules')
 
-for a in $files
-do
-  echo "::group::$a"
-  # cat $a
-  du -h $a
-  echo $'\n'
-  echo "::endgroup::"
-done
+# for a in $files
+# do
+#   echo "::group::$a"
+#   # cat $a
+#   echo $'\n'
+#   echo "::endgroup::"
+# done
+
+ls -lhR $(npm config get cache)
