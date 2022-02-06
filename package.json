@@ -121,13 +121,13 @@
     "dist/**/*.*js",
     "dist/**/*.d.ts.map",
     "dist/**/*.d.ts",
-    "postinstall.mjs",
+    "postinstall.*",
     "!dist/**/*test*/**/*.*"
   ],
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rm -rf .*cache *.log .swc/ coverage/ dist/ logs/",
-    "postinstall": "npm x --cache=.cache -y -- zx@latest ./postinstall.mjs",
+    "postinstall": "bash postinstall.bash",
     "lint": "eslint src --ext .js,.ts",
     "lint:build": "npm run lint -- --config .build.eslintrc.json",
     "lint:commit": "npm x -y -- commitlint@latest --edit",
@@ -148,9 +148,9 @@
     ]
   },
   "dependencies": {
-    "lit-ntml": "^3.0.4",
+    "lit-ntml": "^3.0.5",
     "lodash-es": "^4.17.21",
-    "normalize-diacritics": "^3.0.3",
+    "normalize-diacritics": "^3.0.5",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
