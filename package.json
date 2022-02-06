@@ -148,9 +148,9 @@
     ]
   },
   "dependencies": {
-    "lit-ntml": "^3.0.5-rc.0",
+    "lit-ntml": "^3.0.5-rc.2",
     "lodash-es": "^4.17.21",
-    "normalize-diacritics": "^3.0.4-rc.0",
+    "normalize-diacritics": "^3.0.4-rc.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
