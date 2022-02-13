@@ -37,4 +37,4 @@ type TestSuccess = [number, number];
   });
 });
 
-test.run()
+test.run();

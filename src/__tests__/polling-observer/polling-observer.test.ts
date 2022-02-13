@@ -181,7 +181,7 @@ test(`polls with optional 'timeout'`, async () => {
     return Math.floor(endsAt - startsAt) > 5e3;
   });
   const task = new Promise<[OnfinishFulfilled<MockData>, PollingMeasure[]]>((resolve) => {
-    obs.onfinish = (data, records) => resolve([data, records] as unknown as [OnfinishFulfilled<MockData>, PollingMeasure[]])
+    obs.onfinish = (data, records) => resolve([data, records] as unknown as [OnfinishFulfilled<MockData>, PollingMeasure[]]);
   });
 
   obs.observe(

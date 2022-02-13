@@ -48,4 +48,4 @@ test(`throws when invalid 'day'`, async () => {
   }
 });
 
-test.run()
+test.run();

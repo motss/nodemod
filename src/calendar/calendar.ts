@@ -35,7 +35,7 @@ export function calendar(init: CalendarInit): Calendar {
     max,
     min,
     showWeekNumber = false,
-    weekLabel = 'Week',
+    weekNumberTemplate = 'Week %s',
     weekNumberType = 'first-4-day-week',
   }: CalendarInit = init || {};
 
@@ -89,13 +89,13 @@ export function calendar(init: CalendarInit): Calendar {
           weekNumberType,
           toUTCDate(dateYear, dateMonth, curDay - weekNumberOffset)
         );
-        const wkLabel = `${weekLabel} ${weekNumber}`;
+        const weekLabel = weekNumberTemplate.replace('%s', String(weekNumber));
 
         cols.push({
           fullDate: null,
-          label: wkLabel,
+          label: weekLabel,
           value: `${weekNumber}`,
-          key: `${calendarKey}:${wkLabel}`,
+          key: `${calendarKey}:${weekLabel}`,
           disabled: true,
         });
 

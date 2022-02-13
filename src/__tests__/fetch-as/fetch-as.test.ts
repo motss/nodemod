@@ -38,7 +38,7 @@ test.before(() => {
 });
 
 test.after.each(() => {
-  server.resetHandlers()
+  server.resetHandlers();
 });
 
 test.after(() => {
@@ -123,7 +123,7 @@ test(`returns failed response with 'fetchAsText'`, async () => {
   assert.is(error, JSON.stringify({ ...errorData }));
 });
 
-test.run()
+test.run();
 
 // it(`returns response with 'fetchAsBuffer'`, async () => {
   //   try {

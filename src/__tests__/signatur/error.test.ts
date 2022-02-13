@@ -52,4 +52,4 @@ test('throws when signature not match', async () => {
   }
 });
 
-test.run()
+test.run();

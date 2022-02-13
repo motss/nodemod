@@ -5,6 +5,7 @@ import type { GetWeekdaysInit } from './typings';
 export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
   const {
     firstDayOfWeek = 0,
+    shortWeekLabel,
     showWeekNumber = false,
     weekLabel,
 
@@ -12,19 +13,10 @@ export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
     narrowWeekdayFormat,
   } = init || {};
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
-  /* c8 ignore start */
-  /** FIXME(rongsen): c8 outputs incorrect test coverage mapping for unknown reason */
-  const $weekLabel = weekLabel || 'Wk';
-  /* c8 ignore stop */
 
   const weekdays: CalendarWeekday[] = [
     ...(
-      showWeekNumber ?
-        [{
-          label: $weekLabel === 'Wk' ? 'Week' : $weekLabel,
-          value: $weekLabel,
-        }] :
-        []
+      showWeekNumber ? [{ label: weekLabel || 'Week', value: shortWeekLabel || 'Wk' }] : []
     ),
     ...Array.from(Array(7)).map<CalendarWeekday>((_, i) => {
       const d = toUTCDate(2017, 0, fixedFirstDayOfWeek + i);

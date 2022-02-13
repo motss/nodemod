@@ -30,4 +30,4 @@ import { mockGetWeekdaysData } from '../mocks/get-weekdays';
   });
 });
 
-test.run()
+test.run();

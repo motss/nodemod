@@ -43,4 +43,4 @@ test(`'offset.millisecond' is not a number`, async () => {
   }
 });
 
-test.run()
+test.run();

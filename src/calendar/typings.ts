@@ -28,7 +28,7 @@ export interface CalendarInit extends CalendarInitBase {
 export interface CalendarInitBase {
   firstDayOfWeek?: number;
   showWeekNumber?: boolean;
-  weekLabel?: string;
+  weekNumberTemplate?: string;
 }
 
 export interface CalendarWeekday {

@@ -30,4 +30,4 @@ test(`returns UTC date with defined 'startDate' and 'offset'`, async () => {
   assert.equal(d, new Date(new Date('2019-05-03').toJSON()));
 });
 
-test.run()
+test.run();

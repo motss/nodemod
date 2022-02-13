@@ -23,4 +23,4 @@ test(`returns JSON object via '.toJSON()'`, () => {
   assert.type(entry.startTime, 'number');
 });
 
-test.run()
+test.run();

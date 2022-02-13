@@ -23,4 +23,4 @@ test(`fallbacks not-a-number 'delay' to '0' and resolves`, async () => {
   assert.is(await delayTask, undefined);
 });
 
-test.run()
+test.run();

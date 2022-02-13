@@ -161,11 +161,12 @@ export const mockGetWeekdaysData: TestGetWeekdays[] = [
     ],
   ],
   [
-    `{ firstDayOfWeek: 1, showWeekNumber: true, weekLabel: '曜日' }`,
+    `{ firstDayOfWeek: 1, shortWeekLabel: '曜日', showWeekNumber: true, weekLabel: '曜日' }`,
     {
       firstDayOfWeek: 1,
       longWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'long' })),
       narrowWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'narrow' })),
+      shortWeekLabel: '曜日',
       showWeekNumber: true,
       weekLabel: '曜日',
     },
@@ -205,11 +206,12 @@ export const mockGetWeekdaysData: TestGetWeekdays[] = [
     ],
   ],
   [
-    `{ firstDayOfWeek: -1, showWeekNumber: true, weekLabel: '曜日' }`,
+    `{ firstDayOfWeek: -1, shortWeekLabel: '曜日', showWeekNumber: true, weekLabel: '曜日' }`,
     {
       firstDayOfWeek: -1,
       longWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'long' })),
       narrowWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'narrow' })),
+      shortWeekLabel: '曜日',
       showWeekNumber: true,
       weekLabel: '曜日',
     },
@@ -249,10 +251,11 @@ export const mockGetWeekdaysData: TestGetWeekdays[] = [
     ],
   ],
   [
-    `{ weekLabel: '' }`,
+    `{ shortWeekLabel: '', weekLabel: '' }`,
     {
       longWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'long' })),
       narrowWeekdayFormat: getFormatter(Intl.DateTimeFormat('ja-JP', { weekday: 'narrow' })),
+      shortWeekLabel: '',
       showWeekNumber: true,
       weekLabel: '',
     },
