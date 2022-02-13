@@ -13,11 +13,18 @@ export function getWeekdays(init: GetWeekdaysInit): CalendarWeekday[] {
     narrowWeekdayFormat,
   } = init || {};
   const fixedFirstDayOfWeek = 1 + ((firstDayOfWeek + (firstDayOfWeek < 0 ? 7 : 0)) % 7);
+  /* c8 ignore start */
+  /** FIXME(rongsen): c8 or @swc/register outputs incorrect test coverage mapping for unknown reason */
+  const weekNumberItem: CalendarWeekday[] = showWeekNumber ?
+    [{
+      label: weekLabel || 'Week',
+      value: shortWeekLabel || 'Wk',
+    }] :
+    [];
+  /* c8 ignore stop */
 
   const weekdays: CalendarWeekday[] = [
-    ...(
-      showWeekNumber ? [{ label: weekLabel || 'Week', value: shortWeekLabel || 'Wk' }] : []
-    ),
+    ...weekNumberItem,
     ...Array.from(Array(7)).map<CalendarWeekday>((_, i) => {
       const d = toUTCDate(2017, 0, fixedFirstDayOfWeek + i);
 
